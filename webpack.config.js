@@ -13,12 +13,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Design guideline',
-      template: path.resolve(__dirname, 'public', 'index.html'),
+      template: path.resolve(__dirname, 'src', 'index.html'),
     }),
     new HtmlWebpackPlugin({
       filename: 'second-page.html',
       title: 'Design guideline 2',
-      template: path.resolve(__dirname, 'public', 'second-page.html'),
+      template: path.resolve(__dirname, 'src', 'second-page.html'),
     }),
   ].concat(
     devMode
