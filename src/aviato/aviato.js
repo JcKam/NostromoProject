@@ -1,1 +1,2 @@
-import './aviato.scss'
+import './aviato.scss';
+import './about.html';
