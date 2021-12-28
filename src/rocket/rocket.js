@@ -1,1 +1,1 @@
-import './rocket.scss'
+import './rocket.scss';
