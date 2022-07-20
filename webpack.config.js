@@ -3,6 +3,7 @@ const path = require('path/posix');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -48,7 +49,7 @@ module.exports = {
     )
     .concat(
       devMode
-        ? []
+        ? [new BundleAnalyzerPlugin()]
         : [
             new MiniCssExtractPlugin({
               filename: '[name]/[name].css',
