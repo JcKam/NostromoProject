@@ -1,0 +1,50 @@
+
+@import "../design-tokens.scss";
+
+p{
+    color: map-get($theme, text, "color-text");
+    font-size: $font-size-base;
+}
+
+.text-lead{
+    color: map-get($theme, text, "color-text");
+    font-size: $font-size-lg;
+}
+
+a{
+    color: map-get($theme, brand, "primary");
+}
+
+.text-small, small{
+    font-size: $font-size-sm;
+}
+
+h1, .title-head-1{
+    font-size: $font-size-h1;
+    color: map-get($theme, text, "color-title");
+}
+
+h2, .title-head-2{
+    font-size: $font-size-h2;
+    color: map-get($theme, text, "color-title");
+}
+
+h3, .title-head-3{
+    font-size: $font-size-h3;
+    color: map-get($theme, text, "color-title");
+}
+
+h4, .title-head-4{
+    font-size: $font-size-h4;
+    color: map-get($theme, text, "color-title");
+}
+
+h5, .title-head-5{
+    font-size: $font-size-h5;
+    color: map-get($theme, text, "color-title");
+}
+
+hr{
+    border: 0;
+    border-top: 1px solid map-get($theme, text, "color-border");
+}

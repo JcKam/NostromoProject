@@ -1,0 +1,41 @@
+
+@import "../design-tokens.scss";
+
+.badge{
+    border-radius: $border-radius-label;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    margin: 0;
+    min-height: $space-lg;
+    padding: calc($space-xxxs* .25) $space-xxs;
+}
+
+
+.badge-lg{
+    font-size: $font-size-lg;
+    font-weight: bold;
+}
+
+.badge-primary{
+    background: map-get($theme, brand, "primary");
+    border-color: map-get($theme, brand, "primary");
+    color: map-get($theme, text, "color-low");
+}
+.badge-success{
+    background: map-get($theme, state, "success");
+    border-color: map-get($theme, state, "success");
+    color: map-get($theme, text, "color-low");
+}
+.badge-danger{
+    background: map-get($theme, state, "danger");
+    border-color: map-get($theme, state, "danger");
+    color: map-get($theme, text, "color-low");
+}
+.badge-default{
+    background-color: map-get($theme, text, "color-low");
+    border-color: map-get($theme, text, "color-border");
+    color: map-get($theme, text, "color-text");
+}

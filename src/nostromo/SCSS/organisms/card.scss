@@ -1,0 +1,113 @@
+
+
+@import "../design-tokens.scss";
+
+.card{
+    background-clip: border-box;
+    border-radius: $border-radius-default;
+    color: transparent;
+    border-color: map-get($theme, text, "color-border");
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $space-base;
+    min-width: 0;
+    position: relative;
+    word-wrap: break-word;
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.card-tag{
+    background: map-get($theme, text, "color-low");
+    border-color: map-get($theme, text, "color-border");
+    border-radius: $border-radius-card $border-radius-card 0 0;
+    position: relative;
+    &::before, &::after{
+        background: map-get($theme, text, "color-low");
+        content: " ";
+        display: block;
+        border-color: map-get($theme, text, "color-border");
+        border-style: solid;
+        border-width: 0 1px 1px 1px;
+        box-sizing: border-box;
+        bottom: -.5rem;
+        height: .5rem;
+        position: absolute;
+    }
+    &::after{
+        border-radius: 0 0 $border-radius-card $border-radius-card;
+        width: 30%;
+        right: -1px;
+    }
+    &::before{
+        border-radius: 0 0 $border-radius-card $border-radius-card;
+        width: 30%;
+        left: -1px;
+    }
+}
+.card-label{
+
+}
+
+.card-header{
+    align-items: stretch;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.card-body{
+    border-top: 1px solid map-get($theme, text,  "color-border-light");
+    align-items: center;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    padding: 0 $space-xs;
+}
+
+.card-title{
+
+}
+
+.card-text{
+
+}
+
+.card-link{
+    align-items: center;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: $border-radius-default;
+    display: inline-flex;
+    padding: $space-xxs $space-s;
+    text-decoration: none;
+    &:hover, &:focus{
+        background-color: map-get($theme, text, "color-low" );
+        border-color: map-get($theme, brand, "primary" );
+    }
+    &:focus{
+        box-shadow: $focus-btn;
+        outline: none;
+    }
+}
+
+.card-link-title{
+    color: map-get($theme, brand, "primary" );
+}
+
+.card-img{
+    background: #ccc;
+    margin: 0 $space-xxs 0 0;
+    min-height: 3.5rem;
+    min-width: 3.5rem;
+}
+
+.card-img-round{
+    border-radius: 50%;
+}

@@ -1,0 +1,221 @@
+
+@import "../design-tokens.scss";
+
+
+/* - - - - - - - - - - - - - - - - - - -
+
+            STEPPER-NAV
+
+ - - - - - - - - - - - - - - - - - - - */
+
+ .nav-stepper{
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+  
+.nav-stepper-item{
+  @include debug2();
+  flex: 1;
+
+  &:first-child{
+
+    .nav-stepper-item-btn{
+      &::before{
+        background: linear-gradient(to right, transparent 0%, map-get($theme, brand, "tertiary") 100%);
+      }
+
+      &.is-completed{
+        &::before{
+          background: linear-gradient(to right, transparent 0%, map-get($theme, brand, "primary-hight") 100%);
+        }
+      }
+
+      &.is-current{
+        &::before{
+          background: linear-gradient(to right, transparent 0%, map-get($theme, brand, "tertiary") 100%);
+        }
+      }
+    }
+  }
+
+  &:last-child{
+    
+    .nav-stepper-item-btn{
+      &::after{
+        background: linear-gradient(to right, map-get($theme, brand, "tertiary-low") 0%, transparent 100%);
+      }
+      
+      &.is-completed{
+        &::after{
+          background: linear-gradient(to right, lighten(map-get($theme, brand, "tertiary-low"), 20%) 0%, transparent 100%);
+        }
+      }
+
+      &.is-current{
+        &::after{
+          background: linear-gradient(to right, map-get($theme, brand, "tertiary") 0%, transparent 100%);
+        }
+      }
+    }
+  }
+}
+
+  .nav-stepper-item-btn{
+    //@include debug();
+    align-items: center;
+    color: map-get($theme, brand,  "primary-hight");
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-decoration: none;
+
+    &::after, &::before{
+      background: map-get($theme, brand, "tertiary-low");
+      content: " ";
+      height: .24rem;
+      position: absolute;
+      top: 1.25rem;
+      z-index: -1;
+    }
+    &::before{
+      left: 0;
+      width: calc(50% - calc(2.8rem/2)); //calc(50% - calc(2.75rem/2))
+    }
+    &::after{
+      right: 0;
+      width: calc(50% - calc(2.8rem/2)); //calc(50% - calc(2.75rem/2))
+    }
+  
+    &:hover, &:focus{
+      color: map-get($theme, text, "color-hight");
+      text-decoration: none;
+
+      .nav-stepper-item-btn-number{
+        background: #fff;
+        border-color: map-get($theme, brand, "primary");
+        color: $brand-primary-base;
+        margin-bottom: .5rem;
+        
+        &::after{
+          bottom: -0.55rem;
+          border-right: 1rem solid transparent;
+          border-top: 1rem solid #fff;
+          border-left: 1rem solid transparent;
+          content: "";
+          left: calc(50% - 1rem);
+          position: absolute;
+          z-index: 0;
+        }
+      }
+    }
+  
+    &.is-current{
+      font-weight: 700;
+      font-size: 110%;
+
+      &::before{
+        background: linear-gradient(to right, map-get($theme, brand, "primary-hight") 50%, map-get($theme, brand, "primary") 100%,);
+      }
+      &::after{
+        background: linear-gradient(to right, map-get($theme, brand, "primary") 0%, map-get($theme, brand, "tertiary-low") 50%,);
+      }
+
+      .nav-stepper-item-btn-number{
+        background-color: #fff;
+        box-shadow: 0 .1rem .3rem transparentize($color-grey, .5),  0 0 0 .5rem transparentize(map-get($theme, brand, "tertiary"), .75);
+        border-color: map-get($theme, brand, "primary");
+        border-width: .25rem;
+        color: map-get($theme, brand, "primary");
+        font-size: 125%;
+        margin-top: -.65rem;
+        margin-bottom: .5rem;
+        min-width: 3.5rem;
+        min-height: 3.5rem;
+
+        &::after{
+          content: " ";
+          bottom: -0.65rem;
+          border-right: 1rem solid transparent;
+          border-top: 1rem solid #fff;
+          border-left: 1rem solid transparent;
+          left: calc(50% - 1rem);
+          position: absolute;
+          z-index: 0;
+        }
+      }
+    }
+
+    &.is-completed{
+      
+      .nav-stepper-item-btn-number{
+        background-color: map-get($theme, brand, "tertiary");
+        border-color: map-get($theme, brand, "primary-hight");
+        box-shadow: 0 0 .3rem transparentize($color-grey, .65);
+      }
+
+      &::before, &::after{
+        background: map-get($theme, brand, "primary-hight");
+      }
+
+      &:hover, &:focus{
+        .nav-stepper-item-btn-number{
+          color: #fff;
+          &::after{
+            border-top-color: map-get($theme, brand, "tertiary");
+          }
+        }
+      }
+      
+      &:focus{
+        .nav-stepper-item-btn-number{
+          box-shadow: $focus-btn;
+        }
+      }
+    }
+
+    &.is-disabled{
+      color: map-get($theme, brand, "primary");
+
+      .nav-stepper-item-btn-number{
+        background-color: transparent;//map-get($theme, text, "color-input");
+        border-color: map-get($theme, brand, "tertiary");
+        box-shadow: none;
+        color: map-get($theme, brand, "tertiary");
+      }
+      
+      &:hover, &:focus{
+        cursor: default;
+
+        .nav-stepper-item-btn-number{
+          box-shadow: none;
+          margin-bottom: 0;
+          &::after{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-stepper-item-btn-check{
+    @include button-round($space-base, $space-base);
+    background: #fff;
+    border: .15rem solid map-get($theme, brand, "primary");
+    font-size: $font-size-sm;
+    position: absolute;
+    top: -.3rem;
+    right: -.5rem;
+  }
+  .nav-stepper-item-btn-number{   
+    @include button-round($space-xxxl*1.125, $space-xxxl*1.125);
+    background: map-get($theme, brand, "tertiary");
+    border: .15rem solid map-get($theme, brand, "primary");
+    color: map-get($theme, text, "color-text");
+    font-weight: 700;
+    position: relative;
+    transition: $transition-fastest ease;
+  }

@@ -1,0 +1,135 @@
+@import "../design-tokens.scss";
+
+.switch{
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: $space-xxxs $space-xxs;
+  
+    &:hover,
+    &:focus{
+  
+        .switch-state{
+            background-color: map-get($theme, text, "color-border");
+            box-shadow: $focus-btn;
+        }
+    }
+}
+  
+  .switch-wrap{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 0;
+    font-weight: normal;
+
+    .switch-state:focus{
+        box-shadow: 0 0 0 .2rem transparentize(map-get($theme, brand, "primary"), .5);
+        border: 0;
+    }
+  }
+  
+    .switch-state{
+        background: map-get($theme, text, "color-border");
+        border: 0;
+        border-radius: 50px;
+        float: left;
+        margin-right: 1rem;
+        padding: 2px;
+        transition: all $transition-fastest ease;
+        width: 46px;
+    }
+
+    .switch-state-toggle{
+      background: map-get($theme, text, "color-low");
+      border-radius: 50%;
+      display: block;
+      height: $space-lg;
+      left: 0;
+      position: relative;
+      transition: all $transition-fastest ease;
+      width: $space-lg;
+    }
+
+    .switch-state-input{
+      display: block;
+      opacity: .01;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+    }
+
+  .switch-label{
+    color: map-get($theme, text, "grey");
+    font-weight: 400;
+    font-size: $font-size-base;
+    padding-left: 0;
+  }
+
+
+.switch{
+  
+    &.is-completed{
+  
+      .switch-wrap{
+        font-weight: 700;
+      }
+  
+      .switch-state{
+        background: map-get($theme, brand, "primary");
+      }
+  
+      .switch-state-toggle{
+        left: $space-xl;
+      }
+  
+      .switch-label{
+        color: map-get($theme, text, "grey");
+        font-weight: 700;
+      }
+  
+      &:hover,
+      &:focus{
+  
+        .switch-state{
+          background-color: map-get($theme, brand, "primary-hight");
+        }
+      }
+  
+      &.mod-block{
+  
+        .switch-title{
+          color: map-get($theme, text, "color-text");
+        }
+  
+        .switch-text{
+          color: map-get($theme, text, "color-text");
+        }
+      }
+    }
+
+  
+    &.is-disabled{
+      cursor: default;
+  
+      .switch-state{
+        background: map-get($theme, text, "border-light");
+        cursor: default;
+      }
+  
+      .switch-label{
+        color: map-get($theme, text, "color-text-light");
+        cursor: default;
+      }
+  
+      &:hover,
+      &:focus{
+  
+        .switch-state{
+          background-color: map-get($theme, text, "color-border-light");
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  

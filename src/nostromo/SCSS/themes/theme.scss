@@ -1,0 +1,91 @@
+//MAP-theme-font
+
+/*
+@mixin theme($darkSide: false) {
+    $color-hight: #000000;
+    $color-title: #00151b;
+    $color-text: #15282e;
+    $color-text-light: #31464d;
+    $color-grey: #6d777c;
+    $color-border: #b6bdbf;
+    $color-border-light: #dde3e6;
+    $color-bg: #eef5f7;
+    $color-low: #ffffff;
+}
+*/
+
+@use "sass:map";
+
+$light-side: (
+  brand: (
+    "primary-low": $brand-primary-low,
+    "primary": $brand-primary-base,
+    "primary-hight": $brand-primary-hight,
+
+    "secondary-low": $brand-secondary-low,
+    "secondary": $brand-secondary-base,
+    "secondary-hight": $brand-secondary-hight,
+
+    "tertiary-low": $brand-tertiary-low,
+    "tertiary": $brand-tertiary-base,
+    "tertiary-hight": $brand-tertiary-hight,
+
+    "quaternary": $brand-quaternary-base,
+  ),
+  state: (
+    "success": $color-success-hight,
+    "danger": $color-danger-hight,
+  ),
+  text: (
+    "color-hight": $color-hight,
+    "color-title": $color-title,
+    "color-text": $color-text,
+    "color-text-light": $color-text-light,
+    "color-grey": $color-grey,
+    "color-border": $color-border,
+    "color-border-light": $color-border-light,
+    "color-input": $color-input,
+    "color-low": $color-low,
+  ),
+  bg: (
+    "bg-body": $bg-light,
+    "bg-item": $color-low,
+  ),
+);
+
+$dark-side: (
+  brand: (
+    "primary-low": $brand-tertiary-hight,
+    "primary": $brand-tertiary-base,
+    "primary-hight": $brand-tertiary-low,
+
+    "secondary-low": $brand-secondary-hight,
+    "secondary": $brand-secondary-base,
+    "secondary-hight": $brand-secondary-low,
+
+    "tertiary-low": $brand-primary-hight,
+    "tertiary": $brand-primary-base,
+    "tertiary-hight": $brand-primary-low,
+
+    "quaternary": $brand-quaternary-base,
+  ),
+  state: (
+    "success": $color-success-low,
+    "danger": $color-danger-low,
+  ),
+  text: (
+    "color-hight": $color-low,
+    "color-title": $color-input,
+    "color-text": $color-border-light,
+    "color-text-light": $color-border,
+    "color-grey": $color-grey,
+    "color-border": $color-text-light,
+    "color-border-light": $color-text,
+    "color-input": $color-title,
+    "color-low": $color-hight,
+  ),
+  bg: (
+    "bg-body": $bg-dark,
+    "bg-item": $color-hight,
+  ),
+);

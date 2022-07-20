@@ -1,0 +1,21 @@
+@import "../design-tokens.scss";
+
+.nav-pagination{
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+
+}
+
+.nav-pagination-item{
+    @include margin-x-base;
+}
+
+.nav-pagination-item-link{
+    @include button-round(2rem);
+    border-style: solid;
+    text-decoration: none;
+}

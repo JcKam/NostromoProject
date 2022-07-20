@@ -1,0 +1,42 @@
+@mixin button-circle ($width, $height: $width){
+    align-items: center;
+    border-radius: 50%;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    width: $width;
+    height: $height;
+}
+
+@mixin button-round ($width, $height: $width){
+    @include center-flex;
+    border-radius: $border-radius-button;
+    min-width: $width;
+    min-height: $height;
+}
+
+
+
+.button-xs{
+    font-size: $font-size-sm;
+    padding: calc($space-xxxs / 2) $space-xxs;
+}
+    @mixin button-xs {
+        font-size: $font-size-sm;
+        padding: calc($space-xxxs / 2) $space-xxs;
+    }
+
+.button-sm{
+    font-size: $font-size-sm;
+    padding: $space-xxxs $space-xs;
+}
+
+.button-md{
+    font-size: $font-size-base;
+    padding: $space-xxs $space-base;
+}
+
+.button-lg{
+    font-size: $font-size-lg;
+    padding: $space-xs $space-xl;
+}

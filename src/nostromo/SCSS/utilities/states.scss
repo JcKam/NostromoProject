@@ -1,0 +1,31 @@
+
+@import "../design-tokens.scss";
+
+.is-danger { //.is-danger *
+    border-color: map-get($theme, state, "danger") !important;
+    color: map-get($theme, state, "danger") !important;
+    &::before, &::after{
+        border-color: map-get($theme, state, "danger") !important;
+    }
+}
+
+.is-success{
+    border-color: map-get($theme, state, "success") !important;
+    color: map-get($theme, state, "success") !important;
+    &::before, &::after{
+        border-color: map-get($theme, state, "success") !important;
+    }
+}
+
+.is-selected{
+    border-color: map-get($theme, brand, "tertiary")  !important;
+    color: map-get($theme, brand, "primary")  !important;
+    &::before, &::after{
+        border-color: map-get($theme, brand, "tertiary")  !important;
+    }
+}
+
+.is-active{
+    border-color: map-get($theme, brand, "color-border")  !important;
+    color: map-get($theme, brand, "color-title")  !important;
+}

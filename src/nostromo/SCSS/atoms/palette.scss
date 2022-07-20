@@ -1,0 +1,38 @@
+.brand-primary-base{
+    background-color: map-get($theme, brand, "primary");
+    border-radius: $border-radius-default;
+}
+.brand-primary-hight{
+    background-color: map-get($theme, brand, "primary-hight");
+    border-radius: $border-radius-default;
+}
+.brand-primary-low{
+    background-color: map-get($theme, brand, "primary-low");
+    border-radius: $border-radius-default;
+}
+
+.brand-secondary-base{
+    background-color: map-get($theme, brand, "secondary");
+    border-radius: $border-radius-default;
+}
+.brand-secondary-hight{
+    background-color: map-get($theme, brand, "secondary-hight");
+    border-radius: $border-radius-default;
+}
+.brand-secondary-low{
+    background-color: map-get($theme, brand, "secondary-low");
+    border-radius: $border-radius-default;
+}
+
+.brand-tertiary-base{
+    background-color: map-get($theme, brand, "tertiary");
+    border-radius: $border-radius-default;
+}
+.brand-tertiary-hight{
+    background-color: map-get($theme, brand, "tertiary-hight");
+    border-radius: $border-radius-default;
+}
+.brand-tertiary-low{
+    background-color: map-get($theme, brand, "tertiary-low");
+    border-radius: $border-radius-default;
+}
