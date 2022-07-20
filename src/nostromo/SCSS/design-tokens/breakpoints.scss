@@ -1,0 +1,26 @@
+$breakpoint-xxxs: 320px;
+$breakpoint-xxst: 480px;
+$breakpoint-xs: 640px;
+$breakpoint: 800px;
+$breakpoint-m: 1024px;
+$breakpoint-l: 1280px;
+$breakpoint-xl: 1366px;
+$breakpoint-xxl: 1600px;
+$breakpoint-xxxl: 1920px;
+
+
+@for $i from 1 through 6 {
+    .grid-#{$i} {
+        width: 100px*$i;
+    }
+}
+
+/*
+.row {
+    @include make-row();
+
+    > * {
+      @include make-col-ready();
+    }
+  }
+*/

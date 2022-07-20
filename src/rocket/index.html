@@ -6,5 +6,415 @@
   </head>
   <body>
     <h1>ROCKET</h1>
+    
+
+    <div id="wrapper">
+
+      {% include '@LengowRocket/Html/templates/_menu-lateral.html.twig' %}
+
+      <div id="page-wrapper" class="page-wrapper">
+
+          {% block body %}
+
+          <div class="account-wrapper">
+
+              {% include '@LengowRocket/Html/sources/_source-header.html.twig' %}
+
+              <div class="rocket-page-body u-nomargin u-nopadding-top">
+                  <div class="multibox" id="company-detail" data-multibox="company">
+
+
+                      <div class="page-header">
+                          <a href="#company-detail" class="multibox-back js-multibox">Back to source companies list</a>
+                          
+                      </div>
+                      
+
+                  </div>
+
+                  <section>
+
+                    <div class="card mod-box"> 
+
+                      <header class="card-box-header card-header u-padding-big">
+                        <div class="card-box-header-content u-flex-grow-1">
+                          <h4 class="card-box-header-title">Operation_syn_orders_amazon_DE</h4>
+                          <p class="u-margin-y-small">Schedule type : <span class="label mod-blue">General</span></p>
+                        </div>
+                        <div class="card-box-header-tool">
+                          <button type="button" class="btn button">
+                            <span class="icon-rkt" aria-hidden="true">add</span>&nbsp;
+                            Add a cron
+                          </button>
+                        </div>
+                      </header>
+
+                      <nav role="navigation">
+                        <ul class="nav nav-pills nav-tabs nav-fill mod-nav-tabs-card" role="tablist">
+                          <li class="nav-item" role="tab">
+                            <a class="nav-link is-active" aria-current="page" href="general-schedule">General schedule</a>
+                          </li>
+                          <li class="nav-item" role="tab">
+                            <a class="nav-link" href="exclusion">Exclusion</a>
+                          </li>
+                          <li class="nav-item" role="tab">
+                            <a class="nav-link is-disabled" href="#" aria-disabled="true" tabindex="-1">Additional cron</a>
+                          </li>
+                          <li class="nav-item" role="tab">
+                            <a class="nav-link is-disabled" href="#" aria-disabled="true" tabindex="-1">Re-schedule</a>
+                          </li>
+                        </ul>
+                      </nav>
+
+                      <div class="card-body card-box-body u-padding-top-bigger"> 
+                        <div class="alert mod-default mod-sm u-margin-x-auto u-width-75 u-margin-top-standard" role="alert">
+                          <p>Creat a cron for all merchant </p>
+                        </div>
+                        <form class="u-padding-x-small u-d-flex u-flex-column">
+                          <fieldset class="col-md-12 fieldset">
+                            <legend class="fieldset-legend">General informations</legend>
+                            <div class="form-group u-padding-x-standard">
+                              <label class="form-group-label" for="CronName">
+                                Cron name (required)
+                              </label>
+                              <div class="">
+                                <input type="text" id="CronName" class="form-control" placeholder="" required>
+                                <span class="form-text" aria-labelledby="CronName">A name will automatically be generated but you can customize it here.</span> 
+                              </div>
+                            </div>
+                            <div class="row mx-0 px-5 form-inline">
+                              <div class="form-group col-md-3">
+                                <div class="switch mod-block is-checked">
+                                  <label class="switch-wrap mt-0">
+                                    <div class="switch-state" tabindex="0">
+                                      <span class="switch-state-toggle"></span>
+                                      <input type="checkbox" class="switch-state-input" id="" checked="checked" tabindex="-1">
+                                    </div>
+                                    <span class="switch-label">Active</span>
+                                  </label>
+                                </div>
+                              </div>
+                                                                 
+                              <div class="input-group mb-3 d-flex">
+                                <label for="priorityCron" class="control-label me-3 text-right mt-2">Priority :</label>
+                                <div class="d-flex flex-column">
+                                  <div class="number-input">
+                                      <button type="button" class="minus">-</button>
+                                      <input type="number" class="input" min="0" max="10" value="5" id="priorityCron">
+                                      <button type="button" class="plus">+</button>
+                                  </div>
+                                  <span class="form-text" aria-labelledby="priorityCron">Set an order of priority from 1 to 10</span>
+                                </div>
+                              </div>
+                              
+                            </div>
+
+                          </fieldset>
+
+                          <fieldset class="col-md-12 fieldset">
+                            <legend class="mb-1 fieldset-legend">Schedule edition (requiered)</legend>
+            
+                            <section class="card u-padding-standard mod-card-round row is-error">
+            
+                              <ul class="nav nav-tabs mod-nav-tabs-round" role="tablist">
+                                <li class="nav-item" role="tab">
+                                  <a class="nav-link is-active" aria-current="page" href="#">Basic</a>
+                                </li>
+                                <li class="nav-item" role="tab">
+                                  <a class="nav-link" href="#">Expert</a>
+                                </li>
+                              </ul>
+                              <hr>
+                              <div class="" role="alert"></div>
+
+                              <div class="tab-content row u-d-flex u-flex-column flex-xxl-row mx-1">
+                                <fieldset class="col-xxl-8 col-lg-12 mb-3 fieldset">
+                                  <legend class="fieldset-legend">Job :</legend>
+                                  <div class="alert mod-danger col-md-12 mod-xs" role="alert">
+                                    Veuillez renseigner au moins une valeurs autre que “*”
+                                  </div>
+                                  <fieldset class="mx-2 fieldset mod-form-group">
+                                    <legend class="mod-form-group-label">Minutes :</legend>
+                                    <ul class="radios-rkt row" role="tablist">
+                                        <li class="col-md-6" role="tab">
+                                            <label class="radio-square-rkt is-checked" tabindex="0">
+                                                <input type="radio" class=" radio-rkt-input" required="required" value="0" tabindex="-1">
+                                                <span class="radio-square-rkt-label">Specific time</span>
+                                            </label>
+                                        </li>
+                                        <li class="col-md-6" role="tab">
+                                            <label class="radio-square-rkt" tabindex="0">
+                                                <input type="radio" class=" radio-rkt-input" required="required" value="0" tabindex="-1">
+                                                <span class="radio-square-rkt-label">Periodic time</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <div role="tabpanel" class="row d-flex justify-content-center p-3">
+                                      <div class="form-group col-md-12">
+                                        <label class="form-group-label u-visually-hidden" for="selectMultiMinuteCron">Minutes</label>
+                                        <select id="selectMultiMinuteCron" class="form-select input" placeholder="Option" >
+                                            <option value="">Minutes</option>
+                                            <option value="eng">1 min</option>
+                                            <option value="fra">2 min</option>
+                                            <option value="spa">3 min</option>
+                                            <option value="deu">4 min</option>
+                                            <option value="ita">5 min</option>
+                                            <option value="zho">6 min</option>
+                                        </select>
+                                        <div id="emailHelp" class="form-text">You can select many minutes</div>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+                                  <fieldset class="mx-2 fieldset mod-form-group">
+                                    <legend class="mod-form-group-label">Hours :</legend>
+                                    <ul class="radios-rkt row" role="tablist">
+                                        <li class="col-md-6" role="tab">
+                                            <label class="radio-square-rkt" tabindex="0">
+                                              <input type="radio" class="radio-rkt-input" id=" " required="required" value="0" tabindex="-1">
+                                              <span class="radio-square-rkt-label">Specific hour(s)</span>
+                                            </label>
+                                        </li>
+                                        <li class="col-md-6" role="tab">
+                                            <label class="radio-square-rkt is-checked" tabindex="0">
+                                              <input type="radio" class="radio-rkt-input" id=" " required="required" value="0" tabindex="-1">
+                                              <span class="radio-square-rkt-label">Periodic hour(s)</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+
+                                    <div role="tabpanel" class="row d-flex justify-content-center p-3">
+                                      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group-flex">
+                                          <label for="basic-url" class="u-visually-hidden">Your vanity URL</label>
+                                          <span class="input-group-text">Every</span>
+                                          <input type="number" class="form-control input">
+                                          <span class="input-group-text">hour</span>
+                                        </div>
+                                      </div>
+                                      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group-flex">
+                                          <label for="basic-url" class="u-visually-hidden">Your vanity URL</label>
+                                          <span class="input-group-text">from</span>
+                                          <input type="number" class="form-control input">
+                                          <span class="input-group-text">hour</span>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </fieldset>
+
+                                  <fieldset class="mx-2 fieldset mod-form-group is-error">
+                                    <legend class="mod-form-group-label">Days :</legend>
+                                    <ul class="radios-rkt row is-error" role="tablist">
+                                        <li class="col-md-6" role="tab">
+                                            <label class="radio-square-rkt" tabindex="0">
+                                              <input type="radio" class="radio-rkt-input" id=" " required="required" value="0" tabindex="-1">
+                                              <span class="radio-square-rkt-label">Specific day(s)</span>
+                                            </label>
+                                        </li>
+                                        <li class="col-md-6" role="tab">
+                                            <label class="radio-square-rkt" tabindex="0">
+                                              <input type="radio" class="radio-rkt-input" id=" " name="" required="required" value="0" tabindex="-1">
+                                              <span class="radio-square-rkt-label">Periodic day(s)</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+
+                                    <div role="tabpanel" class="row justify-content-center p-3 d-none">
+                                      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group mb-3 ">
+                                          <label for="basic-url" class="u-visually-hidden">Your vanity URL</label>
+                                          <span class="input-group-text">Every</span>
+                                          <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                          <span class="input-group-text">hour</span>
+                                        </div>
+                                      </div>
+                                      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group mb-3">
+                                          <label for="basic-url" class="u-visually-hidden">Your vanity URL</label>
+                                          
+                                          <div class="input-group">
+                                            <span class="input-group-addon">from</span>
+                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                            <span class="input-group-addon">hour</span>
+                                          </div>
+
+                                          <span class="input-group-text">from</span>
+                                          <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                          <span class="input-group-text">hour</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+                                  <div class="u-padding-x-standard">
+                                    <label class="form-label" for="selectMultiMonthCron">Month(s)</label>
+                                    <select class="form-select input" placeholder="Option" id="selectMultiMonthCron">
+                                      <option selected> </option>
+                                      <option value="1">Janv</option>
+                                      <option value="2">Feb</option>
+                                      <option value="3">March</option>
+                                      <option value="4">March</option>
+                                      <option value="5">April</option>
+                                    </select>
+                                    <div aria-labelledby="selectMultiMonthCron" class="form-text">You can select many month</div>
+                                  </div>
+                                  <hr class="d-xxl-none">
+                                </fieldset>
+
+                                <div class="card-preview u-padding-y-small u-padding-x-standard u-d-flex u-flex-column u-align-items-stretch col-xxl-4 col-lg-12 u-none">
+                                  <div class="row u-d-flex u-align-items-center mb-3 flex-xxl-column">
+                                    <h6 class="d-xxl-block">Preview :</h6>
+                                    <code class="label code-preview text-dark mx-auto is-error">******</code>
+                                  </div>
+                                  <div class="row u-d-flex u-flex-column align-items-center mx-auto u-wisth-full d-none">
+                                    <p class="alert mod-default mod-xs w-100"><strong>Every 2 hours</strong></p>
+                                    <p class="w-100">
+                                      <b class="u-block mb-2">Next update(s) :</b> &nbsp;<span class="label mod-outline-blue">19/01/2022 17h46</span></p>
+                                  </div>
+                                </div>
+
+                              </div>
+
+                            </section>
+                          </fieldset>
+
+                          <!-- Setting list -->
+                          <fieldset class="fieldset">
+                            <legend class="fieldset-legend">
+                              <span class="icon-rkt mod-big" aria-hidden="true">setting</span>
+                              Parametres
+                            </legend>
+                            <ul class="list-group mod-list-group-cron">
+
+                              <li class="list-group-item mod-cron is-active" aria-live="polite">
+                                <div class="list-item-content">
+                                  <div class="u-width-full">
+                                    <div class="col-md-6 col-xs-6">
+                                      <label class="u-visually-hidden" for="parametre_1">Parametre</label>
+                                      <select class="form-select input" placeholder="Parametre pre-defini_1" id="parametre_1">
+                                        <option selected>Parametre pre-defini_1</option>
+                                        <option value="1">Parametre pre-defini_2</option>
+                                        <option value="2">Parametre pre-defini_3</option>
+                                        <option value="3">Parametre pre-defini_4</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                      <label class="u-visually-hidden" for="Option_1">Option</label>
+                                      <select class="form-select input" placeholder="Option_1" id="Option_1">
+                                        <option selected>Option_1</option>
+                                        <option value="1">Option_2</option>
+                                        <option value="2">Option_3</option>
+                                        <option value="3">Option_4</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="list-item-content-tool u-justify-end">
+                                  <div class="list-item-content-tool-btn">
+                                    
+                                    <div class="u-d-flex u-margin-left-auto">
+                                      <a href=""  class="square-button-flex">
+                                        OK
+                                      </a>
+                                      <button type="button" class="square-button-flex"> 
+                                        <span class="icon-rkt">close</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+
+                              <li class="list-group-item mod-cron is-readonly" aria-live="polite">
+                                <div class="list-item-content">
+                                  <div class="u-width-full">
+                                    <div class="col-md-6 col-xs-6">
+                                      <label class="u-visually-hidden" for="parametre_2">Parametre</label>
+                                      <input type="text" readonly class="input" id="parametre_2" value="Parametre pre-defini_2">
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                      <label class="u-visually-hidden" for="option_2">Option</label>
+                                      <input type="text" readonly class="input" id="option_2" value="Option_2">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="list-item-content-tool">
+                                  <div class="list-item-content-tool-btn">
+                                    <div class="u-d-flex u-margin-left-auto">
+                                      <button type="button"  class="square-button-flex">
+                                        <span class="icon-rkt" aria-hidden="true">edit</span>
+                                      </button>
+                                      <button type="button" class="square-button-flex mod-delete"> 
+                                        <span class="icon-rkt" aria-hidden="true">delete</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+
+                              <li class="list-group-item mod-cron is-delete" role="alert">
+                                <div class="list-item-content p-2">
+                                  <span>
+                                    <span class="badge rounded-pill bg-danger">Icon</span>
+                                  </span>
+                                  <h6 class="list-item-content-title">Casser détruire</h6>
+                                                  
+                                </div>
+                                <div class="list-item-content-tool d-flex">
+                                  
+                                  <div class="list-item-content-tool-btn">
+                                    
+                                    <div class="u-d-flex u-margin-left-auto">
+                                      <button type="button"  class="square-button-flex mod-delete">
+                                        <span class="icon-rkt" aria-hidden="true">delete</span>
+                                        <span class="ps-1">Delete</span>
+                                      </button>
+                                      <button type="button" class="square-button-flex"> 
+                                        <span class="icon-rkt" aria-hidden="true">close</span>
+                                        <span class="ps-1">Cancel</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+
+                            </ul>
+                            <div class="u-d-flex u-flex-column u-paddin-big u-padding-left-bigger">
+                              <button class="button mod-outline-blue">
+                                Add new parameter
+                              </button>
+                            </div>
+                          </fieldset>
+
+                          <footer class="u-padding-big u-nopadding-top u-text-center">
+                            <button class="btn btn-primary btn-lg mt-0" type="submit">Creat cron</button>
+                            <button class="button-link mt-0" type="submit">Cancel</button>
+                          </footer>
+                        </form>
+
+                      </div>
+
+                    </div>
+                    
+                  </section>
+
+                  
+          </div>
+
+          {% endblock body %}
+
+      </div>
+
+  </div>
+  </div>
+
+  <footer role="contentinfo">
+    <ul>
+      <li>
+        <a href="../nostromo/index.html">LIEN Nostromo</a>
+      </li>
+    </ul>
+  </footer>
   </body>
 </html>

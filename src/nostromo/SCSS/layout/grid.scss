@@ -1,0 +1,19 @@
+
+
+@mixin clearfix() {
+    &::after {
+      display: block;
+      clear: both;
+      content: "";
+    }
+}
+
+.row{
+  @include clearfix();
+  min-width: 100%;
+  min-height: 1px;
+  margin-left: -$space-base;
+  margin-right: -$space-base;
+  position: relative;
+  width: auto;
+}

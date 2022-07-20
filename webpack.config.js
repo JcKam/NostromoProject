@@ -12,24 +12,24 @@ module.exports = {
   },
   output: {
     filename: '[name]/[name].[hash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
     assetModuleFilename: 'static/[hash][ext][query]',
     clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'rocket/index.html',
-      template: path.resolve(__dirname, 'src', 'rocket', 'index.html'),
+      template: path.join(__dirname, 'src', 'rocket', 'index.html'),
       chunks: ['rocket'],
     }),
     new HtmlWebpackPlugin({
       filename: 'aviato/index.html',
-      template: path.resolve(__dirname, 'src', 'aviato', 'index.html'),
+      template: path.join(__dirname, 'src', 'aviato', 'index.html'),
       chunks: ['aviato'],
     }),
     new HtmlWebpackPlugin({
       filename: 'nostromo/index.html',
-      template: path.resolve(__dirname, 'src', 'nostromo', 'index.html'),
+      template: path.join(__dirname, 'src', 'nostromo', 'index.html'),
       chunks: ['nostromo'],
     }),
   ]

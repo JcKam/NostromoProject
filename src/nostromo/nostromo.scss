@@ -1,5 +1,56 @@
-@import "~bootstrap/scss/bootstrap";
+
+// DESIGN TOKENS
+@import 
+    "SCSS/design-tokens.scss";
+
+$theme: $dark-side;
+
+// UTILITIES
+@import 
+    "SCSS/utilities/states.scss",
+    "SCSS/utilities/utilities.scss";
+
+// MIXINS
+@import
+    "SCSS/mixins/button.scss";
+
+// ATOMS
+@import
+    "SCSS/atoms/buttons.scss",
+    "SCSS/atoms/fonts.scss",
+    "SCSS/atoms/badge.scss",
+    "SCSS/atoms/palette.scss",
+    "SCSS/atoms/switch.scss";
+
+// MOLECULES
+@import 
+    "SCSS/molecules/alert.scss",
+    "SCSS/molecules/pagination.scss",
+    "SCSS/molecules/stepper.scss";
+
+//ORGANISMS
+@import
+    "SCSS/organisms/card.scss",
+    "SCSS/organisms/list.scss";
+
+// LAYOUT
+@import
+    "SCSS/layout/grid.scss";
+
+
+
+:root{
+    font-family: sans-serif;
+    font-size: 16px; //1rem
+    line-height: 1.618;
+}
 
 body{
-    background: red;
+    //@include debug;
+    background: map-get($theme, bg, "bg-body");
+    color: map-get($theme, text, "color-text");
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }

@@ -1,17 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
-    <title></title>
+    <title>Projet Nostromo</title>
+		<meta name="viewport" content="width=device-width">
   </head>
+
   <body>
-    <h1>NOSTROMO</h1>
-    <a href="../rocket/index.html">LIEN ROCKET</a>
-    <a href="../aviato/index.html">LIEN AVIATO</a>
-    <div class="row">
-      <div class="col-md-12">
-        <button class="btn btn-primary">TEST BTN</button>
-      </div>
-    </div>
+    <header role="banner">
+      <h1>Design system nostromo <small>Beta</small></h1>
+    </header>
+
+    <main role="main" class="padding-x-base">
+      <h2 class="margin-y-base">Design tokens</h2>
+      <section class="margin-x-base">
+        <h3 class="margin-reset">Colors</h3>
+        <section class="margin-x-base">
+        <h4 class="margin-reset">Brand</h4>
+        <br>
+        <div class="margin-x-base d-inline">
+          <h5 class="d-inline">Brand primary</h5>
+          <span class="item-xs brand-primary-hight margin-x-base">
+            Hight
+          </span>
+          <span class="item-lg brand-primary-base margin-x-base">
+            Base
+          </span>
+          <span class="item-xs brand-primary-low margin-x-base">
+            Low
+          </span>
+        </div>
+        <div class="margin-x-base d-inline">
+          <h5 class="d-inline">Brand secondary</h5>
+          <span class="item-xs brand-secondary-hight margin-x-base">
+            Hight
+          </span>
+          <span class="item-lg brand-secondary-base margin-x-base">
+            Base
+          </span>
+          <span class="item-xs brand-secondary-low margin-x-base">
+            Low
+          </span>
+        </div>
+        <div class="margin-x-base d-inline">
+          <h5 class="d-inline">Brand tertiary</h5>
+          <span class="item-xs brand-tertiary-hight margin-x-base">
+            Hight
+          </span>
+          <span class="item-lg brand-tertiary-base margin-x-base">
+            Base
+          </span>
+          <span class="item-xs brand-tertiary-low margin-x-base">
+            Low
+          </span>
+        </div>
+        </section>
+      </section>
+      <br>
+      <hr>
+           
+      <h2 class="margin-y-base">Organisms</h2>
+      
+      <section class="margin-x-base dark-side">
+        <h3 class="margin-reset">Stepper</h3>
+        <nav class="nav spacer-base row" role="navigation" aria-label="Step by step navigation">
+          <ol class="nav-stepper">
+              <li class="nav-stepper-item">
+                  <a href="#" class="nav-stepper-item-btn is-completed" aria-disabled="false">
+                      <span class="nav-stepper-item-btn-number">
+                          <span class="sr-only">Step</span>
+                          <span>1</span>
+                          <span class="nav-stepper-item-btn-check">$</span>
+                      </span>
+                      <span>Page 1 <small>(checked)</small></span>
+                  </a>
+              </li>
+              <li class="nav-stepper-item" aria-current="step">
+                  <a href="#" class="nav-stepper-item-btn is-current" tabindex="-1" aria-disabled="false">
+                      <span class="nav-stepper-item-btn-number">
+                        <span class="sr-only">Step</span>
+                        <span>2</span>
+                      </span>
+                      <span>Current page</span>
+                  </a>
+              </li>
+              <li class="nav-stepper-item">
+                  <a href="" class="nav-stepper-item-btn" aria-disabled="true" aria-disabled="false">
+                      <span class="nav-stepper-item-btn-number">
+                          <span>
+                              <span class="sr-only">Step</span>
+                              <span>3</span>
+                          </span>
+                      </span>
+                      <span>Page 3 <small>(default)</small></span>
+                  </a>
+              </li>
+              <li class="nav-stepper-item">
+                  <a href="#" class="nav-stepper-item-btn is-disabled" tabindex="-1" aria-disabled="true" disabled>
+                      <span class="nav-stepper-item-btn-number">
+                          <span>
+                              <span class="sr-only">Step</span>
+                              <span>4</span>
+                          </span>
+                      </span>
+                      <span>Page 4 <small>(disabled)</small></span>
+                  </a>
+              </li>
+          </ol>
+        </nav>
+        <h3 class="margin-reset">Pagination</h3>
+        <nav class="nav spacer-base row" aria-label="pagination">
+          <ul class="nav-pagination" data-current-page="1" data-next-page="2" data-previous-page="1" data-max-pages="54" data-pagination-route="rocket_accounts_index" data-pagination-params="[]">
+              <li class="nav-pagination-item disabled " data-page="1">
+                  <a class="nav-pagination-item-link" href="/accounts/?page=1">
+                      Previous
+                  </a>
+              </li>
+              <li class="nav-pagination-item active" data-page="1">
+                  <a class="nav-pagination-item-link" href="/accounts/?page=1" data-page="1">
+                      1
+                  </a>
+              </li>
+              <li class="nav-pagination-item " data-page="2">
+                  <a class="nav-pagination-item-link" href="/accounts/?page=2" data-page="2">
+                      2
+                  </a>
+              </li>
+              <li class="nav-pagination-item " data-page="3">
+                  <a class="nav-pagination-item-link" href="/accounts/?page=3" data-page="3">
+                      3
+                  </a>
+              </li>
+              <li class="nav-pagination-item " data-page="4">
+                  <a class="nav-pagination-item-link" href="/accounts/?page=4" data-page="4">
+                      4
+                  </a>
+              </li>
+              <li class="nav-pagination-item disabled separator">
+                  <a class="nav-pagination-item-link" href="#">
+                      ...
+                  </a>
+              </li>
+              <li class="nav-pagination-item" data-page="54">
+                  <a class="nav-pagination-item-link" href="/accounts/?page=54" data-page="54">
+                      54
+                  </a>
+              </li>
+              <li class="nav-pagination-item" data-page="2">
+                  <a class="nav-pagination-item-link" href="/accounts/?page=2" data-page="2">
+                      Next
+                  </a>
+              </li>
+          </ul>
+      </nav>
+      </section>
+
+      <h2 class="margin-y-base">Utilities</h2>
+      <section class="margin-x-base d-none">
+        <h3 class="margin-reset">Size item</h3>
+        <br>
+        <div>
+          <div class="card item-lg d-inline-block margin-x-base">
+            <p class="d-inline">.item-lg</p>
+          </div>
+          <div class="card item-md d-inline-block margin-x-base">
+            <p class="d-inline">size-base</p>
+          </div>
+          <div class="card item-sm d-inline-block margin-x-base">
+            <p class="d-inline">.item-sm</p>
+          </div>
+          <div class="card item-xs d-inline-block margin-x-base">
+            <p class="d-inline">.item-xs</p>
+          </div>
+          <div class="card item-xxs d-inline-block margin-x-base">
+            <p class="d-inline">.item-xxs</p>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <h2 class="margin-y-base">Atoms</h2>
+
+      <!--BADGE-->
+      <section class="margin-x-base d-none">
+        <h3 class="margin-reset">Badge</h3>
+        <span class="badge badge-danger">badge-danger</span>
+        <span class="badge badge-success">badge-success</span>
+        <span class="badge badge-primary">badge-primary</span>
+        <span class="badge badge-default">badge-default</span>
+      </section>
+
+      <!--BUTTON-->
+      <section class="margin-x-base d-none">
+
+        <h3>Buttons</h3>
+        <section class="margin-x-base">
+          <h4 class="margin-reset">Button primary</h4>
+          <button type="button" class="button button-xs button-primary">
+            .button .button-primary .button-xs
+          </button>
+          <button type="button" class="button button-sm button-primary">
+            .button .button-primary .button-sm
+          </button>
+          <button type="button" class="button button-md button-primary">
+            .button .button-primary .button-md
+          </button>
+          <button type="button" class="button button-lg button-primary">
+            .button .button-primary .button-lg
+          </button>
+        </section>
+        <br>
+        <section class="margin-x-base">
+          <h4 class="margin-reset">Button secondary</h4>
+          <button type="button" class="button button-xs button-secondary">
+            .button .button-secondary .button-xs
+          </button>
+          <button type="button" class="button button-sm button-secondary">
+            .button .button-secondary .button-sm
+          </button>
+          <button type="button" class="button button-md button-secondary">
+            .button .button-secondary .button-md
+          </button>
+          <button type="button" class="button button-lg button-secondary">
+            .button .button-secondary .button-lg
+          </button>
+        </section>
+        <br>
+        <section class="margin-x-base">
+          <h4 class="margin-reset">Button danger</h4>
+          <button type="button" class="button button-xs button-danger">
+            .button .button-danger .button-xs
+          </button>
+          <button type="button" class="button button-sm button-danger">
+            .button .button-danger .button-sm
+          </button>
+          <button type="button" class="button button-md button-danger">
+            .button .button-danger .button-md
+          </button>
+          <button type="button" class="button button-lg button-danger">
+            .button .button-danger .button-lg
+          </button>
+        </section>
+
+      </section>
+      
+      <!--Checkbox-->
+      <section class="margin-x-base">
+        <h3 class="margin-reset">Checkbox</h3>
+        <section class="margin-x-base">
+          <h4 class="margin-reset">Switch</h4>
+          <div class="switch">
+            <label class="switch-wrap is-checked">
+              <div class="switch-state" tabindex="0">
+                <span class="switch-state-toggle"></span>
+                <input type="checkbox" class="switch-state-input" id="switch2" tabindex="-1" checked>
+              </div>
+              <span class="switch-label">switch on</span>
+            </label>
+          </div>
+          <div class="switch">
+            <label class="switch-wrap">  
+              <div class="switch-state" tabindex="0">
+                <span class="switch-state-toggle"></span>
+                <input type="checkbox" class="switch-state-input" id="switch" tabindex="-1">
+              </div>
+              <span class="switch-label">mod-column</span>
+            </label>
+          </div>
+        </section>
+      </section>
+      <hr>
+
+      <h2 class="margin-y-base">Molecules</h2>
+      <section class="margin-x-base d-none">
+        <h3 class="margin-reset">Alert</h3>
+        <br>
+        <span class="alert alert-default item-xs d-inline-flex margin-x-base" role="alert">
+          <p class="alert-default-text d-inline">Alert default</p>
+        </span>
+        <span class="alert item-xs alert-danger d-inline-flex margin-x-base" role="alert">
+          <p class="alert-danger-text d-inline">Alert danger</p>
+        </span>
+        <span class="alert item-xs alert-success d-inline-flex margin-x-base" role="alert">
+          <p class="alert-success-text d-inline">Alert success</p>
+        </span>
+        <span class="alert alert-default item-xs d-inline-flex margin-x-base" role="alert">
+          <p class="alert-default-text d-inline">Alert default</p>
+          <button class="alert-close alert-default-close" type="button" aria-label="Fermer"></button>
+        </span>
+        <span class="alert item-xs alert-danger d-inline-flex margin-x-base" role="alert">
+          <p class="alert-danger-text d-inline">Alert danger</p>
+          <button class="alert-close alert-danger-close" type="button" aria-label="Fermer"></button>
+        </span>
+        <span class="alert item-xs alert-success d-inline-flex margin-x-base" role="alert">
+          <p class="alert-success-text d-inline">Alert success</p>
+          <button class="alert-close alert-success-close" type="button" aria-label="Fermer"></button>
+        </span>
+      </section>
+      <hr>
+      <section class="margin-x-base d-none">
+        <h3 class="margin-reset">Card</h3>
+        <div class="card w-25 card-tag item-xxs margin-x-base is-danger">
+          <h4 class="margin-reset">Card title</h4>
+        </div>
+
+        <div class="card w-25 card-tag margin-x-base is-selected">
+          <div class="card-header item-xxs">
+            <h4 class="margin-reset">Card title</h4>
+          </div>
+          <div class="card-body item-xxs">
+            <p>Card body</p>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section class="margin-x-base d-none">
+        <h3 class="margin-reset">List-group</h3>
+        
+        <section class="margin-x-base">
+
+          <h4>List table with Card <small>Catalogue</small></h4>
+          
+          <a href="#" class="card-link item-xxs margin-x-base">
+            <img class="card-img card-img-round" alt="">
+            <span>
+              <h5 class="card-link-title margin-reset">Catalogue title</h5>
+              <p class="card-text margin-reset text-small">www.lengow.com</p>
+            </span>
+          </a>
+          <hr>
+          <ul class="list list-table">
+
+            <li class="list-item item-xxs list-table-item is-danger">
+              <div class="card-header">
+                <div class="list-item-content">
+                  <div class="list-item-checkbox" tabindex="1">
+                    <label class="sr-only" for="">Selection catalogue</label>
+                    <input id="" type="checkbox" tabindex="-1">
+                  </div>
+                  <a href="#" class="card-link item-row item-xxs margin-x-base">
+                    <img class="card-img card-img-round" alt="">
+                    <span>
+                      <h5 class="card-link-title margin-reset">Catalogue title</h5>
+                      <p class="card-text margin-reset text-small">www.lengow.com</p>
+                    </span>
+                  </a>
+                  <p class="margin-x-base">
+                    <strong class="text-lead">1 236</strong><br>
+                    <small>Product(s)</small>
+                  </p>
+                  <p class="margin-x-base">
+                    <strong class="text-lead">2</strong><br>
+                    <small>Channel(s)</small>
+                  </p>
+                  <span class="badge badge-danger">Danger</span>
+                </div>
+                <div class="list-item-action">
+                  <button type="button" class="button button-md button-secondary">
+                    Editer
+                  </button>
+                  <button type="button" class="button button-md button-danger">
+                    Supprimer
+                  </button>
+                </div>
+              </div>
+            </li>
+            
+            <li class="list-item item-xxs list-table-item">
+              <div class="card-header">
+                <div class="list-item-content">
+                  <div class="list-item-checkbox" tabindex="1">
+                    <label class="sr-only" for="">Selection catalogue</label>
+                    <input id="" type="checkbox" tabindex="-1">
+                  </div>
+                  <a href="#" class="card-link item-row item-xxs margin-x-base">
+                    <img class="card-img card-img-round" alt="">
+                    <span>
+                      <h5 class="card-link-title margin-reset">Catalogue title</h5>
+                      <p class="card-text margin-reset text-small">www.lengow.com</p>
+                    </span>
+                  </a>
+                  <p class="margin-x-base">
+                    <strong class="text-lead">1 236</strong><br>
+                    <small>Product(s)</small>
+                  </p>
+                  <p class="margin-x-base">
+                    <strong class="text-lead">2</strong><br>
+                    <small>Channel(s)</small>
+                  </p>
+                  <span class="badge badge-default">Default</span>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-item item-xxs list-table-item is-selected">
+              <div class="card-header">
+                <div class="list-item-content">
+                  <div class="list-item-checkbox" tabindex="1">
+                    <label class="sr-only" for="">Selection catalogue</label>
+                    <input id="" type="checkbox" tabindex="-1">
+                  </div>
+                  <a href="#" class="card-link item-row item-xxs margin-x-base">
+                    <img class="card-img card-img-round" alt="">
+                    <span>
+                      <h5 class="card-link-title margin-reset">Catalogue title</h5>
+                      <p class="card-text margin-reset text-small">www.lengow.com</p>
+                    </span>
+                  </a>
+                  <p class="margin-x-base">
+                    <strong class="text-lead">1 236</strong><br>
+                    <small>Product(s)</small>
+                  </p>
+                  <p class="margin-x-base">
+                    <strong class="text-lead">2</strong><br>
+                    <small>Channel(s)</small>
+                  </p>
+                  <span class="badge badge-primary">Primary</span>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+          <hr>
+
+          <h4>List tree <small>Settings (cron...)</small></h4>
+          
+          <ul class="list list-tree">
+
+            <li class="list-item list-tree-item item-xs">
+              <div class="card-header item-xs">
+                <div class="list-item-content flex-column">
+                  <h3 class="list-item-content-title">Title</h3>
+                  <p class="list-item-content-text">Description</p>
+                </div>
+                
+                <div class="list-item-action">
+                  <button type="button" class="button button-md button-secondary">
+                    .button .button-secondary .button_md
+                  </button>
+                  <button type="button" class="button button-md button-secondary">
+                    .button .button-secondary .button_md
+                  </button>
+                </div>
+              </div>
+
+              <div class="card-body item-xs">
+                <p class="margin-reset">SubContent List</p>
+              </div>
+            </li>
+
+            <li class="list-item list-tree-item">
+              <div class="card-header">
+                <div class="list-item-content flex-column">
+                  <h3 class="list-item-content-title">Title</h3>
+                  <p class="list-item-content-text">Description</p>
+                </div>
+                <div class="list-item-action">
+                  <button type="button" class="button button-md button-danger">
+                    Supprimer
+                  </button>
+                  <button type="button" class="button button-md button-primary">
+                    Editer
+                  </button>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-item list-tree-item is-danger">
+              <div class="card-header">
+                <div class="list-item-content">
+                  <p class="list-item-content-text">Description</p>
+                </div>
+                <div class="list-item-action">
+                  <button type="button" class="button button-md button-tertiary">
+                    Annuler
+                  </button>
+                  <button type="button" class="button button-md button-danger">
+                    Supprimer
+                  </button>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+      </section>
+
+    </main>
+
+    <footer role="contentinfo">
+      <ul>
+        <li>
+          <a href="../rocket/index.html">LIEN ROCKET</a>
+        </li>
+      </ul>
+    </footer>
+
   </body>
 </html>

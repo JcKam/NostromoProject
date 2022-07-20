@@ -1,0 +1,40 @@
+
+//BRANDING
+
+$brand-primary-base: #0056A4;
+$brand-primary-low: lighten($brand-primary-base, 20%);
+$brand-primary-hight: darken($brand-primary-base, 10%);
+
+$brand-secondary-base: #fdc300;
+$brand-secondary-low: lighten($brand-secondary-base, 20%);
+$brand-secondary-hight: darken($brand-secondary-base, 10%);
+
+$brand-tertiary-base: #00b0f0;
+$brand-tertiary-low: lighten($brand-tertiary-base, 20%);
+$brand-tertiary-hight: darken($brand-tertiary-base, 10%);
+
+$brand-quaternary-base: #1D2B4E;
+
+//STATES
+
+$color-success-hight: #008630;
+$color-success-low: #05C247;
+$color-danger-hight: #f02b00;
+$color-danger-low: #F04E3E;
+
+//TEXT
+
+$color-hight: #000000;
+$color-title: #00151b;
+$color-text: #15282e;
+$color-text-light: #31464d;
+$color-grey: #6d777c;
+$color-border: #b6bdbf;
+$color-border-light: #dde3e6;
+$color-input: #eef5f7;
+$color-low: #ffffff;
+
+//BG
+
+$bg-light: #F4F7F6;
+$bg-dark: #1b2f36; //#  162037

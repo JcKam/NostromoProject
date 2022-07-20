@@ -1,0 +1,202 @@
+
+@import "../design-tokens.scss";
+@import "../utilities/states.scss";
+
+ul, ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.list-item{
+    align-items: stretch;
+    border-color: transparent;
+    color: map-get($theme, text, "color-text");
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $space-lg $space-xl;
+    position: relative;
+}
+
+    .list-item-checkbox{
+        border-color: transparent;
+        border-radius: $border-radius-default;
+        border-style: solid;
+        border-width: 1px;
+        padding: $space-xxs;
+        &:focus{
+            box-shadow: $focus-btn;
+            border-color: $brand-tertiary-base;
+        }
+    }
+
+    .list-item-content{
+        //border: 1px solid green;
+        align-items: center;
+        display: flex;
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+        .list-item-content-title{
+            margin: 0;
+            display: block;
+            width: 100%;
+        }
+        .list-item-content-text{
+            margin: 0;
+            display: block;
+            width: 100%;
+        }
+
+    .list-item-action{
+        //border: 1px solid red;
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+//ITEM-SIZE
+
+.item-lg{
+    padding: $space-xl $space-xxl !important;
+}
+
+.item-md{
+    padding: $space-lg $space-xl !important;
+}
+
+.item-sm{
+    padding: $space-base $space-lg !important;
+}
+
+.item-xs{
+    padding: $space-xs $space-base !important;
+}
+
+.item-xxs{
+    padding: $space-xxs $space-s !important;
+}
+
+//ITEM-DIRECTION
+
+.item-row{
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.item-column{
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+
+.list-table{
+    margin: 0 $space-s;
+}
+
+    .list-table-item{
+        background: map-get($theme, text, "color-low");
+        margin: $space-xxs $space-s;
+        border-bottom-color: map-get($theme, text, "color-border");
+        border-left-color: map-get($theme, text, "color-border");
+        border-radius: 0 $border-radius-default $border-radius-default 0;
+        border-width: 1px;
+        box-sizing: content-box;
+        position: relative;
+        &::before, &::after{
+            background: map-get($theme, text, "color-low");
+            content: " ";
+            display: block;
+            border-color: map-get($theme, text, "color-border");
+            border-style: solid;
+            border-width: 1px 0 1px 1px;
+            box-sizing: border-box;
+            left: -.5rem;
+            width: .5rem;
+            position: absolute;
+        }
+        &::after{
+            border-radius: $border-radius-default 0 0 1rem;
+            height: 30%;
+            top: -1px;
+        }
+        &::before{
+            border-radius: 1rem 0 0 $border-radius-default;
+            height: 30%;
+            bottom: -1px;
+        }
+    }
+
+
+.list-tree{
+    margin: 0 $space-s 0 $space-xxxl;
+
+    &::before, &::after{
+      content: " ";
+      display: block;
+      left: 0;
+      position: absolute;
+    }
+
+    &::after{
+      background: linear-gradient(to bottom, transparent 0%, map-get($theme, text, "color-border") 5%);
+      height: 100%;
+      top: -2rem;
+      left: -.22rem;
+      width: .15rem;
+    }
+    /*
+    &:first-child{
+      &::after{
+        background: 
+      }
+    }
+    &:last-child{
+      &::after{
+        background: map-get($theme, text, "color-border");
+        height: 5rem;
+      }
+    }
+    */
+}
+
+    .list-tree-item{
+        background: map-get($theme, bg, "bg-item");
+        border-radius: $border-radius-list;
+        margin: $space-s;
+        border-color: map-get($theme, text, "color-border");
+
+        &::before, &::after{
+            content: " ";
+            display: block;
+            left: 0;
+            position: absolute;
+        }
+        &::before{
+            background: linear-gradient(to bottom, transparent 0%, map-get($theme, text, "color-grey") 100%);
+            height: 2.5rem;
+            left: -1.15rem;
+            top: -1rem;
+            width: .15rem;
+            z-index: 1;
+        }
+        &::after{
+            border-top: 0;
+            border-right: 0;
+            border-left: .15rem solid  map-get($theme, text, "color-grey");
+            border-bottom: .15rem solid map-get($theme, text, "color-grey");
+            border-radius: 0 0 0 1rem;
+            box-sizing: content-box;
+            height: 1rem;
+            left: -1.1rem;
+            top: 1.5rem;
+            width: 0.95rem;
+            z-index: 1;
+        }
+    }

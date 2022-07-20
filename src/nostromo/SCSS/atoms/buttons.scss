@@ -1,0 +1,73 @@
+
+@import "../design-tokens.scss";
+
+.button{
+    border-radius: $border-radius-button;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: $line-height-base;
+    margin: 0 $space-xxxs;
+}
+
+
+.button-primary{
+    background: map-get($theme, brand, "primary");
+    border-color: map-get($theme, brand, "primary");
+    color: map-get($theme, text, "color-input");
+    &:hover, &:focus{
+        background: map-get($theme, brand, "tertiary");
+        border-color: map-get($theme, brand, "tertiary");
+        color: map-get($theme, text, "color-text");
+    }
+    &:focus{
+        border-color: map-get($theme, text, "color-low");
+        box-shadow: $focus-btn;
+        outline: none;
+    }
+}
+
+.button-secondary{
+    background: map-get($theme, text, "color-low");
+    border-color: map-get($theme, brand, "primary");
+    color: map-get($theme, brand, "primary");
+    &:hover, &:focus{
+        background: map-get($theme, brand, "primary");
+        border-color: map-get($theme, brand, "primary");
+        color: map-get($theme, text, "color-low");
+    }
+    &:focus{
+        box-shadow: $focus-btn;
+        outline: none;
+    }
+}
+
+.button-tertiary{
+    background: transparent;
+    border-color: transparent;
+    color: map-get($theme, brand, "primary");
+    &:hover, &:focus{
+        border-color: $brand-primary-hight;
+        color: $brand-primary-hight;
+    }
+    &:focus{
+        box-shadow: $focus-btn;
+        outline: none;
+    }
+}
+
+.button-danger{
+    background: map-get($theme, text, "color-low");
+    border-color: map-get($theme, state, "danger");
+    color: map-get($theme, state, "danger");
+    &:hover, &:focus{
+        background: map-get($theme, state, "danger");
+        border-color: map-get($theme, state, "danger");
+        color: map-get($theme, text, "color-low");
+    }
+    &:focus{
+        box-shadow: $focus-btn-danger;
+        outline: none;
+    }
+}
