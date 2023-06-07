@@ -36,3 +36,42 @@
     background-color: map-get($theme, brand, "tertiary-low");
     border-radius: $border-radius-default;
 }
+
+// LEVEL GREY
+
+.color-hight{
+    background-color: map-get($theme, text, "color-hight");
+    border-radius: $border-radius-default;
+}
+.color-title{
+    background-color: map-get($theme, text, "color-title");
+    border-radius: $border-radius-default;
+}
+.color-text{
+    background-color: map-get($theme, text, "color-text");
+    border-radius: $border-radius-default;
+}
+.color-text-light{
+    background-color: map-get($theme, text, "color-text-light");
+    border-radius: $border-radius-default;
+}
+.color-grey{
+    background-color: map-get($theme, text, "color-grey");
+    border-radius: $border-radius-default;
+}
+.color-border{
+    background-color: map-get($theme, text, "color-border");
+    border-radius: $border-radius-default;
+}
+.color-border-light{
+    background-color: map-get($theme, text, "color-border-light");
+    border-radius: $border-radius-default;
+}
+.color-input{
+    background-color: map-get($theme, text, "color-input");
+    border-radius: $border-radius-default;
+}
+.color-low{
+    background-color: map-get($theme, text, "color-low");
+    border-radius: $border-radius-default;
+}

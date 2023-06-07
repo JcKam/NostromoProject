@@ -1,0 +1,439 @@
+.tooltip-lgw{
+    animation: tooltipTop 200ms;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .05);
+    background: $sky-lighter;
+    color: $dark-light;
+    font-size: $font-small;
+    left:0;
+    max-width: 300px;
+    padding: 10px 15px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    z-index: 160;
+  
+    &:after{
+      border-style: solid;
+      border-width: 4px 4px 0 4px;
+      border-color: $sky-lighter transparent transparent transparent;
+      content: '';
+      height: 0;
+      left: 50%;
+      margin: 0 0 0 -4px;
+      position: absolute;
+      top: 100%;
+      width: 0;
+    }
+  }
+  /* for react tooltips */
+  .tooltip-lgw-inner {
+    font-size: $font-small;
+    max-width: 300px;
+    padding: 10px 15px;
+    text-align: center;
+  
+    &:after {
+      border-style: solid;
+      border-width: 4px 4px 0 4px;
+      border-color: $sky-lighter transparent transparent transparent;
+      content: '';
+      height: 0;
+      left: 50%;
+      margin: 0 0 0 -4px;
+      position: absolute;
+      top: 100%;
+      width: 0;
+    }
+  
+  }
+  
+  .lgw-select-container-single .lgw-select-single .tooltip-lgw-inner {
+    overflow: visible;
+  }
+  
+  /*[data-tooltip-text]{
+    cursor: default;
+  }*/
+  
+  /* - - - - - - - - - - - - - - - - - - -
+  
+                TOOLTIP MODS
+  
+   - - - - - - - - - - - - - - - - - - - */
+  .tooltip-lgw{
+  
+    /*
+      Positions
+    */
+  
+    &.mod-right{
+      animation: tooltipRight 200ms;
+  
+      &:after{
+        border-width: 4px 4px 4px 0;
+        border-color: transparent $sky-lighter transparent transparent;
+        left: -4px;
+        margin: -4px 0 0 0;
+        top: 50%;
+      }
+    }
+  
+    &.mod-bottom{
+      animation: tooltipBottom 200ms;
+  
+      &:after{
+        border-width: 0 4px 4px 4px;
+        border-color: transparent transparent $sky-lighter transparent;
+        left: 50%;
+        margin: 0 0 0 -4px;
+        top: -4px;
+      }
+    }
+  
+    &.mod-left{
+      animation: tooltipLeft 200ms;
+  
+      &:after{
+        border-width: 4px 0 4px 4px;
+        border-color: transparent transparent transparent $sky-lighter;
+        left: 100%;
+        margin: -4px 0 0 0;
+        top: 50%;
+      }
+    }
+  
+    /*
+      Sizes
+    */
+  
+    &.mod-big{
+      max-width: 500px;
+      text-align: left;
+    }
+  
+    &.mod-kraken{
+      font-size: $font-standard;
+      max-width: 500px;
+      padding: $margin-big;
+    }
+  
+    /*
+      Colors
+    */
+  
+    &.mod-black{
+      background: hsla(223, 46%, 10%, .8);
+      color: white;
+  
+      &:after{
+        border-color: hsla(223, 46%, 10%, .8) transparent transparent transparent;
+      }
+  
+      &.mod-right{
+  
+        &:after{
+          border-color: transparent hsla(223, 46%, 10%, .8) transparent transparent;
+        }
+      }
+  
+      &.mod-bottom{
+  
+        &:after{
+          border-color: transparent transparent hsla(223, 46%, 10%, .8) transparent;
+        }
+      }
+  
+      &.mod-left{
+  
+        &:after{
+          border-color: transparent transparent transparent hsla(223, 46%, 10%, .8);
+        }
+      }
+    }
+  
+    &.mod-white{
+      background: hsl(0, 0%, 100%);
+      box-shadow: 0 10px 10px 0 rgba(0,0,0,.15);
+      color: $grey;
+  
+      &:after{
+        border-color: hsl(0, 0%, 100%) transparent transparent transparent;
+      }
+  
+      &.mod-right{
+  
+        &:after{
+          border-color: transparent hsl(0, 0%, 100%) transparent transparent;
+        }
+      }
+  
+      &.mod-bottom{
+  
+        &:after{
+          border-color: transparent transparent hsl(0, 0%, 100%) transparent;
+        }
+      }
+  
+      &.mod-left{
+  
+        &:after{
+          border-color: transparent transparent transparent hsl(0, 0%, 100%);
+        }
+      }
+    }
+  }
+  
+  
+  /* - - - - - - - - - - - - - - - - - - -
+  
+            TOOLTIP ANIMATIONS
+  
+   - - - - - - - - - - - - - - - - - - - */
+  
+  @keyframes tooltipTop{
+  
+    from{
+      margin-top: -7px;
+      opacity: 0;
+    }
+  
+    to{
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes tooltipRight{
+  
+    from{
+      margin-left: 7px;
+      opacity: 0;
+    }
+  
+    to{
+      margin-left: 0;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes tooltipBottom{
+  
+    from{
+      margin-top: 7px;
+      opacity: 0;
+    }
+  
+    to{
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes tooltipLeft{
+  
+    from{
+      margin-left: -7px;
+      opacity: 0;
+    }
+  
+    to{
+      margin-left: 0;
+      opacity: 1;
+    }
+  }
+  
+  /* - - - - - - - - - - - - - - - - - - -
+  
+            NEW REACT TOOLTIP STYLES
+  
+   - - - - - - - - - - - - - - - - - - - */
+  $lgw-react-tooltip-class: 'lgw-react-tooltip' !default;
+  $lgw-react-tooltip-background-color: $sky-lighter !default;
+  $lgw-react-tooltip-color: $dark-light !default;
+  $lgw-react-tooltip-border-color: $sky-lighter !default;
+  $lgw-react-tooltip-border-width: 1px !default;
+  $arrow-size: 5px !default;
+  
+  .#{$lgw-react-tooltip-class} {
+    animation: tooltipReact 200ms;
+    background: $lgw-react-tooltip-background-color;
+    border: solid $lgw-react-tooltip-border-width $lgw-react-tooltip-border-color;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .05);
+    color: $lgw-react-tooltip-color;
+    display: inline-block;
+    font-size: $font-small;
+    left: 0;
+    max-width: 300px;
+    padding: 10px 15px;
+    text-align: center;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .#{$lgw-react-tooltip-class}-arrow {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+  
+    svg {
+      fill: $lgw-react-tooltip-background-color;
+      position: relative;
+      stroke: $lgw-react-tooltip-border-color;
+      stroke-width: $lgw-react-tooltip-border-width;
+    }
+  }
+  
+  .#{$lgw-react-tooltip-class}-top,
+  .#{$lgw-react-tooltip-class}-top-start,
+  .#{$lgw-react-tooltip-class}-top-end,
+  .#{$lgw-react-tooltip-class}-bottom.#{$lgw-react-tooltip-class}-flipped,
+  .#{$lgw-react-tooltip-class}-bottom-start.#{$lgw-react-tooltip-class}-flipped,
+  .#{$lgw-react-tooltip-class}-bottom-end.#{$lgw-react-tooltip-class}-flipped {
+    margin-bottom: $arrow-size;
+  
+    .#{$lgw-react-tooltip-class}-arrow {
+      top: auto;
+      bottom: -$arrow-size - $lgw-react-tooltip-border-width;
+      height: $arrow-size + $lgw-react-tooltip-border-width;
+      width: $arrow-size * 2 + $lgw-react-tooltip-border-width * 2;
+  
+      svg {
+        top: -$arrow-size;
+      }
+    }
+  }
+  
+  .#{$lgw-react-tooltip-class}-right,
+  .#{$lgw-react-tooltip-class}-right-start,
+  .#{$lgw-react-tooltip-class}-right-end,
+  .#{$lgw-react-tooltip-class}-left.#{$lgw-react-tooltip-class}-flipped,
+  .#{$lgw-react-tooltip-class}-left-start.#{$lgw-react-tooltip-class}-flipped,
+  .#{$lgw-react-tooltip-class}-left-end.#{$lgw-react-tooltip-class}-flipped {
+    margin-left: $arrow-size;
+  
+    .#{$lgw-react-tooltip-class}-arrow {
+      right: auto;
+      left: -$arrow-size - $lgw-react-tooltip-border-width;
+      height: $arrow-size * 2 + $lgw-react-tooltip-border-width * 2;
+      width: $arrow-size + $lgw-react-tooltip-border-width;
+    }
+  
+    svg {
+      left: 0;
+    }
+  }
+  
+  .#{$lgw-react-tooltip-class}-left,
+  .#{$lgw-react-tooltip-class}-left-start,
+  .#{$lgw-react-tooltip-class}-left-end,
+  .#{$lgw-react-tooltip-class}-right.#{$lgw-react-tooltip-class}-flipped,
+  .#{$lgw-react-tooltip-class}-right-start.#{$lgw-react-tooltip-class}-flipped,
+  .#{$lgw-react-tooltip-class}-right-end.#{$lgw-react-tooltip-class}-flipped {
+    margin-right: $arrow-size;
+  
+    .#{$lgw-react-tooltip-class}-arrow {
+      left: auto;
+      right: -$arrow-size - $lgw-react-tooltip-border-width;
+      height: $arrow-size * 2 + $lgw-react-tooltip-border-width * 2;
+      width: $arrow-size + $lgw-react-tooltip-border-width;
+  
+      svg {
+        left: -$arrow-size;
+      }
+    }
+  }
+  
+  .#{$lgw-react-tooltip-class}-bottom,
+  .#{$lgw-react-tooltip-class}-bottom-start,
+  .#{$lgw-react-tooltip-class}-bottom-end,
+  .#{$lgw-react-tooltip-class}-top.#{$lgw-react-tooltip-class}-flipped,
+  .#{$lgw-react-tooltip-class}-top-start.#{$lgw-react-tooltip-class}-flipped,
+  .#{$lgw-react-tooltip-class}-top-end.#{$lgw-react-tooltip-class}-flipped {
+    margin-top: $arrow-size;
+  
+    .#{$lgw-react-tooltip-class}-arrow {
+      bottom: auto;
+      height: $arrow-size + $lgw-react-tooltip-border-width;
+      top: -$arrow-size - $lgw-react-tooltip-border-width;
+      width: $arrow-size * 2 + $lgw-react-tooltip-border-width * 2;
+    }
+  
+    svg {
+      top: 0;
+    }
+  }
+  
+  .#{$lgw-react-tooltip-class}-top-start .#{$lgw-react-tooltip-class}-arrow,
+  .#{$lgw-react-tooltip-class}-bottom-start .#{$lgw-react-tooltip-class}-arrow {
+    left: 0;
+  }
+  
+  .#{$lgw-react-tooltip-class}-top-end .#{$lgw-react-tooltip-class}-arrow,
+  .#{$lgw-react-tooltip-class}-bottom-end .#{$lgw-react-tooltip-class}-arrow {
+    right: 0;
+  }
+  
+  .#{$lgw-react-tooltip-class}-left-start .#{$lgw-react-tooltip-class}-arrow,
+  .#{$lgw-react-tooltip-class}-right-start .#{$lgw-react-tooltip-class}-arrow {
+    top: 0;
+  }
+  
+  .#{$lgw-react-tooltip-class}-left-end .#{$lgw-react-tooltip-class}-arrow,
+  .#{$lgw-react-tooltip-class}-right-end .#{$lgw-react-tooltip-class}-arrow {
+    bottom: 0;
+  }
+  
+  @keyframes tooltipReact{
+  
+    from{
+      opacity: 0;
+    }
+  
+    to{
+      opacity: 1;
+    }
+  }
+  
+  /* - - - - - - - - - - - - - - - - - - -
+  
+            NEW REACT TOOLTIP MODS
+  
+   - - - - - - - - - - - - - - - - - - - */
+  
+   $lgw-react-tooltip-color-black: hsla(223, 46%, 10%, .8);
+  
+  .#{$lgw-react-tooltip-class} {
+  
+    &.mod-black{
+      background: $lgw-react-tooltip-color-black;
+      border-color: $lgw-react-tooltip-color-black;;
+      color: white;
+  
+      .#{$lgw-react-tooltip-class}-arrow {
+  
+        svg {
+          fill: $lgw-react-tooltip-color-black;
+          stroke: $lgw-react-tooltip-color-black;;
+        }
+      }
+    }
+  
+    &.mod-white{
+      background: white;
+      border-color: white;
+      box-shadow: 0 10px 10px 0 rgba(0,0,0,.15);
+      color: $grey;
+  
+      .#{$lgw-react-tooltip-class}-arrow {
+  
+        svg {
+          fill: white;
+          stroke: white;
+        }
+      }
+    }
+  }
+  

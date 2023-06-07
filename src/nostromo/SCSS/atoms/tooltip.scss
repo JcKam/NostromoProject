@@ -1,0 +1,68 @@
+@import "../design-tokens.scss";
+@import "../mixins.scss";
+
+@mixin tooltip ($after-top, $after-left, $after-bottom, $after-right, $border-with-caret, $border-color-caret){
+    align-items: baseline;
+    animation: tooltipTop 200ms;
+    border-radius: $border-radius-sm;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .05);
+    background: $color-background-tooltip;
+    color: $color-text-tooltip;
+    display: inline-flex;
+    font-size: $font-size-sm;
+    left: 0;
+    line-height: $line-height-base;
+    padding: $space-xxxs $space-xxs;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: auto;
+    z-index: 160;
+    &:after{
+        border-style: solid;
+        border-width: $border-with-caret;
+        border-color: $border-color-caret;
+        bottom: $after-bottom;
+        content: '';
+        height: 0;
+        left: $after-left; //50%
+        margin: 0 0 0 -4px;
+        position: absolute;
+        right: $after-right; //0
+        top: $after-top; //
+        width: 0;
+    }
+    small{
+        color: $color-text-tooltip;
+        font-size: $font-size-icon !important;
+    }
+}
+
+.tooltip--top{
+    @include tooltip(
+        100%, auto, auto, calc(50% - $space-xxxs),
+        $space-xxxs $space-xxxs 0 $space-xxxs,
+        $color-background-tooltip transparent transparent transparent
+        );
+}
+.tooltip--left{
+    @include tooltip(
+        calc(50% - $space-xxxs), auto, auto, 100%,
+        $space-xxxs $space-xxxs $space-xxxs 0,
+        transparent $color-background-tooltip transparent transparent
+        );
+}
+.tooltip--bottom{
+    @include tooltip(
+        auto, calc(50% - $space-xxxs), 100%, auto,
+        0 $space-xxxs $space-xxxs $space-xxxs,
+        transparent transparent $color-background-tooltip transparent 
+        );
+}
+.tooltip--right{
+    @include tooltip(
+        calc(50% - $space-xxxs), calc(100% + $space-xxxs), auto, auto,
+        $space-xxxs 0 $space-xxxs $space-xxxs,
+        transparent transparent transparent $color-background-tooltip
+        );
+}

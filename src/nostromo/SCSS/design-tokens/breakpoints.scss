@@ -8,6 +8,15 @@ $breakpoint-xl: 1366px;
 $breakpoint-xxl: 1600px;
 $breakpoint-xxxl: 1920px;
 
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
 
 @for $i from 1 through 6 {
     .grid-#{$i} {

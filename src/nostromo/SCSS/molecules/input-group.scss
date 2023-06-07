@@ -1,0 +1,52 @@
+
+@import "../design-tokens.scss";
+
+.input-group{
+    margin: $space-base $space-base 0 $space-base;
+    display: block;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.input-group-number{
+    display: flex;
+    align-items: center;
+}
+
+.input-group-text, .form-text{
+    margin: 0;
+    display: inline;
+    font-size: $font-size-sm;
+    margin-left: .2rem;
+}
+
+.form-text-success{
+    color: map-get($theme, state, "success") !important;
+    padding-left: 1rem;
+    position: relative;
+    &::after{
+        content: "2";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}
+
+.form-text-danger{
+    color: map-get($theme, state, "danger") !important;
+    padding-left: 1rem;
+    position: relative;
+    &::after{
+        content: "3";
+        display: block;
+        position: absolute;
+        width: $space-s;
+        height: $space-s;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}

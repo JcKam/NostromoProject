@@ -1,65 +1,74 @@
 @import "../design-tokens.scss";
+@import "../mixins.scss";
 
 .switch{
-    display: inline-block;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    padding: $space-xxxs $space-xxs;
-  
-    &:hover,
-    &:focus{
-  
-        .switch-state{
-            background-color: map-get($theme, text, "color-border");
-            box-shadow: $focus-btn;
-        }
-    }
-}
-  
-  .switch-wrap{
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    margin-bottom: 0;
-    font-weight: normal;
+  align-items: center;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: $space-xxxs $space-xxs;
 
-    .switch-state:focus{
-        box-shadow: 0 0 0 .2rem transparentize(map-get($theme, brand, "primary"), .5);
-        border: 0;
+  &:hover,
+  &:focus{
+
+    .switch_state{
+      background-color: map-get($theme, text, "color-border");
+      border-color: map-get($theme, brand, "primary");
     }
   }
+  &:focus{
+    box-shadow: $focus-btn;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+  }
+}
   
-    .switch-state{
-        background: map-get($theme, text, "color-border");
-        border: 0;
-        border-radius: 50px;
-        float: left;
-        margin-right: 1rem;
-        padding: 2px;
-        transition: all $transition-fastest ease;
-        width: 46px;
-    }
+  
+  .switch_state{
+      background: map-get($theme, text, "color-border-light");
+      border-color: map-get($theme, text, "color-border");
+      border-style: solid;
+      border-width: 1px;
+      box-sizing: content-box;
+      border-radius: 50px;
+      float: left;
+      height: 1.25rem;
+      margin-right: $space-xxs;
+      min-width: 2.75rem;
+      padding: .2rem;
+      position: relative;
+      transition: all $transition-faster ease;
+  }
 
-    .switch-state-toggle{
-      background: map-get($theme, text, "color-low");
+    .switch_state_toggle{
+      background: map-get($theme, text, "color-title");
       border-radius: 50%;
       display: block;
       height: $space-lg;
       left: 0;
       position: relative;
-      transition: all $transition-fastest ease;
+      transition: all $transition-faster ease;
+      top: 0;
       width: $space-lg;
+      z-index: 1;
     }
 
-    .switch-state-input{
+    .switch_state_input{
       display: block;
-      opacity: .01;
+      opacity: 0;
       margin: 0;
       padding: 0;
       position: absolute;
+      &:checked + .switch_state_toggle{
+        background: #fff;
+        left: $space-xl;
+      }
     }
 
-  .switch-label{
+  .switch_label{
     color: map-get($theme, text, "grey");
     font-weight: 400;
     font-size: $font-size-base;
@@ -67,69 +76,62 @@
   }
 
 
-.switch{
-  
-    &.is-completed{
-  
-      .switch-wrap{
-        font-weight: 700;
+  .switch--checked{
+    
+      .switch_state{
+        border-color: map-get($theme, brand, "primary");
+        &::before{
+          background-color: map-get($theme, brand, "primary");
+        }
+        
+        &::after{
+          background-color: map-get($theme, brand, "primary");
+          content: "";
+          left: .25rem;
+          line-height: .85rem;
+          right: auto;
+        }
       }
   
-      .switch-state{
-        background: map-get($theme, brand, "primary");
-      }
-  
-      .switch-state-toggle{
-        left: $space-xl;
-      }
-  
-      .switch-label{
-        color: map-get($theme, text, "grey");
-        font-weight: 700;
+      .switch_label{
+        color: map-get($theme, text, "color-hight");
       }
   
       &:hover,
       &:focus{
   
-        .switch-state{
+        .switch_state{
           background-color: map-get($theme, brand, "primary-hight");
         }
       }
-  
-      &.mod-block{
-  
-        .switch-title{
-          color: map-get($theme, text, "color-text");
-        }
-  
-        .switch-text{
-          color: map-get($theme, text, "color-text");
-        }
-      }
     }
-
   
-    &.is-disabled{
+    .switch--disabled{
       cursor: default;
   
-      .switch-state{
-        background: map-get($theme, text, "border-light");
+      .switch_state{
+        background: map-get($theme, text, "color-border");
+        border-color: map-get($theme, text, "color-low");
+        cursor: default;
+      }
+      .switch_state_toggle{
+        background: map-get($theme, text, "color-low");
         cursor: default;
       }
   
-      .switch-label{
+      .switch_label{
         color: map-get($theme, text, "color-text-light");
         cursor: default;
       }
   
       &:hover,
       &:focus{
+        box-shadow: none;
   
-        .switch-state{
-          background-color: map-get($theme, text, "color-border-light");
-          box-shadow: none;
+        .switch_state{
+          background: map-get($theme, text, "color-border");
+          border-color: map-get($theme, text, "color-low");
         }
       }
     }
-  }
   

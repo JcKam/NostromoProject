@@ -1,0 +1,21 @@
+
+@mixin card(
+    $color-background-card, 
+    $color-border-card,
+    $color-background-card-before
+    ){
+    background: $color-background-card;
+    border-color: $color-border-card;
+    border-radius: $border-radius-card;
+    padding: $space-xxs $space-base;
+    &::before{
+        background: $color-background-card-before;
+        border-radius: $border-radius-card 0 0 $border-radius-card;
+        content: " ";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        opacity: 0;
+        width: $space-xxxs;
+    }
+}

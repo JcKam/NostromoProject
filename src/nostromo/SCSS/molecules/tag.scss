@@ -1,0 +1,64 @@
+
+@import "../design-tokens.scss";
+@import "../mixins.scss";
+
+@mixin tag ($color-background-tag, $color-border-tag, $color-text-tag, $icon-status-tag){ //$icon-status-tag
+    align-items: center;
+    background-color: $color-background-tag;
+    border-radius: $border-radius-badge;
+    border-color: $color-border-tag;
+    border-style: solid;
+    border-width: 1px;
+    color: $color-text-tag;
+    display: inline-flex;
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    margin: 0;
+    min-height: $space-xl;
+    //overflow: hidden;
+    padding: $space-xxxxs $space-xs;
+    position: relative;
+    text-overflow: ellipsis;
+    &::before{
+        content: $icon-status-tag;
+        background: $color-background-tag;
+        border-color: $color-border-tag;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 50%;
+        font-size: $font-size-icon;
+        height: $space-xxs;
+        left: -$space-xxxs;
+        position: absolute;
+        top: calc(50% - $space-xxxs) ;
+        width: $space-xxs;
+        z-index: 1;
+    }
+}
+
+.tag--danger{
+    @include tag(
+                map-get($theme, text, "text-light"), //background
+                map-get($theme, state, "danger"), //border-color
+                map-get($theme, state, "danger"),  //color-text
+                "d"
+            );
+}
+
+.tag--success{
+    @include tag(
+                map-get($theme, text, "text-light"), //background
+                map-get($theme, state, "danger"), //border-color
+                map-get($theme, state, "danger"),  //color-text
+                "d"
+            );
+}
+
+.tag--default{
+    @include tag(
+                map-get($theme, text, "color-low"),
+                map-get($theme, text, "color-border"),
+                map-get($theme, text, "color-text"),
+                "d"
+            );
+}

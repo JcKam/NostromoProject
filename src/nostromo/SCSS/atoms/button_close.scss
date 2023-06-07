@@ -1,0 +1,60 @@
+
+@import "../design-tokens.scss";
+@import "../mixins.scss";
+
+
+.button_close--default{
+    @include button_close(
+                map-get($theme, text, "color-low"), //background
+                map-get($theme, text,  "color-text-light"), //border-color
+                map-get($theme, text, "color-text"),//color-text
+                map-get($theme, text, "color-text"), //background-hover
+                map-get($theme, text,  "color-text-light"), //border-color-hover
+                map-get($theme, text, "color-low"), //color-text-hover
+                $focus-btn //color-shadow-focus
+            );
+}
+.button_close--info{
+    @include button_close(
+                map-get($theme, text, "color-low"), //background
+                map-get($theme, brand, "primary"), //border-color
+                map-get($theme, brand, "primary"),//color-text
+                map-get($theme, brand, "primary"), //background-hover
+                map-get($theme, brand, "tertiary"), //border-color-hover
+                map-get($theme, text, "color-low"), //color-text-hover
+                $focus-btn //color-shadow-focus
+            );
+}
+.button_close--warning{
+    @include button_close(
+                map-get($theme, text, "color-low"), //background
+                map-get($theme, state,  "warning-hight"), //border-color
+                map-get($theme, state, "warning-low"),//color-text
+                map-get($theme, state, "warning-low"), //background-hover
+                map-get($theme, state, "warning-low"), //border-color-hover
+                map-get($theme, text, "color-low"), //color-text-hover
+                $focus-btn-warning //color-shadow-focus
+            );
+}
+.button_close--success{
+    @include button_close(
+                map-get($theme, text, "color-low"), //background
+                map-get($theme, state,  "success"), //border-color
+                map-get($theme, state, "success"),//color-text
+                map-get($theme, state, "success"), //background-hover
+                map-get($theme, state, "success"), //border-color-hover
+                map-get($theme, text, "color-low"), //color-text-hover
+                $focus-btn-success //color-shadow-focus
+            );
+}
+.button_close--danger{
+    @include button_close(
+                map-get($theme, text, "color-low"), //background
+                map-get($theme, state,  "danger"), //border-color
+                map-get($theme, state, "danger"),//color-text
+                map-get($theme, state, "danger"), //background-hover
+                map-get($theme, state, "danger"), //border-color-hover
+                map-get($theme, text, "color-low"), //color-text-hover
+                $focus-btn-danger //color-shadow-focus
+            );
+}

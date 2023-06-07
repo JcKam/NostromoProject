@@ -1,18 +1,16 @@
 //MAP-theme-font
 
-/*
-@mixin theme($darkSide: false) {
-    $color-hight: #000000;
-    $color-title: #00151b;
-    $color-text: #15282e;
-    $color-text-light: #31464d;
-    $color-grey: #6d777c;
-    $color-border: #b6bdbf;
-    $color-border-light: #dde3e6;
-    $color-bg: #eef5f7;
-    $color-low: #ffffff;
-}
-*/
+$color-hight: #000000;
+$color-title: #00151b;
+$color-text: #15282e;
+$color-text-light: #31464d;
+$color-grey: #6d777c;
+$color-border: #b6bdbf;
+$color-border-light: #dde3e6;
+$color-bg: #eef5f7;
+$color-low: #ffffff;
+
+
 
 @use "sass:map";
 
@@ -34,7 +32,11 @@ $light-side: (
   ),
   state: (
     "success": $color-success-hight,
+    "success-hight": $color-success-low,
     "danger": $color-danger-hight,
+    "danger-hight": $color-danger-low,
+    "warning-low": $color-warning-hight,
+    "warning-hight": $color-warning-low,
   ),
   text: (
     "color-hight": $color-hight,
@@ -71,7 +73,11 @@ $dark-side: (
   ),
   state: (
     "success": $color-success-low,
+    "success-hight": $color-success-hight,
     "danger": $color-danger-low,
+    "danger-hight": $color-danger-hight,
+    "warning-low": $color-warning-low,
+    "warning-hight": $color-warning-hight,
   ),
   text: (
     "color-hight": $color-low,
@@ -89,3 +95,5 @@ $dark-side: (
     "bg-item": $color-hight,
   ),
 );
+
+

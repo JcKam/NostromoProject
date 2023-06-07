@@ -1,0 +1,100 @@
+
+@import "../design-tokens.scss";
+@import "../mixins.scss";
+
+/*
+.progress{
+    background-color: map-get($theme, text, "color-low");
+    overflow: hidden;
+    position: relative;
+    
+    &::after{
+        
+        background-color:rgba(0,0,0,0.05);
+        background-image:linear-gradient(90deg, #b8b8b8 4px, transparent 4px),linear-gradient(0deg, #bfbfbf 4px, transparent 4px);
+        background-size:calc(8.333333333333333%) 8px,calc(100% - 8.333333333333333%) 16px;
+        background-position:calc(8.333333333333333% / 2) 8px,50% 14px;
+        background-repeat:repeat-x, repeat-y;
+        content: " ";
+        display: block;
+        grid-template-columns: repeat(5, rem);
+        grid-template-rows: 1fr;
+        grid-column-gap: 50px;
+        grid-row-gap: 0px;
+        height: 5px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+*/
+
+.batch-counter{
+    align-items: center;
+    display: flex;
+  }
+    .batch-counter-gauge {
+    --v:calc( ((18/5) * var(--percentage) - 90)*1deg);
+    background:
+      linear-gradient(#ccc, #ccc) content-box,
+      linear-gradient(var(--v), #ccc 50%,transparent 0) 0/min(100%,(50 - var(--percentage))*100%),
+      linear-gradient(var(--v), transparent 50%,orange 0) 0/min(100%,(var(--percentage) - 50)*100%),
+      linear-gradient(to right, #ccc 50%,orange 0);
+    border-radius:50%;
+    display:inline-block;
+    height:18px;
+    margin: 0 3px 0 0;
+    padding:2px;
+    width:18px;
+    }
+    .batch-counter-label{
+      color: orange;
+      font-size: 14px;
+    }
+    .batch-counter-done{}
+    .batch-counter-total{}
+    .batch-counter-label-text{
+      margin: 0 0 0 3px;
+      white-space: nowrap;
+    }
+  /* - - - - - - - - - - - - - - - - - - -
+            BATCH COUNTER STATE
+  - - - - - - - - - - - - - - - - - - - */
+  .batch-counter{
+    &.is-complete{
+      .batch-counter-gauge{
+        align-items: center;
+        background: green;
+        display: flex;
+        justify-content: center;
+        &:after{
+          //@include m-icon-lgw;
+          color: white;
+          content: "f";
+          font-size: 13px;
+          font-weight: 700;
+        }
+      }
+      .batch-counter-label{
+        color: green;
+      }
+    }
+    &.is-error{
+      .batch-counter-gauge{
+        align-items: center;
+        background: red;
+        display: flex;
+        justify-content: center;
+        &:after{
+          //@include m-icon-lgw;
+          color: white;
+          content: "I";
+          font-size: 12px;
+          font-weight: 700;
+        }
+      }
+      .batch-counter-label{
+        color: red;
+      }
+    }
+  }

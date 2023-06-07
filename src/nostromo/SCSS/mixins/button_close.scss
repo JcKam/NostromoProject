@@ -1,0 +1,35 @@
+
+@mixin button_close (
+    $color-background-button,
+    $color-border-button,
+    $color-text-button,
+    $color-background-button-hover,
+    $color-border-button-hover,
+    $color-text-button-hover,
+    $color-shadow-button-focus,
+    ){
+    background: $color-background-button;
+    border-color: $color-border-button;
+    color: $color-text-button;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: $font-size-base;
+    height: $space-xl;
+    line-height: 1;
+    width: $space-xl;
+    position: relative;
+    text-align: center;
+    &:hover, &:focus{
+        background: $color-background-button-hover;
+        border-color: $color-border-button-hover;
+        color: $color-text-button-hover;
+    }
+    &:focus{
+        box-shadow: $color-shadow-button-focus;
+        outline: none;
+    }
+}

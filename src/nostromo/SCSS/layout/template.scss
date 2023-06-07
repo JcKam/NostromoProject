@@ -1,0 +1,36 @@
+@import "../design-tokens.scss";
+
+header[role="banner"]{
+    display: block;
+    width: 100%;
+    position: sticky;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    //flex: 1;
+    height: 100%;
+    align-items: stretch;
+    align-self: stretch;
+}
+
+main[role="main"]{
+    display: flex;
+    flex-direction: column;
+    
+    overflow-x: hidden;
+    overflow-y: auto;
+    right: 0;
+    height: 100%;
+}
+
+.wrapper{
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: auto;
+    height: 100%;
+}

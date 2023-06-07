@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Matching categorie</title>
+  </head>
+  <body>
+    <h1>Matching Categories</h1>
+    <main class="w-100 row justify-content-center">
+      
+      <div class="w-100 row d-none">
+        <section class="col col-3 text-center">    
+          <h4 class="margin-reset">Atome :</h4>
+          button_close :<br>
+          <button type="button" class="button_close--default">x</button>
+          <hr>
+          badge :<br>
+          <span class="badge--danger">Error</span>
+          <span class="badge--info_outline">Matched</span>
+          <span class="badge--default">23 conditions</span>
+
+          <hr>
+          alert :<br>
+          
+          <span class="alert--danger d-inline-flex margin-x-base" role="alert">
+            <p class="alert_text">.alert--danger <small>(role="alert")</small></p>
+          </span>
+          <hr>
+          list :<br>
+          <ul class="list--tree">
+            <li class="list_item--tree padding-y-xxxs">list_item</li>
+            <li class="list_item--tree padding-y-xxxs">list_item</li>
+          </ul>
+          <hr>
+          tag :<br>
+          <span class="tag--default item-xxxs">
+            <span>Categorie_catalogue</span><span class="badge--default margin-x-xs">23 Conditions</span>
+            <button type="button" class="button_close--default" aria-label="Close">x</button>
+          </span>
+        </section>
+           
+        <section class="col col-3 text-center">   
+          <h4 class="margin-reset">Molécules :</h4>
+          list--tree :<br>
+          <ul class="list--tree_round">
+            <li class="list_item--tree_round padding-y-xxxs">
+              <span class="tag--default">
+                <span>product_type</span><span class="badge--info margin-x-xs">product_type</span>
+                <button type="button" class="button_close--default" aria-label="Close">x</button>
+              </span>
+            </li>
+            <li class="list_item--tree_round padding-y-xxxs">
+              <span class="tag--default">
+                <button type="button" class="button--link button--xs">ID_categorie</button>
+                <span class="badge--info_outline margin-x-xs">ID_categorie</span>
+                <button type="button" class="button_close--default" aria-label="Close">x</button>
+              </span>
+            </li>
+          </ul>
+          <hr>
+          Card_button :<br>
+          <ul>
+            <li class="margin-b-base row flex-column">
+              <button type="button" class="card-row card_button--default">
+                <span role="heading" aria-level="4" class="margin-reset text-lead">Card_button--default</span>
+                <span class="d-flex flex-column">
+                  <span class="text-small">23 products</span>
+                </span>
+              </button>
+            </li>
+            <li class="margin-b-base row flex-column">
+              <button type="button" class="card-row card_button--selected">
+                <span role="heading" aria-level="4" class="margin-reset text-lead">Card_button--selected</span>
+                <span class="d-flex flex-column align-item-center">
+                  <span class="text-small">23 products</span>
+                </span>
+              </button>
+            </li>
+            <li class="margin-b-base row flex-column">
+              <button type="button" class="card-row card_button--danger">
+                <span role="heading" aria-level="4" class="margin-reset text-lead">Card_button--danger</span>
+                <span class="d-flex flex-column align-item-center">
+                  <span class="text-small">23 products</span>
+                  <span class="badge--danger">Error</span>
+                </span>
+              </button>
+            </li>
+            <li class="margin-b-base row flex-column">
+              <button type="button" class="card-row card_button--success">
+                <span role="heading" aria-level="4" class="margin-reset text-lead">Card_button--success</span>
+                <span class="d-flex flex-column align-item-center">
+                  <span class="text-small">23 products</span>
+                  <span class="badge--info_outline">Matched</span>
+                </span>
+              </button>
+            </li>
+          </ul>
+          <hr>
+          <ul>
+            <li class="margin-b-base row flex-column">
+              <div class="card--default card-row justify-content-between">
+                <span role="heading" aria-level="4" class="margin-reset text-lead">Card--default</span>
+                <span class="d-flex flex-column align-item-center">
+                  <span class="text-small">card-row</span>
+                  <span class="badge--info_outline">Matched</span>
+                </span>
+              </div>
+            </li>
+            <li class="margin-b-base row flex-column">
+              <div class="card--default">
+                <span role="heading" aria-level="4" class="margin-reset text-lead">Card--default</span>
+                <span class="badge--info_outline">Matched</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+      
+        <section class="col col-4 card item-md">
+
+          <div class="d-none">
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress_bar" style="width: 25%"></div>
+            </div>
+            <div class="progress">
+              <label class="progress-label" aria-labelledby="progress-bar">Category matching coverage</label>
+              <div class="progress-info">
+                  <span class="progress-status">0% completed</span>
+                  <span class="progress-remaining">88 categories remaining</span>
+              </div>
+              <div class="progress-bg">
+                  <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <label class="progress-label" aria-labelledby="progress-bar">Category matching coverage</label>
+              <div class="progress-info">
+                  <span class="progress-status">43% completed</span>
+                  <span class="progress-remaining">35 categories remaining</span>
+              </div>
+              <div class="progress-bg">
+                  <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%;"></div>
+              </div>
+            </div>
+            <div class="progress is-complete">
+              <label class="progress-label" aria-labelledby="progress-bar">Category matching coverage</label>
+              <div class="progress-info">
+                  <span class="progress-status">100% completed</span>
+                  <span class="progress-remaining">0 category remaining</span>
+              </div>
+              <div class="progress-bg">
+                  <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <div class="batch-counter d-none">
+            <div class="batch-counter-gauge" style="--percentage:25"></div>
+            <div class="batch-counter-label">
+                <span class="batch-counter-done">1</span>/<span class="batch-counter-total">4</span>
+                <span class="batch-counter-label-text">category configured</span>
+            </div>
+          </div>
+ 
+          <h4 class="margin-reset">Organisme :</h4>
+          <ul class="text-align-righ">
+            <li class="margin-b-base row flex-column">   
+              <button type="button" class="card-row card_button--success">
+                <span role="heading" aria-level="4" class="margin-reset text-lead">Clavier pour tablette</span>
+                <span class="d-flex flex-column align-item-center">
+                  <span class="text-small">23 products</span>
+                  <span class="badge--info_outline">Matched</span>
+                </span>
+              </button>
+              <ul class="list--tree_round">
+                <li class="list_item--tree_round padding-y-xxxxs">
+                  <span class="tag--default">
+                    <span>product_type</span><span class="badge--info margin-x-xs">product_type</span>
+                    <button type="button" class="button_close--default" aria-label="Close">x</button>
+                  </span>
+                </li>
+                <li class="list_item--tree_round padding-y-xxxxs">
+                  <span class="tag--default">
+                    <span>ID_categorie</span><span class="badge--info_outline margin-x-xs">ID_categorie</span>
+                    <button type="button" class="button_close--default" aria-label="Close">x</button>
+                  </span>
+                </li>
+              </ul>
+            </li>
+            <li class="margin-b-base row flex-column">          
+              <button type="button" class="card-row card_button--danger">
+                <span role="heading" aria-level="4" class="margin-reset text-lead">Clavier pour tablette</span>
+                
+                <span class="d-flex flex-column align-item-center">
+                  <span class="text-small">23 products</span>
+                  <span class="badge--danger">Error</span>
+                </span>
+              </button>
+              <ul class="list--tree_round">
+                <li class="list_item--tree_round padding-y-xxxxs">
+                  <span class="tag--default">
+                    <span>product_type</span><span class="badge--info margin-x-xs">product_type</span>
+                    <button type="button" class="button_close--default" aria-label="Close">x</button>
+                  </span>
+                </li>
+                <li class="list_item--tree_round padding-y-xxxxs">
+                  <span class="alert--danger alert--xs d-inline " role="alert">
+                    <span class="alert_text">The product_categorie need to matched</span>
+                  </span>
+                </li>
+              </ul>
+            </li>
+            <li class="margin-b-base row flex-column">           
+              <button type="button" class="card-row card_button--success">
+                <span role="heading" aria-level="4" class="margin-reset text-lead">Clavier pour tablette</span>
+                <span class="d-flex flex-column align-item-center">
+                  <span class="text-small">23 products</span>
+                  <span class="badge--info_outline">Matched</span>
+                </span>
+              </button>
+              <ul class="list--tree_round">
+                <li class="list_item--tree_round padding-y-xxxxs">
+                  <span class="tag--default">
+                    <span>product_type</span><span class="badge--info margin-x-xs">product_type</span>
+                    <button type="button" class="button_close--default" aria-label="Close">x</button>
+                  </span>
+                </li>
+                <li class="list_item--tree_round padding-y-xxxxs">
+                  <span class="tag--default">
+                    <button type="button" class="button--link button--xs">ID_categorie</button>
+                    <span class="badge--info_outline margin-x-xs">ID_categorie</span>
+                    <button type="button" class="button_close--default" aria-label="Close">x</button>
+                  </span>
+                </li>
+                <li class="list_item--tree_round padding-y-xxxxs">
+                  <span class="tag--default">
+                    <span>Categorie_catalogue</span><span class="badge--default margin-x-xs">23 Conditions</span>
+                    <button type="button" class="button_close--default" aria-label="Close">x</button>
+                  </span>
+                </li>
+              </ul>
+            </li>
+            <li class="margin-b-base row flex-column">        
+              <button type="button" class="card-row card_button--default">
+                <span role="heading" aria-level="4" class="margin-reset text-lead">Clavier pour tablette</span>
+                <span class="d-flex flex-column">
+                  <span class="text-base">23 products</span>
+                </span>
+              </button>
+              <ul class="list--tree_round">
+                <li class="list_item--tree_round padding-y-xxxxs">
+                  <span class="tag--default">
+                    <span class="text-ellipsis">product-typeproduct-typeproduct-typeproduct-typeproduct-typeproduct-typeproduct-type</span>
+                    <span class="badge--info_outline margin-x-xs">ID_categorie</span>
+                    <button type="button" class="button_close--default" aria-label="Close">x</button>
+                  </span>
+                </li>
+                <li class="list_item--tree_round padding-y-xxxxs">
+                  <span class="tag--default">
+                    <span>
+                      product_type<br>
+                      007 en force<br>
+                      tu peux pas test
+                    </span>
+                  </span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="row d-non">
+        <section class="col col-3 text-center">
+
+          0/666 matching        
+          
+          <button type="button" class="button_close--default">x</button>
+          
+          <button type="button" class="card_button--default item-xxs">
+            <span role="heading" aria-level="4" class="margin-reset text-lead">Clavier pour tablette</span>
+            <span class="text-small">23 products</span>
+          </button>
+          <br><hr>
+          <ul class="nav_tabs--column" role="tablist">
+            <li class="nav_tabs_item">
+              <button type="button" role="tab" class="nav_tabs_item_button--active button--sm" aria-selected="true">
+                <span aria-hidden="true">$</span>&nbsp;nav_tabs_item_button&nbsp;<small>(Active)</small>
+              </button>
+            </li>
+            <li class="nav_tabs_item">
+              <button type="button" role="tab" class="nav_tabs_item_button--default button--sm" aria-selected="false">
+                <span aria-hidden="true">$</span>&nbsp;nav_tabs_item_button&nbsp;<small>(Default)</small>
+              </button>
+            </li>
+            <li class="nav_tabs_item">
+              <button type="button" role="tab" class="nav_tabs_item_button--disabled button--sm" aria-selected="false" disabled>
+                <span aria-hidden="true">$</span>&nbsp;nav_tabs_item_button&nbsp;<small>(Disabled)</small>
+              </button>
+            </li>
+          </ul>
+          <br>
+          <ul class="nav_tabs--column" role="tablist">
+            <li class="nav_tabs_item">
+              <button type="button" role="tab" class="nav_tabs_item_button--active" aria-selected="true">
+                <span aria-hidden="true">$</span>&nbsp;nav_tabs_item_button&nbsp;<small>(Active)</small>
+              </button>
+            </li>
+            <li class="nav_tabs_item">
+              <button type="button" role="tab" class="nav_tabs_item_button--default" aria-selected="false">
+                <span aria-hidden="true">$</span>&nbsp;nav_tabs_item_button&nbsp;<small>(Default)</small>
+              </button>
+            </li>
+            <li class="nav_tabs_item">
+              <button type="button" role="tab" class="nav_tabs_item_button--disabled" aria-selected="false" disabled>
+                <span aria-hidden="true">$</span>&nbsp;nav_tabs_item_button&nbsp;<small>(Disabled)</small>
+              </button>
+            </li>
+          </ul>
+          <hr>
+          <div class="tooltip--top position-relative">
+            tooltip--top<br>
+            <small>(new windows)</small>
+          </div>
+          <br>
+          <br>
+          <div class="tooltip--left position-relative">
+            tooltip--left<br>
+            <small>(new windows)</small>
+          </div>
+          <br>
+          <br>
+          <div class="tooltip--bottom position-relative">
+            <span>tooltip--bottom</span><br>
+            <small>(new windows)</small>
+          </div>
+          <br>
+          <br>
+          <div class="tooltip--right position-relative">
+            tooltip--right<br>
+            <small>(new windows)</small>
+          </div>
+        </section>
+        <section class="col col-6 card item-xs">
+          <ul class="nav_tabs--row" role="tablist">
+            <li class="nav_tabs_item nav_tabs--sm" >
+              <button type="button" role="tab" class="nav_tabs_item_button--active button--sm" aria-selected="true">
+                <span aria-hidden="true">$</span>&nbsp;Product type&nbsp;<small>(Required)</small>
+              </button>
+            </li>
+            <li class="nav_tabs_item">
+              <button type="button" role="tab" class="nav_tabs_item_button--default button--sm" aria-selected="false">
+                <span aria-hidden="true">$</span>&nbsp;Product catégorie&nbsp;<small>(Required)</small>
+              </button>
+            </li>
+          </ul>
+          <div id="section1" role="tabpanel" class="tabs_panel">
+
+            <ul class="nav_treeline flex-column">
+                <li class="nav_treeline_item">
+                    <button type="button" class="nav_item text-bold">
+                        <span class="icon">$</span>
+                        <span>Commons fields</span>&nbsp;
+                        <span class="badge--default badge--round"><span>11</span>/<span>11</span></span>
+                    </button>
+                    <ul class="nav_treeline">
+                        <li class="nav_treeline_item">
+                            <button type="button" class="nav_item text-small">Button</button>
+                        </li>
+                        <li class="nav_treeline_item">
+                            <a href="#" class="nav_item text-small">Link</a>
+                        </li>
+                        <li class="nav_treeline_item">
+                            <button type="button" class="nav_item text-small">Button</button>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav_treeline_item">
+                    <a href="#" class="nav_item nav_item--active text-bold">
+                      <span class="icon">$</span>
+                      <span>Product fields</span>
+                    </a>
+                    <ul class="nav_treeline">
+                        <li class="nav_treeline_item">
+                            <a href="#" class="nav_item nav_item--disabled  text-small" tabindex="-1">
+                                Hé c’est bon papy reste tranquille, t’as craqué ou quoi, j’suis James Bond quand même !!! tuPeuxPasTest. 007 en force !!!
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav_treeline_item">
+                    <a href="#" class="nav_item text-bold" data-cy="tree-item-anchor">
+                        <span>Offer fields</span>
+                    </a>
+                    <ul class="nav_treeline">
+                        <li class="nav_treeline_item">
+                            <a href="#" class="nav_item" data-cy="tree-item-anchor">
+                                <span>Common</span>
+                            </a>
+                            <ul class="nav_treeline">
+                                <li class="nav_treeline_item">
+                                    <a href="#" class="nav_item nav_item--disabled text-small" tabindex="-1">
+                                        <span>Baseball CapBaseball CapBaseball CapBaseball CapBaseball CapBaseball CapBaseball Cap</span>
+                                    </a>
+                                </li>
+                                <li class="nav_treeline_item">
+                                    <a href="#" class="nav_item nav_item--default text-small">
+                                        <span>Baseball</span>
+                                    </a>
+                                </li>
+                                <li class="nav_treeline_item">
+                                    <a href="#" class="nav_item nav_item--disabled text-small" tabindex="-1">
+                                        BaseballCapBaseballCapBaseballCapBaseballCapBaseballCapBaseballCapBaseballCap
+                                    </a>
+                                    <ul class="nav_treeline">
+                                        <li class="nav_treeline_item">
+                                            <a href="#" class="nav_item nav_item--disabled text-small" tabindex="-1">
+                                                Baseball CapBaseball CapBaseball CapBaseball CapBaseball CapBaseball CapBaseball Cap
+                                            </a>
+                                        </li>
+                                        <li class="nav_treeline_item">
+                                            <a href="#" class="nav_item nav_item--default text-small">
+                                                <span>Baseball</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav_treeline_item">
+                            <a href="#" class="nav_item nav_item--disabled text-small" tabindex="-1">
+                                <span>Disabled</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+          </div>
+
+          <span class="alert--info justify-content-between align-item-center" role="alert">
+            <span class="d-flex align-item-center">
+                <span class="alert_icon icon" aria-hidden="true">$</span>
+                <span class="d-flex flex-column">
+                    <p class="alert_title">Title Alert Info</p>
+                    <p class="alert_text">Text Alert Info</p>
+                </span>
+            </span>
+
+            <button type="button" class="button--secondary button--xs">
+                .button--secondary
+            </button>
+          </span>
+          
+        </section>
+      </div>
+        
+    </main>
+
+    <footer class="d-none  footer">
+      <button>Exit</button>
+      footer 
+      <ul class="d-flex">
+        <li>Catalogues</li>
+        <li>Categories</li>
+        <li>Attributs</li>
+        <li>Exclusion</li>
+        <li>Preview</li>
+        <li>Settings</li>
+      </ul>
+      <button class="button button-md button-secondary">Need help ?</button>
+      <button class="button button-md button-secondary">View catalogue</button>
+      <button>Next</button>
+    </footer>
+
+    <nav class="d-none footer u-text-center">
+        <div class="u-pull-left u-text-left">
+            <div class="timeline">
+                                
+    <a href="#" class="footer-button mod-standard u-pull-left">Exit</a>
+
+    <div class="footernav js-footernav u-pull-left" data-toggle-target="" data-toggle-clickable="">
+        <a href="" class="footernav-button">
+            <div class="footernav-button-carret"></div>
+        </a>
+        <div class="footernav-drop" style="height: 424.141px;">
+            <p class="footernav-title js-footernav-title">Back to</p>
+                <ul class="footernav-drop-menu">
+            <li class="footernav-drop-menu-item">
+                <a class="footernav-drop-menu-item-link" href="/">
+                    Home
+                </a>
+            </li>
+                    <li class="footernav-drop-menu-item ">
+                <a href="#" class="footernav-drop-menu-item-link">Catalogues</a>
+            </li>
+                <li class="footernav-drop-menu-item  is-active">
+                <a href="#" class="footernav-drop-menu-item-link">Channels</a>
+            </li>
+                <li class="footernav-drop-menu-item ">
+                <a href="#" class="footernav-drop-menu-item-link">Orders</a>
+            </li>
+                <li class="footernav-drop-menu-item ">
+                <a href="#" class="footernav-drop-menu-item-link">Reports</a>
+            </li>
+                <li class="footernav-drop-menu-item ">
+                <a href="#" class="footernav-drop-menu-item-link">Insights</a>
+            </li>
+                <li class="footernav-drop-menu-item ">
+                <a href="#" class="footernav-drop-menu-item-link">Apps</a>
+            </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+        
+                    
+                            
+            <div class="nav-channels js-nav-channels mod-footer js-switch-channel-panel" data-toggle-target="" data-toggle-clickable="">
+                <a href="#" class="nav-channels-button js-tooltip" data-tooltip-text="Switch channel">
+                    <img class="nav-channels-button-flag" src="#" alt="">
+                    <div class="nav-channels-button-txt">
+                        <span title="1000mercis">1000mercis</span>
+                                        </div>
+                    <div class="nav-channels-button-carret"></div>
+                </a>
+                
+    <!--
+                <div class="nav-channels-drop js-noscroll js-switch-channel-filters-panel"><div class="nav-channels-filters">
+        
+                  <div class="container js-channels-container">
+            <div class="u-pull-left filters-container">
+
+        <div class="search">
+            <input type="text" class="search-input" id="search-feed" placeholder="Search (ID / Title / Designation)">
+            <button class="search-empty"></button>
+        </div>
+
+                <div class="filters-select-wrap u-pull-left mod-dark">
+                <div class="filters-select-wrap u-pull-left">
+                                    <select class="filters-select chosen-filter" id="filter_status" style="display: none;">
+                        <option value="" selected="">All statuses</option>
+                                                <option value="active">Active</option>
+                                                <option value="disabled">Disabled</option>
+                                                <option value="draft">Draft</option>
+                                        </select><div class="chosen-container chosen-container-single" style="width: 103px;" title="" id="filter_status_chosen"><a class="chosen-single"><span>All statuses</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"></ul></div></div>
+                </div>
+            </div>
+        
+            
+        
+                <div class="filters-select-wrap u-pull-left mod-dark">
+                <select class="filters-select chosen-filter" id="filter_type" style="display: none;">
+                    <option value="" selected="">All types</option>
+                                        <option value="affiliation">Affiliation</option>
+                                        <option value="apps">Apps</option>
+                                        <option value="custom_channel">Custom Channel</option>
+                                        <option value="local_ads">Local Inventory Ads</option>
+                                        <option value="marketplace">Marketplace</option>
+                                        <option value="product_ads">Product Ads</option>
+                                        <option value="retargeting">Retargeting </option>
+                                        <option value="shopbot">Shopbot</option>
+                                </select><div class="chosen-container chosen-container-single" style="width: 120px;" title="" id="filter_type_chosen"><a class="chosen-single"><span>All types</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"></ul></div></div>
+            </div>
+        </div>
+            <a href="/channels/" class="nav-channels-filters-count js-nav-channels-counter">439 channels</a>
+        </div>
+        <button class="nav-channels-filters-close js-nav-channels-button-close"></button>
+    </div>
+
+    -->
+
+    </div>
+            </div>
+
+        
+
+                        </div>
+        </div>
+        <div class="footer-right u-pull-right">
+            <div class="dropdown-lgw mod-footer-button u-pull-right">
+                                                    <div class="u-pull-right">
+        <div class="dropdown-lgw mod-footer-button u-pull-right js-footer-next-button">
+
+                <a href="#" class="footer-button mod-main next dropdown-lgw-toggle mod-next-step" id="">
+                <p class="footer-button-title">Next</p>
+                <p class="footer-button-next-step">Exclusions</p>
+                <div class=" footer-button-arrow"></div>
+            </a>
+        
+                                </div>
+    </div>
+
+                                                        
+                                        </div>
+                        <div class="u-pull-right u-margin-right-tiny">
+                                        <a class="button-icon mod-catalog mod-dark js-tooltip" target="_blank" href="#" data-tooltip-text="View my current catalog<br><span class='u-text-italic'>(new window)</span>">
+                        </a><a class="button-icon mod-help mod-dark js-tooltip" target="_blank" href="#" data-tooltip-position="top" data-tooltip-text="Need help?">
+                        </a>
+                                </div>
+                </div>
+        <div class="u-text-center">
+            <div class="timeline">
+                                <a href="javascript:void(0)" class=" timeline-step  is-active "><span class="timeline-step-item js-tooltip" data-tooltip-text="Link your product fields with the channel requirements">Attributes</span></a><span class="timeline-arrow"></span><a href="/feed/8650/exclusions#/exclusions" class=" timeline-step  is-next-step "><span class="timeline-step-item js-tooltip" data-tooltip-text="Exclude products from your channel">Exclusions</span></a><span class="timeline-arrow"></span><a href="/feed/8650/preview" class=" timeline-step  is-next-step "><span class="timeline-step-item js-tooltip" data-tooltip-text="Watch your products as they will be sent to your channel">Preview</span></a><span class="timeline-arrow"></span><a href="/feed/8650/settings" class=" timeline-step  is-next-step "><span class="timeline-step-item js-tooltip" data-tooltip-text="Set up tracking, costs and authentication">Settings</span></a>
+                        </div>
+        </div>
+    </nav>
+
+  </body>
+</html>

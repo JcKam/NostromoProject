@@ -1,0 +1,150 @@
+@import "../design-tokens.scss";
+@import "../mixins.scss";
+
+@mixin nav_tabs(){
+    display: flex;
+    position: relative;
+    .nav_tabs_item{
+        display: inline-flex;
+        position: relative;
+    }
+}
+
+.nav_tabs--row{
+    @include nav_tabs();
+    .nav_tabs_item{
+        &:first-child{
+            button{
+                border-top-left-radius: $border-radius-nav_tabs;
+            }
+        }
+        &:last-child{
+            button{
+                border-top-right-radius: $border-radius-nav_tabs;
+            }
+        }
+    }
+}
+
+.nav_tabs--row_justify{
+    @include nav_tabs();
+    .nav_tabs_item{
+        flex: 1;
+    }
+}
+
+.nav_tabs--column{
+    @include nav_tabs();
+    align-items: stretch;
+    flex-direction: column;
+    text-align: center;
+    .nav_tabs_item{
+        &:first-child{
+            button{
+                border-top-left-radius: $border-radius-nav_tabs;
+            }
+        }
+        &:last-child{
+            button{
+                border-bottom-left-radius: $border-radius-nav_tabs;
+            }
+        }
+    }
+}
+
+.tabs_panel{
+    border-color: map-get($theme, text, "color-border-light");
+    border-style: solid;
+    border-width: 1px;
+}
+
+@mixin nav_tabs_item_button (
+    $color-background-button, 
+    $color-border-button,
+    $color-text-button,
+    $color-background-button-after,
+    $color-background-button-hover,
+    $color-text-button-hover,
+    $color-background-button-after-hover
+    ) {
+    align-items: baseline;
+    background: $color-background-button;
+    border-color: map-get($theme, text, "color-border");
+    border-style: solid;
+    border-width: 1px;
+    border-color: $color-border-button;
+    border-bottom: 0;
+    color: $color-text-button;
+    display: flex;
+    flex-direction: row;
+    padding: $space-xxs $space-base;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    small{
+        color: $color-text-button;
+    }
+    &:hover, &:focus{
+        background: $color-background-button-hover;
+        color: $color-text-button-hover;
+        outline: none;
+        &::after{
+            background: $color-background-button-after-hover;
+        }
+    }
+    &:focus{
+        box-shadow: $focus-btn;
+    }
+    &::after{
+        background: $color-background-button-after;
+        bottom: -2px;
+        content: " ";
+        display: block;
+        height: $space-xxxs;
+        left: -1px;
+        position: absolute;
+        right: -1px;
+        z-index: 1;
+    }
+}
+
+/*STATE*/
+.nav_tabs_item_button--default{
+    @include nav_tabs_item_button(
+        map-get($theme, text, "color-border-light"),    //bg 
+        map-get($theme, text, "color-border"),          //border-color
+        map-get($theme, text, "color-text"),            //text-color
+        transparent,                                    //bg-after
+        map-get($theme, text, "color-input"),           //bg-hover
+        map-get($theme, text, "color-title"),           //text-color-hover
+        map-get($theme, brand, "primary")               //bg-after-hover
+    );
+    cursor: pointer;
+}
+.nav_tabs_item_button--active{
+    @include nav_tabs_item_button(
+        map-get($theme, text, "color-low"),             //bg 
+        map-get($theme, brand, "tertiary"),              //border-color
+        map-get($theme, text, "color-hight"),           //text-color
+        map-get($theme, brand, "primary"),              //bg-after
+        map-get($theme, text, "color-low"),           //bg-hover
+        map-get($theme, text, "color-hight"),           //text-color-hover
+        map-get($theme, brand, "primary")               //bg-after-hover
+    );
+    cursor: pointer;
+}
+.nav_tabs_item_button--disabled{
+    @include nav_tabs_item_button(
+        transparent,                                    //bg 
+        map-get($theme, text, "color-border"),          //border-color
+        map-get($theme, text, "color-text-light"),      //text-color
+        transparent,                                    //bg-after
+        transparent,                                    //bg-hover
+        map-get($theme, text, "color-text-light"),      //text-color-hover
+        transparent                                     //bg-after-hover
+    );
+    cursor: not-allowed;
+    &:focus{
+        box-shadow: none;
+    }
+}

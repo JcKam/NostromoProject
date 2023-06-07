@@ -1,41 +1,59 @@
 
 @import "../design-tokens.scss";
+@import "../mixins.scss";
 
-.badge{
-    border-radius: $border-radius-label;
-    border-style: solid;
-    border-width: 1px;
-    display: inline-block;
+
+.badge--info{
+    @include badge(
+                map-get($theme, brand, "primary"), //background
+                map-get($theme, brand, "primary"), //border-color
+                map-get($theme, text, "color-low")  //color-text
+            );
+}
+.badge--info_outline{
+    @include badge(
+                map-get($theme, text, "color-low"), //background
+                map-get($theme, brand, "primary"), //border-color
+                map-get($theme, brand, "primary")  //color-text
+            );
+}
+.badge--success{
+    @include badge(
+                map-get($theme, state, "success"), //background
+                map-get($theme, state, "success"), //border-color
+                map-get($theme, text, "color-low")  //color-text
+            );
+}
+.badge--danger{
+    @include badge(
+                map-get($theme, state, "danger"), //background
+                map-get($theme, state, "danger"), //border-color
+                map-get($theme, text, "color-low")  //color-text
+            );
+}
+.badge--default{
+    @include badge(
+                map-get($theme, text, "color-low"), //background
+                map-get($theme, text, "color-text-light"), //border-color
+                map-get($theme, text, "color-text")  //color-text
+            );
+}
+.badge--disabled{
+    @include badge(
+                map-get($theme, text, "color-low"), //background
+                map-get($theme, text, "color-border"), //border-color
+                map-get($theme, text, "color-grey")  //color-text
+            );
+}
+
+//OPTION
+.badge--sm{
     font-size: $font-size-sm;
-    line-height: $line-height-base;
-    margin: 0;
-    min-height: $space-lg;
-    padding: calc($space-xxxs* .25) $space-xxs;
+    line-height: 1.25
 }
-
-
-.badge-lg{
-    font-size: $font-size-lg;
-    font-weight: bold;
+.badge--lg{
+    font-size: $font-size-base;
 }
-
-.badge-primary{
-    background: map-get($theme, brand, "primary");
-    border-color: map-get($theme, brand, "primary");
-    color: map-get($theme, text, "color-low");
-}
-.badge-success{
-    background: map-get($theme, state, "success");
-    border-color: map-get($theme, state, "success");
-    color: map-get($theme, text, "color-low");
-}
-.badge-danger{
-    background: map-get($theme, state, "danger");
-    border-color: map-get($theme, state, "danger");
-    color: map-get($theme, text, "color-low");
-}
-.badge-default{
-    background-color: map-get($theme, text, "color-low");
-    border-color: map-get($theme, text, "color-border");
-    color: map-get($theme, text, "color-text");
+.badge--round{
+    border-radius: $border-radius-badge-round;
 }

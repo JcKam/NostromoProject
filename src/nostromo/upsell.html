@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upsell</title>
+  </head>
+  <body>
+    <section class="section center-flex flex-column">
+        <button class="button button-md button-secondary button-secondary_active">
+            Uprade your plan to get more channels
+        </button>
+        <section class="debug2 w-100">
+            <h4>Add more channels to your current plan</h4>
+            <section class="d-flex">
+                                            
+                <table class="table w-25">
+                    <caption class="text-left text-lead">Price by channel</caption>
+                    <tbody class="text-small">
+                        <tr>
+                            <td>1</td>
+                            <td class="text-right">500€</td>
+                        </tr>
+                        <tr>
+                            <td>2 to 5</td>
+                            <td class="text-right">400€</td>
+                        </tr>
+                        <tr>
+                            <td>6 to 25</td>
+                            <td class="text-right">300€</td>
+                        </tr>
+                        <tr>
+                            <td>26 to more</td>
+                            <td class="text-right">200€</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="input-group w-15">
+                    <label for="upgradeChannel" class="label">Modify current plan <small class="label-aide d-none">Set an order of priority from 1 to 10</small></label>
+                    <div class="input-group-number">
+                        <button type="button" class="button button-secondary button-md button-input button-input-firstchild">-</button>
+                        <input type="number" class="input input-number" min="1" max="" value="5" id="upgradeChannel">
+                        <button type="button" class="button button-secondary button-md button-input button-input-lastchild">+</button>
+                    </div>
+                </div>
+            </section>
+            <div class="row justify-content-around">
+
+                <section class="col-4">
+            
+                    <div class="card item-md" aria-live="polite">
+                    
+                        <ul class="d-inline-flex">
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-reset debug2" aria-live="polite">
+                                    <span><b class="text-lead">Current</b> amount&nbsp;/&nbsp;month</span>
+                                    <br>
+                                </p>
+                                <p class="margin-x-xxs">
+                                    <span class="title-head-4 h-100 d-inline-flex align-item-bottom">400€</span>
+                                </p>
+                            </li>
+                            <li class="debug d-flex align-item-bottom">
+                                <span class="text-center text-lead title-head-4 margin-x-xxs">+</span>
+                            </li>
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-reset">
+                                    <span><b class="text-lead">Additionnal</b> amount&nbsp;/&nbsp;month</span>
+                                </p>
+                                <ul class="d-flex">
+                                    <li><span class="title-head-4 margin-x-xxs">4x400€</span></li>
+                                    <li><span class="title-head-4">+</span></li>
+                                    <li><span class="title-head-4 margin-x-xxs">19x5.700€</span></li>
+                                </ul>
+                            </li>
+                            <li class="debug d-flex align-item-bottom">
+                                <span class="text-center text-lead title-head-4 margin-x-xxs">=</span>
+                            </li>
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-reset debug2" aria-live="polite">
+                                    <span><b class="text-lead">New</b> amount&nbsp;/&nbsp;month</span>
+                                    <br>
+                                </p>
+                                <p class="margin-x-xxs">
+                                    <b class="title-head-3 h-100 d-inline-flex align-item-bottom">22.700€</b>
+                                </p>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                </section>
+
+                <section class="col-4">
+            
+                    <div class="card item-md" aria-live="polite">
+                    
+                        <ul class="d-inline-flex">
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-reset debug2" aria-live="polite">
+                                    <span><b class="text-lead">Current</b> amount&nbsp;/&nbsp;month</span>
+                                    <br>
+                                </p>
+                                <p class="margin-x-xxs">
+                                    <span class="title-head-4 h-100 d-inline-flex align-item-bottom">400€</span>
+                                </p>
+                            </li>
+                            <li class="debug d-flex align-item-bottom">
+                                <span class="text-center text-lead title-head-4 margin-x-xxs">+</span>
+                            </li>
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-reset">
+                                    <span><b class="text-lead">Additionnal</b> amount&nbsp;/&nbsp;month</span>
+                                </p>
+                                <ul class="d-flex">
+                                    <li><span class="title-head-4 margin-x-xxs">4x400€</span></li>
+                                    <li><span class="title-head-4">+</span></li>
+                                    <li><span class="title-head-4 margin-x-xxs">19x300€</span></li>
+                                    <li><span class="title-head-4">+</span></li>
+                                    <li><span class="title-head-4 margin-x-xxs">75x200€</span></li>
+                                </ul>
+                            </li>
+                            <li class="debug d-flex align-item-bottom">
+                                <span class="text-center text-lead title-head-4 margin-x-xxs">=</span>
+                            </li>
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-reset debug2" aria-live="polite">
+                                    <span><b class="text-lead">New</b> amount&nbsp;/&nbsp;month</span>
+                                    <br>
+                                </p>
+                                <p class="margin-x-xxs">
+                                    <b class="title-head-3 h-100 d-inline-flex align-item-bottom">22.700€</b>
+                                </p>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                </section>
+
+            </div>
+
+            <div class="row justify-content-around">
+
+                <section class="col-3">
+
+                    <div class="card item-md" aria-live="polite">
+                        
+                        <ul class="d-flex">
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-x-xxs debug2" aria-live="polite">
+                                    <span><b class="text-lead">Current</b> amount&nbsp;/&nbsp;month</span>
+                                    <br>
+                                </p>
+                                <p class="margin-x-xxs">
+                                    <span class="title-head-4 h-100 d-inline-flex align-item-bottom">400€</span>
+                                </p>
+                            </li>
+                            <li class="debug d-flex align-item-bottom">
+                                <span class="text-center text-lead title-head-4 margin-x-xxs">+</span>
+                            </li>
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-x-xxs">
+                                    <span><b class="text-lead">Additionnal</b> amount&nbsp;/&nbsp;month</span>
+                                </p>
+                                <ul class="d-inline-flex flex-column">
+                                    <li><span class="title-head-4 margin-x-xxs">4x400€</span></li>
+                                </ul>
+                            </li>
+                            <li class="debug d-flex align-item-bottom">
+                                <span class="text-center text-lead title-head-4 margin-x-xxs">=</span>
+                            </li>
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-reset debug2" aria-live="polite">
+                                    <span><b class="text-lead">New</b> amount&nbsp;/&nbsp;month</span>
+                                    <br>
+                                </p>
+                                <p class="margin-x-xxs">
+                                    <b class="title-head-3 h-100 d-inline-flex align-item-bottom">22.700€</b>
+                                </p>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                </section>
+            
+                <section class="col-3">
+
+                    <div class="card item-md" aria-live="polite">
+                        
+                        <ul class="d-flex">
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-x-xxs debug2" aria-live="polite">
+                                    <span><b class="text-lead">Current</b> amount&nbsp;/&nbsp;month</span>
+                                    <br>
+                                </p>
+                                <p class="margin-x-xxs">
+                                    <span class="title-head-4 h-100 d-inline-flex align-item-bottom">400€</span>
+                                </p>
+                            </li>
+                            <li class="debug d-flex align-item-bottom">
+                                <span class="text-center text-lead title-head-4 margin-x-xxs">+</span>
+                            </li>
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-x-xxs">
+                                    <span><b class="text-lead">Additionnal</b> amount&nbsp;/&nbsp;month</span>
+                                </p>
+                                <ul class="d-inline-flex flex-column">
+                                    <li><span class="title-head-4 margin-x-xxs">4x400€</span></li>
+                                    <li><span class="title-head-4 margin-x-xxs">+</span></li>
+                                    <li><span class="title-head-4 margin-x-xxs">19x5.700€</span></li>
+                                </ul>
+                            </li>
+                            <li class="debug d-flex align-item-bottom">
+                                <span class="text-center text-lead title-head-4 margin-x-xxs">=</span>
+                            </li>
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-x-xxs debug2" aria-live="polite">
+                                    <span><b class="text-lead">New</b> amount&nbsp;/&nbsp;month</span>
+                                    <br>
+                                </p>
+                                <p class="margin-x-xxs">
+                                    <b class="title-head-3 h-100 d-inline-flex align-item-bottom">22.700€</b>
+                                </p>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                </section>
+            
+                <section class="col-3">
+
+                    <div class="card item-md" aria-live="polite">
+                        
+                        <ul class="d-flex">
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-reset debug2" aria-live="polite">
+                                    <span><b class="text-lead">Current</b> amount&nbsp;/&nbsp;month</span>
+                                    <br>
+                                </p>
+                                <p class="margin-x-xxs">
+                                    <span class="title-head-4 h-100 d-inline-flex align-item-bottom">400€</span>
+                                </p>
+                            </li>
+                            <li class="debug d-flex align-item-bottom">
+                                <span class="text-center text-lead title-head-4 margin-x-xxs">+</span>
+                            </li>
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-reset">
+                                    <span><b class="text-lead">Additionnal</b> amount&nbsp;/&nbsp;month</span>
+                                </p>
+                                <ul class="d-inline-flex flex-column">
+                                    <li><span class="title-head-4 margin-x-xxs">4x400€</span></li>
+                                    <li><span class="title-head-4 margin-x-xxs">+</span></li>
+                                    <li><span class="title-head-4 margin-x-xxs">19x5.700€</span></li>
+                                    <li><span class="title-head-4 margin-x-xxs">+</span></li>
+                                    <li><span class="title-head-4 margin-x-xxs">75x15.000€</span></li>
+                                </ul>
+                            </li>
+                            <li class="debug d-flex align-item-bottom">
+                                <span class="text-center text-lead title-head-4 margin-x-xxs">=</span>
+                            </li>
+                            <li class="debug text-center d-flex flex-column justify-content-between">
+                                <p class="text-small margin-reset debug2" aria-live="polite">
+                                    <span><b class="text-lead">New</b> amount&nbsp;/&nbsp;month</span>
+                                    <br>
+                                </p>
+                                <p class="margin-x-xxs">
+                                    <b class="title-head-3 h-100 d-inline-flex align-item-bottom">22.700€</b>
+                                </p>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                </section>
+
+            </div>
+
+            <button class="button button-md button-secondary">
+                Valider 
+            </button>
+            <button class="button button-md button-tertiary">
+                Cancel
+            </button>
+
+            <hr>
+        </section>
+
+    </section>
+
+    <section class="d-none">
+
+        <header role="banner">
+            <h1>Matching Attributs</h1>
+        </header>
+        <nav class="w-15 debug nav" role="navigation">
+            <ul class="nav_tree">
+                <li class="nav_tree_item">
+                    <a href="#" class="nav_tree_link nav_tree_link-active">
+                        <span>Commons fields</span>&nbsp;
+                        <span class="badge badge-default badge-round"><span>11</span>/<span>11</span></span>
+                    </a>
+                    <ul class="nav_tree">
+                        <li class="nav_tree_item">
+                            <button type="button" class="nav_tree_link">Button</button>
+                        </li>
+                        <li class="nav_tree_item">
+                            <button type="button" class="nav_tree_link">Button</button>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav_tree_item">
+                    <a href="#" class="nav_tree_link">
+                        <span>Product fields</span>
+                    </a>
+                    <ul class="nav_tree">
+                        <li class="nav_tree_item">
+                            <a href="#" class="nav_tree_link disabled" data-cy="tree-item-anchor">
+                                <span>Baseball CapBaseball CapBaseball CapBaseball CapBaseball CapBaseball CapBaseball Cap</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav_tree_item">
+                    <a href="#" class="nav_tree_link" data-cy="tree-item-anchor">
+                        <span>Offer fields</span>
+                    </a>
+                    <ul class="nav_tree">
+                        <li class="nav_tree_item">
+                            <a href="#" class="nav_tree_link nav_tree_link-disabled" data-cy="tree-item-anchor">
+                                <span>Common</span>
+                            </a>
+                            <ul class="nav_tree">
+                                <li class="nav_tree_item">
+                                    <a href="#" class="nav_tree_link disabled" data-cy="tree-item-anchor">
+                                        <span>Baseball CapBaseball CapBaseball CapBaseball CapBaseball CapBaseball CapBaseball Cap</span>
+                                    </a>
+                                </li>
+                                <li class="nav_tree_item">
+                                    <a href="#" class="nav_tree_link disabled" data-cy="tree-item-anchor">
+                                        <span>Baseball</span>
+                                    </a>
+                                </li>
+                                <li class="nav_tree_item">
+                                    <a href="#" class="nav_tree_link disabled" data-cy="tree-item-anchor">
+                                        <span>BaseballCapBaseballCapBaseballCapBaseballCapBaseballCapBaseballCapBaseballCap</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav_tree_item">
+                            <a href="#" class="nav_tree_link nav_tree_link-disabled" data-cy="tree-item-anchor">
+                                <span>Disabled</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <main role="main" class="w-75">
+            <form>
+                <fieldset class="fieldset">
+                    <legend class="legend title-head-3">Product attributs</legend>
+                    <ul class="">
+                        <li class="card flex-row item-xxs">
+                            <div class="input-group w-50">
+                                <label class="label" for="inputText2">Label Attributs&nbsp;<small class="label-aide">(Required)</small></label>
+                                <input type="text" class="input" id="inputText" placeholder="Placeholder" aria-invalid="true">
+                                <span class="form-text" aria-labelledby="inputText" role="alert">Input help</span>
+                            </div>
+                        </li> 
+                        <li class="card flex-row item-xxs">
+                            <div class="input-group w-50">
+                                <label class="label" for="inputText2">Label Attributs&nbsp;<small class="label-aide is-danger">(Error)</small></label>
+                                <input type="text" class="input is-danger" id="inputText2" placeholder="Placeholder" invalid>
+                                <span class="form-text form-text-danger" aria-labelledby="inputText2" role="alert">Error help</span>
+                            </div>
+                            <div>
+                                <button class="button" type="button">2</button>
+                            </div>
+                        </li>
+                        <li class="card flex-row item-xxs">
+                            <div class="input-group w-50">
+                                <label class="label" for="inputText3">Label Attributs&nbsp;<small class="label-aide">(Required)</small></label>
+                                <input type="text" class="input" id="inputText3" placeholder="Placeholder">
+                                <span class="form-text" aria-labelledby="inputText" role="alert">Input help</span>
+                            </div>
+                        </li>
+                        <li class="card flex-row item-xxs">
+                            <div class="input-group w-50">
+                                <label class="label" for="inputText4">Label Attributs&nbsp;<small class="label-aide is-success">(Success)</small></label>
+                                <input type="text" class="input input-success" id="inputText4" placeholder="Placeholder">
+                                <span class="form-text form-text-success" aria-labelledby="inputText" role="alert">Input help</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <fieldset class="fieldset w-50">
+                        <legend class="legend title-head-5">Required</legend>
+                        <ul>
+                            <li class="card list-item item-xxs list-table-item">
+                                <div class="boxfield mod-box mod-advanced-btn" data-cy="attribute-list-item">
+                                    <div class="boxfield-inner">
+                                        <div class="boxfield-label">
+                                            <label class="label">
+                                                <span title="pricing.sale.startDate">pricing.sale.startDate</span>&nbsp;<small class="label-aide">(Required)</small>
+                                                <br>
+                                                <small class="label-aide">pricing.sale.startDate</small>
+                                            </label>
+                                        </div>
+                                        <div class="boxfield mod-addon">
+                                            <div class="boxfield-assign">
+                                                <!--
+                                                <div class="boxfield-assign-tags">
+                                                    <div class="boxfield-assign-tags-box">
+                                                        <span class="boxfield-tags-span mod-text u-text-light">Bestimmen Sie $ für Ihre Werte.  CALC für Funktionen.</span>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                <textarea rows="1" data-min-rows="1" data-cy="autocomplete-wrapper" class="w-100 input" placeholder="Bestimmen Sie $ für Ihre Werte.  CALC für Funktionen.">
+    
+                                                </textarea>
+                                                <div class="butto" data-cy="attribute-list-item-advanced-rule">
+                                                    
+                                                    <button class="button button-md">Rules</button>
+                                                        
+                                                    <div class="badge" data-cy="box-advanced-rule-btn-nb-rules">0</div>
+                                                </div>
+                                            </div>
+                                            <span class="form-text">Error help</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+    
+                            <li>
+                                <div id="pricing.sale.startDate" class="boxfield mod-box mod-advanced-btn" data-cy="attribute-list-item">
+                                    <div class="boxfield-inner">
+                                        <div class="boxfield-label">
+                                            <label class="boxfield-label-main u-nomargin" style="overflow: hidden;">
+                                                <span title="pricing.sale.startDate">pricing.sale.startDate</span>
+                                            </label>
+                                            <label style="overflow: hidden;">
+                                                <span class="boxfield-label-secundary" title="pricing.sale.startDate">pricing.sale.startDate</span>
+                                            </label>
+                                        </div>
+                                        <div class="boxfield mod-addon">
+                                            <div class="boxfield-assign" data-cy="input-parsed-wrapper">
+                                                <div class="boxfield-advanced-rule" data-cy="attribute-list-item-advanced-rule">
+                                                    <span class="">
+                                                        <a class="boxfield-advanced-rule-icon" tabindex="-1" href="#/rule-builder/lengow_root/new/pricing.sale.startDate"></a>
+                                                    </span>
+                                                    <div class="boxfield-advanced-rule-count" data-cy="box-advanced-rule-btn-nb-rules">0</div>
+                                                </div>
+    
+                                                <!--Surcharge fonctionnel-->
+                                                <div class="boxfield-assign-tags">
+                                                    <div class="boxfield-assign-tags-box" style="white-space: normal;">
+                                                        <span class="boxfield-tags-span mod-text u-text-light">Bestimmen Sie $ für Ihre Werte.  CALC für Funktionen.</span>
+                                                    </div>
+                                                </div>
+    
+                                                <textarea rows="1" data-min-rows="1" data-cy="autocomplete-wrapper" class="boxfield-assign-tags-textarea" placeholder="Bestimmen Sie $ für Ihre Werte.  CALC für Funktionen." style="opacity: 0; max-width: none; height: auto;">
+    
+                                                </textarea>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </fieldset>
+            </form>
+        </main>
+    </section>
+  </body>
+</html>

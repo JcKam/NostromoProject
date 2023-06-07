@@ -1,0 +1,45 @@
+
+@mixin alert ($color-border-alert, $color-title-alert, $color-text-alert){
+    align-items: center;
+    background: map-get($theme, text, "color-low");
+    border-radius: $border-radius-sm;
+    border-color: $color-border-alert;
+    border-style: solid;
+    border-width: 1px;
+    color: $color-text-alert;
+    display: flex;
+    flex-direction: row;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    justify-content: space-between;
+    margin: 0;
+    min-height: $space-xl;
+    overflow: hidden;
+    padding: $space-xxs $space-xs;  // .5rem .75rem
+    position: relative;   
+    text-overflow: ellipsis;
+    .alert_title, .alert_text, small{
+        color: $color-title-alert;
+        display: inline;
+        margin: $space-reset;
+    }
+    .alert_title{
+        font-size: $font-size-lg;
+    }
+    .alert_text{
+        font-size: $font-size-sm;
+    }
+    .alert_link{
+        color: $color-text-alert;
+        text-decoration: underline;
+    }
+    .alert_icon{
+        background-color: map-get($theme, text, "color-low");
+        border-radius: 50%;
+        font-size: $font-size-base;
+        @include margin-x-xxs;
+        min-height: $space-base;
+        min-width: $space-base;
+        padding: $space-xxxxs;
+    }
+}

@@ -1,0 +1,108 @@
+@import "../design-tokens.scss";
+@import "../mixins.scss";
+
+
+.card_checkbox{
+    @include card_checkbox(
+        transparentize(map-get($theme, text, "color-low"), .4),
+        map-get($theme, text, "color-border"),
+        map-get($theme, brand, "tertiary")
+    );
+    &:hover, &:focus{
+        &::before{
+            opacity: 1;
+        }
+        .checkbox_label{
+            &::before{
+                border-color: map-get($theme, brand, "primary");
+            }
+            &::after{
+                color: map-get($theme, brand, "primary");
+                opacity: 1; 
+            }
+        }
+    }
+    &:focus{
+        box-shadow: $focus-btn;
+        outline: none;
+    }
+}
+
+.card_checkbox_label{
+    padding-left: $space-xs;
+}
+
+.card_checkbox--default{
+    @include card_checkbox(
+        transparentize(map-get($theme, text, "color-low"), .4),
+        map-get($theme, text, "color-border"),
+        map-get($theme, brand, "tertiary")
+    );
+    &:hover, &:focus{
+        &::before{
+            opacity: 1;
+        }
+    }
+}
+
+.card_checkbox--selected{
+    @include card_checkbox(
+        map-get($theme, text, "color-low"),
+        map-get($theme, brand, "tertiary"),
+        map-get($theme, brand, "tertiary")
+    );
+    &::before{
+        opacity: 1;
+    }
+    &:hover, &:focus{
+        &::before{
+            background: map-get($theme, brand, "primary");
+        }
+        .checkbox_label{
+            &::before{
+                border-color: map-get($theme, brand, "primary");
+            }
+        }
+    }
+}
+
+.card_checkbox--disabled{
+    @include card_checkbox(
+        transparent,
+        map-get($theme, text, "color-border"),
+        map-get($theme, brand, "tertiary")
+    );
+    color: map-get($theme, text, "color-grey") !important;
+    cursor: not-allowed !important;
+    &:hover, &:focus{
+        box-shadow: none;
+        &::before{
+            opacity: 0;
+        }
+        .checkbox_label{
+            &::before{
+                border-color: map-get($theme, text, "color-border");
+            }
+            &::after{
+                opacity: 0; 
+            }
+        }
+    }
+}
+
+.card_checkbox--danger{
+    @include card_checkbox(
+        transparentize(map-get($theme, text, "color-low"), .4),
+        map-get($theme, state, "danger"),
+        map-get($theme, brand, "tertiary")
+    );
+    .checkbox_label{
+        &::before{
+            border-color: transparent;
+        }
+    }
+    &:focus{
+        box-shadow: $focus-btn-danger;
+        outline: none;
+    }
+}

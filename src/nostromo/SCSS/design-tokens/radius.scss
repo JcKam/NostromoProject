@@ -1,0 +1,19 @@
+/*
+  Border radius
+*/
+$border-radius-xs: .125rem;
+$border-radius-sm: .25rem;
+$border-radius-default: .5rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 2rem;
+$border-radius-xxl: 3rem;
+
+$border-radius-step: $border-radius-xl;
+$border-radius-button: $border-radius-xl;
+$border-radius-button-add: $border-radius-sm;
+$border-radius-badge: $border-radius-sm;
+$border-radius-badge-round: $border-radius-xxl;
+$border-radius-list: $border-radius-sm;
+$border-radius-card: $border-radius-default;
+$border-radius-flag: $border-radius-xs;
+$border-radius-nav_tabs: $border-radius-default;

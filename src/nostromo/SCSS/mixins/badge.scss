@@ -1,0 +1,22 @@
+
+@mixin badge ($color-background-badge, $color-border-badge, $color-text-badge){
+    background-color: $color-background-badge;
+    border-radius: $border-radius-badge;
+    border-color: $color-border-badge;
+    border-style: solid;
+    border-width: 1px;
+    color: $color-text-badge;
+    display: inline;
+    font-size: $font-size-sm;
+    font-weight: normal;
+    line-height: $line-height-base;
+    margin: 0;
+    min-height: $space-lg;
+    padding: 0 $space-xxs;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    .icon-lgw{
+        margin: .15rem 0 0 0;
+    }
+}

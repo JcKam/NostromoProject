@@ -1,2 +1,95 @@
 
 @import "../design-tokens.scss";
+@import "../mixins.scss";
+
+
+.input{
+    background: map-get($theme, text, "color-input");
+    border-color: map-get($theme, text, "color-border");
+    border-style: solid;
+    border-width: 1px;
+    border-radius: $border-radius-sm;
+    box-shadow: inset 0 3px 3px rgba(0,0,0,0.05);
+    color: map-get($theme, text, "color-text");
+    display: block;
+    font-size: $font-size-base;
+    height: 2.4rem;
+    line-height: $line-height-base;
+    outline: none;
+    padding: 0 $space-xxs;
+    position: relative;
+    transition: all $transition-faster ease;
+    width: 100%;
+
+    &::placeholder{
+        color: map-get($theme, text, "color-text-light");
+    }
+  
+    &:hover{
+      border-color: map-get($theme, text, "color-grey");
+    }
+  
+    &:focus{
+      background-color: map-get($theme, text, "color-low");
+      border-color: map-get($theme, brand, "primary");
+      box-shadow: $focus-btn;
+      outline: none;
+    }
+  }
+
+  .input-disabled{
+    border-color: transparent;
+
+    &::placeholder{
+      color: map-get($theme, text, "color-grey");
+    }
+  }
+
+  .input-readonly{
+    background: transparent;
+    border-color: transparent;
+    color: map-get($theme, text, "color-text");
+    &:hover, &:focus{
+      
+      border-color: transparent;
+      box-shadow: 0 0 0 0;
+    }
+
+  }
+
+  .label{
+    //display: block;
+    font-size: $font-size-base;
+    font-weight: 600;
+    margin-left: .2rem;
+  }
+
+    .label-aide{
+      font-weight: normal;
+    }
+
+  .input-number{
+    border-radius: 0;
+    border-width: 1px 0;
+    &[type=number]::-webkit-inner-spin-button,
+    &[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    }
+  }
+
+  .button-input{
+    @include button-circle(.5rem, 1.4rem);
+    margin: 0;
+  }
+
+  .button-input-firstchild{
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    //margin-left: $space-xs;
+  }
+
+  .button-input-lastchild{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    //margin-right: $space-xs;
+  }

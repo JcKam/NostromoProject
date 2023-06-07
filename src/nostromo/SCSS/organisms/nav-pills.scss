@@ -1,0 +1,89 @@
+@import "../design-tokens.scss";
+@import "../mixins.scss";
+
+.nav_treeline{
+    border-top: 1px solid transparentize( map-get($theme, text, "color-hight"), .75);
+    display: block;
+    padding-left: 1rem;
+    position: relative;
+    &::before{
+        background: transparentize( map-get($theme, text, "color-hight"), .75);
+        content: "";
+        display: block;
+        width: 1px;
+        left: 1rem;
+        top: 0;
+        bottom: $font-size-lg;
+        position: absolute;
+        z-index: 1;
+    }
+}
+.nav_treeline_item{
+    position: relative;
+    border-top: 1px solid transparentize( map-get($theme, text, "color-hight"), .75);
+    &:last-child{
+        &::after{
+            background: map-get($theme, text, "color-grey");
+            border-radius: 50%;
+            box-sizing: content-box;
+            content: "";
+            display: block;
+            height: .35rem;
+            left: -.125rem;
+            position: absolute;
+            top: calc(100% - $font-size-lg);
+            width: .35rem;
+            z-index: 1;
+        }
+    }
+    &:first-child{
+        border-top: 0;
+    }
+}
+
+.nav_item{
+    background: transparent;
+    border: 0;
+    box-sizing: border-box;
+    color: map-get($theme, brand, "primary");
+    cursor: pointer;
+    display: block;
+    font-size: $font-size-base;
+    overflow: hidden;
+    padding: .25rem .25rem .25rem $space-base;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all $transition-faster ease;
+    width: 100%;
+    &:hover, &:focus{
+        background: map-get($theme, brand, "tertiary");
+        color: map-get($theme, text, "color-hight");
+        padding-left: $space-xl;
+        outline: none;
+    }
+}
+
+/*STATE*/
+.nav_item--active{
+    background: map-get($theme, brand, "primary"); 
+    color:  map-get($theme, text, "color-low");
+    padding-left: $space-xl;
+    &:hover, &:focus{
+        color: map-get($theme, text, "color-hight");
+    }
+    &:focus{
+        box-shadow: $focus-btn;
+    }
+}
+.nav_item--disabled{
+    background: transparent;
+    color: map-get($theme, text, "color-text-light");
+    cursor: not-allowed;
+    &:hover, &:focus{
+        background: transparent;
+        color: map-get($theme, text, "color-text-light");
+        padding-left: $space-base;
+    }
+}

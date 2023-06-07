@@ -13,35 +13,67 @@ p{
 
 a{
     color: map-get($theme, brand, "primary");
+    cursor: pointer;
+    font-size: $font-size-base;
 }
 
 .text-small, small{
-    font-size: $font-size-sm;
+    color: map-get($theme, text, "color-text-light");
+    font-size: $font-size-sm !important;
+}
+.text-bold, strong{
+    font-weight: 600 !important;
 }
 
-h1, .title-head-1{
+h1, h2, h3, h4, h5{
+    color: map-get($theme, text, "color-title");
+    font-weight: 600;
+}
+
+h1{
     font-size: $font-size-h1;
-    color: map-get($theme, text, "color-title");
+    line-height: $line-height-title;
 }
-
-h2, .title-head-2{
+h2{
     font-size: $font-size-h2;
-    color: map-get($theme, text, "color-title");
+    line-height: $line-height-title;
 }
-
-h3, .title-head-3{
+h3{
     font-size: $font-size-h3;
-    color: map-get($theme, text, "color-title");
+    line-height: $line-height-title;
 }
-
-h4, .title-head-4{
+h4{
     font-size: $font-size-h4;
-    color: map-get($theme, text, "color-title");
+    font-weight: 600;
+    line-height: $line-height-title;
+}
+h5{
+    font-size: $font-size-h5;
+    line-height: $line-height-title;
+}
+h6{
+    font-size: $font-size-lg;
+    line-height: $line-height-title;
 }
 
-h5, .title-head-5{
-    font-size: $font-size-h5;
-    color: map-get($theme, text, "color-title");
+
+.title-head-1{
+    font-size: $font-size-h1 !important;
+}
+.title-head-2{
+    font-size: $font-size-h2 !important;
+}
+.title-head-3{
+    font-size: $font-size-h3 !important;
+}
+.title-head-4{
+    font-size: $font-size-h4 !important;
+}
+.title-head-5{
+    font-size: $font-size-h5 !important;
+}
+.title-head-6{
+    font-size: $font-size-lg !important;
 }
 
 hr{

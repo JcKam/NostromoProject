@@ -1,40 +1,59 @@
 
 @import "../design-tokens.scss";
+@import "../mixins.scss";
+@import
+    "../themes/theme.scss";
+    
+$theme: $dark-side !default;
 
+button{
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+}
 .button{
     border-radius: $border-radius-button;
     border-style: solid;
     border-width: 1px;
     cursor: pointer;
     display: inline-block;
+    font-size: $font-size-base;
+    padding: $space-xxs $space-base;
     line-height: $line-height-base;
-    margin: 0 $space-xxxs;
+    position: relative;
 }
 
-
-.button-primary{
-    background: map-get($theme, brand, "primary");
-    border-color: map-get($theme, brand, "primary");
-    color: map-get($theme, text, "color-input");
-    &:hover, &:focus{
-        background: map-get($theme, brand, "tertiary");
-        border-color: map-get($theme, brand, "tertiary");
-        color: map-get($theme, text, "color-text");
-    }
-    &:focus{
-        border-color: map-get($theme, text, "color-low");
-        box-shadow: $focus-btn;
-        outline: none;
+.button-dropdown{
+    &::after{
+        box-sizing: border-box;
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: "";
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
     }
 }
 
-.button-secondary{
-    background: map-get($theme, text, "color-low");
-    border-color: map-get($theme, brand, "primary");
+.button_add{
+    background: map-get($theme, text, "color-border-light");
+    border-color: map-get($theme, text, "color-border");
+    border-radius: $border-radius-button-add;
     color: map-get($theme, brand, "primary");
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: flex;
+    font-size: $font-size-base;
+    padding: $space-xxs $space-base;
+    line-height: $line-height-base;
+    position: relative;
+    text-align: center;
+    width: 100%;
     &:hover, &:focus{
         background: map-get($theme, brand, "primary");
-        border-color: map-get($theme, brand, "primary");
+        border-color: map-get($theme, text, "color-low");
         color: map-get($theme, text, "color-low");
     }
     &:focus{
@@ -43,31 +62,79 @@
     }
 }
 
-.button-tertiary{
+.button--primary{
+    @include button(
+                map-get($theme, brand, "primary"), //background
+                map-get($theme, brand, "primary"), //border-color
+                map-get($theme, text, "color-low"),//color-text
+                map-get($theme, brand, "tertiary"), //background-hover
+                map-get($theme, brand, "tertiary"), //border-color-hover
+                map-get($theme, text, "color-text"), //color-text-hover
+                $focus-btn //color-shadow-focus
+            );
+}
+.button--secondary{
+    @include button(
+                map-get($theme, text, "color-low"), //background
+                map-get($theme, brand, "primary"), //border-color
+                map-get($theme, brand, "primary"),//color-text
+                map-get($theme, brand, "primary"), //background-hover
+                map-get($theme, brand, "primary"), //border-color-hover
+                map-get($theme, text, "color-low"), //color-text-hover
+                $focus-btn //color-shadow-focus
+            );
+}
+.button--link{
+    @include button(
+                transparent, //background
+                transparent, //border-color
+                map-get($theme, brand, "primary"),//color-text
+                transparent, //background-hover
+                map-get($theme, brand, "primary"), //border-color-hover
+                map-get($theme, brand, "primary-hight"), //color-text-hover
+                $focus-btn //color-shadow-focus
+            );
+    text-decoration: underline;
+}
+.button--danger{
+    @include button(
+                map-get($theme, text, "color-low"), //background
+                map-get($theme, state, "danger"), //border-color
+                map-get($theme, state, "danger"),//color-text
+                map-get($theme, state, "danger"), //background-hover
+                map-get($theme, state, "danger"), //border-color-hover
+                map-get($theme, text, "color-low"), //color-text-hover
+                $focus-btn-danger //color-shadow-focus
+            );
+}
+
+//State
+.button--disabled{
     background: transparent;
-    border-color: transparent;
-    color: map-get($theme, brand, "primary");
+    border-color: map-get($theme, text, "color-border");
+    color: map-get($theme, text, "color-text-light");
+    cursor: not-allowed;
     &:hover, &:focus{
-        border-color: $brand-primary-hight;
-        color: $brand-primary-hight;
-    }
-    &:focus{
-        box-shadow: $focus-btn;
-        outline: none;
+        background: transparent !important;
+        border-color: map-get($theme, text, "color-border") !important;
+        box-shadow: none !important;
+        color: map-get($theme, text, "color-text-light") !important;
     }
 }
 
-.button-danger{
-    background: map-get($theme, text, "color-low");
-    border-color: map-get($theme, state, "danger");
-    color: map-get($theme, state, "danger");
-    &:hover, &:focus{
-        background: map-get($theme, state, "danger");
-        border-color: map-get($theme, state, "danger");
-        color: map-get($theme, text, "color-low");
+//Size
+.button--xs{
+    font-size: $font-size-sm !important;
+    padding: calc($space-xxxs / 2) $space-xxs;
+}
+.button--sm{
+    font-size: $font-size-sm !important;
+    padding: $space-xxxs $space-xs;
+    small{
+        font-size: $font-size-icon !important;
     }
-    &:focus{
-        box-shadow: $focus-btn-danger;
-        outline: none;
-    }
+}
+.button--lg{
+    font-size: $font-size-lg;
+    padding: $space-xs $space-xl;
 }

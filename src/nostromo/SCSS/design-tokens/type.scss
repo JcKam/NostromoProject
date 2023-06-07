@@ -17,4 +17,6 @@ $font-size-h4:            $font-size-base * 1.5; // ~24px
 $font-size-h5:            $font-size-base * 1.25; // ~20px
 $font-size-h6:            $font-size-base * 1.125; // ~18px
 
-$line-height-base: 1.618;
+$line-height-base:            1.618 !default;
+$line-height-sm:              1.25 !default;
+$line-height-title:           1.35 !default;

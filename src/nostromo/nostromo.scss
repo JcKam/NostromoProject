@@ -3,39 +3,89 @@
 @import 
     "SCSS/design-tokens.scss";
 
-$theme: $dark-side;
+
+@import
+    "SCSS/themes/theme.scss";
+
+
+$theme: $dark-side !default;
+
+/*
+@mixin theme($dark-side: true) {
+    @if ($dark-side global) {
+        $theme: $dark-side;
+        background: green;
+    }@else{
+        $theme: $light-side;
+        background: blue;
+    }
+}
+
+.dark-side{
+    @include theme($dark-side: false);
+    border: 1px solid red;
+}
+*/
+// IMG
+@import 
+    "SCSS/design-tokens/img.scss";
 
 // UTILITIES
 @import 
-    "SCSS/utilities/states.scss",
-    "SCSS/utilities/utilities.scss";
+    "SCSS/utilities/utilities.scss",
+    "SCSS/utilities/states.scss";
 
 // MIXINS
 @import
-    "SCSS/mixins/button.scss";
+    "SCSS/mixins/alert.scss",
+    "SCSS/mixins/badge.scss",
+    "SCSS/mixins/button.scss",
+    "SCSS/mixins/button_close.scss",
+    "SCSS/mixins/card_core.scss",
+    "SCSS/mixins/card.scss",
+    "SCSS/mixins/card_checkbox.scss",
+    "SCSS/mixins/card_button.scss",
+    "SCSS/mixins/checkbox_input.scss",
+    "SCSS/mixins/utilities.scss";
 
 // ATOMS
 @import
+    "SCSS/atoms/badge.scss",   
     "SCSS/atoms/buttons.scss",
+    "SCSS/atoms/button_close.scss",
+    "SCSS/atoms/checkbox.scss",
     "SCSS/atoms/fonts.scss",
-    "SCSS/atoms/badge.scss",
+    "SCSS/atoms/input.scss",
+    "SCSS/atoms/input-type_range.scss",
     "SCSS/atoms/palette.scss",
-    "SCSS/atoms/switch.scss";
+    "SCSS/atoms/switch.scss",
+    "SCSS/atoms/tooltip.scss";
 
 // MOLECULES
 @import 
     "SCSS/molecules/alert.scss",
+    "SCSS/molecules/input-group.scss",
     "SCSS/molecules/pagination.scss",
-    "SCSS/molecules/stepper.scss";
+    "SCSS/molecules/progress_bar.scss",
+    "SCSS/molecules/stepper.scss",
+    "SCSS/molecules/tag.scss";
 
 //ORGANISMS
 @import
     "SCSS/organisms/card.scss",
-    "SCSS/organisms/list.scss";
+    "SCSS/organisms/card_button.scss",
+    "SCSS/organisms/card_checkbox.scss",
+    "SCSS/organisms/list.scss",
+    "SCSS/organisms/nav-tabs.scss",
+    "SCSS/organisms/nav-pills.scss",
+    "SCSS/organisms/progress-bar.scss";
 
 // LAYOUT
 @import
-    "SCSS/layout/grid.scss";
+    "SCSS/layout/footer.scss",
+    "SCSS/layout/form.scss",
+    "SCSS/layout/grid.scss",
+    "SCSS/layout/template.scss";
 
 
 
@@ -46,11 +96,13 @@ $theme: $dark-side;
 }
 
 body{
-    //@include debug;
+    @include debug;
     background: map-get($theme, bg, "bg-body");
     color: map-get($theme, text, "color-text");
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    position: relative;
     height: 100%;
+    width: 100%;
 }

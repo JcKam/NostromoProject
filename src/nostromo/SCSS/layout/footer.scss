@@ -1,0 +1,12 @@
+@import "../design-tokens.scss";
+
+.footer{
+    @include debug2;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .footer-link{
+        margin: 0 $space-base;
+    }

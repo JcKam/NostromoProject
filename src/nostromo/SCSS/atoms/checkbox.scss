@@ -1,0 +1,125 @@
+
+@import "../design-tokens.scss";
+@import "../mixins.scss";
+
+.checkbox{
+  align-items: center;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  display: block;
+  line-height: $line-height-base;
+  min-height: $space-base;
+  padding-left: $space-xl;
+  padding-right: $space-xs;
+  &:hover, &:focus{
+    .checkbox_label{
+      &::before{
+        border-color: map-get($theme, brand, "primary");
+      }
+      &::after{
+        color: map-get($theme, brand, "primary");
+        opacity: 1;
+      }
+    }
+  }
+  &:focus{
+    box-shadow: $focus-btn;
+    outline : none
+  }
+}
+
+.checkbox_label{
+  color: map-get($theme, text, "color-text");
+  line-height: $line-height-base;
+  position: relative;
+  &::before, &::after{
+
+    position: absolute;
+    top: calc(40% - ($space-base / 2));
+  }
+  &::before{
+    content: "";
+    background: map-get($theme, text, "color-input");
+    border-radius: $border-radius-sm;
+    border-color: map-get($theme, text, "color-grey");
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    height: $space-base;
+    left: -$space-xl;
+    width: 1rem;
+  }
+  &::after{
+    color: $color-low;
+    content: "V";
+    display: block;
+    font-size: $font-size-sm;
+    font-weight: bold;
+    //height: 14px;
+    left: -$space-lg;
+    opacity: 0;
+  }
+}
+
+.checkbox_input{
+  display: block;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  &:focus{
+    box-shadow: none;
+    border: 0;
+  }
+  &:checked{
+
+    + .checkbox_label{
+      &::after{
+        opacity: 1;
+      }
+      &::before{
+        background: map-get($theme, brand, "primary");
+        border-color: map-get($theme, brand, "primary");
+      }
+    }
+  }
+}
+
+//STATE
+
+.checkbox--checked{
+  .checkbox_label{
+    &::before{
+      border-color: map-get($theme, brand, "primary");
+    }
+  }
+  &:hover, &:focus{
+    .checkbox_label{
+      &::after{
+        color: $color-low;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.checkbox--disabled{
+  cursor: default;
+  .checkbox_label{
+    color: map-get($theme, text, "color-grey");
+    &::before{
+      background: map-get($theme, text, "color-border");
+      border-color: map-get($theme, text, "color-border");
+    }
+  }
+  &:hover, &:focus{
+    .checkbox_label{
+      &::before{
+        border-color: map-get($theme, text, "color-border");
+      }
+      &::after{
+        opacity: 0;
+      }
+    }
+  }
+}

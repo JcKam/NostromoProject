@@ -1,85 +1,66 @@
 
-
 @import "../design-tokens.scss";
+@import "../mixins.scss";
 
-.card{
-    background-clip: border-box;
-    border-radius: $border-radius-default;
-    color: transparent;
-    border-color: map-get($theme, text, "color-border");
-    border-style: solid;
-    border-width: 1px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: $space-base;
-    min-width: 0;
-    position: relative;
-    word-wrap: break-word;
-    &::after {
-        content: '';
-        display: table;
-        clear: both;
-    }
+
+.card--default{
+    @include card_core();
+    @include card(
+        transparentize(map-get($theme, text, "color-low"), .4),
+        map-get($theme, text, "color-border"),
+        transparent
+    );
 }
 
-.card-tag{
-    background: map-get($theme, text, "color-low");
-    border-color: map-get($theme, text, "color-border");
-    border-radius: $border-radius-card $border-radius-card 0 0;
-    position: relative;
-    &::before, &::after{
-        background: map-get($theme, text, "color-low");
-        content: " ";
-        display: block;
-        border-color: map-get($theme, text, "color-border");
-        border-style: solid;
-        border-width: 0 1px 1px 1px;
-        box-sizing: border-box;
-        bottom: -.5rem;
-        height: .5rem;
-        position: absolute;
-    }
-    &::after{
-        border-radius: 0 0 $border-radius-card $border-radius-card;
-        width: 30%;
-        right: -1px;
-    }
-    &::before{
-        border-radius: 0 0 $border-radius-card $border-radius-card;
-        width: 30%;
-        left: -1px;
-    }
-}
-.card-label{
-
+.card--danger{
+    @include card_core();
+    @include card(
+        transparentize(map-get($theme, text, "color-low"), .4),
+        map-get($theme, state, "danger"),
+        map-get($theme, state, "danger")
+    );
 }
 
-.card-header{
-    align-items: stretch;
+.card--success{
+    @include card_core();
+    @include card(
+        transparentize(map-get($theme, text, "color-low"), .6),
+        map-get($theme, state, "success"),
+        map-get($theme, state, "success")
+    );
+}
+
+.card_header{
+    align-items: center;
     display: flex;
     flex: 1;
     flex-direction: row;
     justify-content: flex-start;
 }
-
-.card-body{
-    border-top: 1px solid map-get($theme, text,  "color-border-light");
-    align-items: center;
+.card_body{
+    align-items: flex-start;
+    box-sizing: border-box;
+    display: flex;
     flex: 1 1 auto;
+    height: 100%;
     justify-content: flex-start;
-    padding: 0 $space-xs;
+    text-align: left;
 }
-
 .card-title{
 
 }
-
 .card-text{
 
 }
 
-.card-link{
+.card_link{
+    @include card(
+        transparentize(map-get($theme, text, "color-low"), .4),
+        map-get($theme, text, "color-border"),
+        transparent
+    );
     align-items: center;
+    background: transparent;
     border-color: transparent;
     border-style: solid;
     border-width: 1px;
@@ -97,17 +78,68 @@
     }
 }
 
-.card-link-title{
+.card_link-title{
     color: map-get($theme, brand, "primary" );
 }
 
-.card-img{
+.card_img{
     background: #ccc;
     margin: 0 $space-xxs 0 0;
     min-height: 3.5rem;
     min-width: 3.5rem;
 }
 
-.card-img-round{
+.card_img--round{
     border-radius: 50%;
+}
+
+.card_img--lg{
+    min-height: 5rem;
+    min-width: 5rem;
+}
+
+.card-row{
+    align-items: center !important;
+    flex-direction: row !important;
+}
+
+// STYLE
+
+.card_tag{
+    background: transparentize(map-get($theme, text, "color-low"), .5);
+    border-color: map-get($theme, text, "color-border-light");
+    border-radius: $border-radius-card;
+    position: relative;
+    
+    &::before, &::after{
+        content: " ";
+        display: block;
+        border-color: map-get($theme, text, "color-border-light");
+        border-style: solid;
+        border-width: 1px 1px 1px 0;
+        box-sizing: border-box;
+        position: absolute;
+    }
+    &::before{
+        background: map-get($theme, text, "color-border-light");
+        border-left-color: map-get($theme, text, "color-border-light");
+        border-left-width: 0;
+        border-radius: 0 $border-radius-default $border-radius-default 0;
+        box-sizing: border-box;
+        height: 50%;
+        left: -1px;
+        top: 25%;
+        width: .6rem;
+        z-index: 1;
+    }
+    &::after{
+        background: map-get($theme, text, "color-grey");
+        border-radius: $border-radius-default;
+        border: 0;
+        bottom: 30%;
+        height: 40%;
+        left: .1rem;
+        width: .2rem;
+        z-index: 1;
+    }
 }

@@ -1,0 +1,1267 @@
+// Refacto of the file _transfo.scss
+
+// Wrapper for grouped boxfields
+.boxfields{
+  margin-bottom: $margin-standard;
+}
+
+  .boxfields-header,
+  .boxfields-items-header{
+    background-color: $grey-separator;
+    box-shadow: 0 -0.5px 1px rgba(0, 0, 0, .2), 0 2px 2px rgba(0, 0, 0, .2);
+    color: $grey;
+    display: block;
+    padding: $margin-tiny $margin-standard;
+    position: relative;
+  }
+
+    .boxfields-items{
+
+      .boxfields-items-header{
+        background-color: $grey-separator;
+        box-shadow: 0 -0.5px 1px rgba(0, 0, 0, .2), 0 2px 2px rgba(0, 0, 0, .2);
+        color: $grey;
+        display: block;
+        padding: $margin-tiny $margin-standard;
+        position: relative;
+      }
+
+    }
+
+    .boxfield-delete{
+      position: absolute;
+      top: 25px;
+      right: 24px;
+      z-index: 3;
+
+      &:before{
+        //@include m-icon-lgw;
+        border-radius: 20px;
+        color: $grey-light;
+        //content: unicode($icon-delete);
+        font-size: 20px;
+        height: 20px;
+        padding: 5px 6px 6px 6px;
+        transition: all 125ms ease;
+        width: 20px;
+
+      }
+
+      &:hover,
+      &:focus{
+        text-decoration: none;
+
+        &:before{
+          background-color: $red-lightish;
+          color: $red;
+        }
+      }
+
+      &.mod-field{
+        top: 15px;
+
+        &:before{
+          color: $grey-border-over;
+        }
+
+        &:hover,
+        &:focus{
+
+          &:before{
+            color: $red;
+          }
+        }
+      }
+    }
+
+  .boxfields-add{
+    background-color: white;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 0 -0.5px 1px rgba(0, 0, 0, .2), 0 2px 2px rgba(0, 0, 0, .2);
+    color: $grey-light;
+    display: block;
+    padding: 20px $margin-standard 20px $margin-bigger;
+    position: relative;
+    transition: all 125ms ease;
+    z-index: 2;
+
+    &:before{
+      //@include m-icon-lgw;
+      border-radius: 12px;
+      color: $grey-light;
+      //content: unicode($icon-add);
+      height: 12px;
+      font-size: 13px;
+      font-weight: 900;
+      left: $margin-standard;
+      padding: 5px;
+      position: absolute;
+      transition: all 125ms ease;
+      width: 12px;
+    }
+
+    &:hover{
+      background-color: white;
+      cursor: pointer;
+
+      &:before{
+        background-color: $sky;
+        color: white;
+      }
+    }
+  }
+
+
+// Boxfield-item
+.boxfield{
+
+  &:hover,
+  &:focus{
+
+    .boxfield-delete{
+      opacity: 1;
+    }
+  }
+
+  .boxfield-delete{
+    opacity: 0;
+    transition: all 125ms ease;
+  }
+}
+
+  .boxfield-inner{
+
+    .switch{
+      margin:0;
+      padding-top: $margin-small;
+    }
+  }
+
+  .boxfield-label{
+    position:relative;
+
+    .compulsory{
+      position: absolute;
+      right: 0px;
+      top: 0;
+      z-index: 2;
+    }
+  }
+
+    .boxfield-label-main{
+      color: $grey-light;
+      display: block;
+      font-weight: 600;
+      margin-bottom: 7px;
+      padding-right: 10px;
+      overflow: hidden;
+      position: relative;
+      transition: all $transition-faster ease;
+      white-space: nowrap;
+    }
+
+    .boxfield-label-locked-icon{
+      //background: url(../images/components/input/locker.png) no-repeat top left;
+      display: inline-block;
+      height: 15px;
+      margin-right: 5px;
+      width: 11px;
+    }
+
+    .boxfield-label-secundary{
+      color: $grey-light;
+      display: block;
+      font-size: $font-small;
+      font-weight: 400;
+      margin-bottom: 7px;
+      padding-right:10px;
+      overflow: hidden;
+      position: relative;
+      transition: all $transition-faster ease;
+      white-space: nowrap;
+    }
+
+  .boxfield-assign{
+    cursor: text;
+    position: relative;
+    transition: all $transition-fast ease;
+  }
+
+    .boxfield-assign-tags-box{
+      white-space: nowrap; /* delete this style when textarea autosize is done by front */
+    }
+
+    .boxfield-assign-tags{
+      background: $grey-input;
+      border: 1px solid $grey-border;
+      border-radius: $border-radius;
+      bottom: 0;
+      box-shadow: inset 0 3px 3px rgba(0,0,0,0.05);
+      font-size: 0; // Remove spacing of inline-block childs
+      left: 0;
+      line-height: 30px;
+      overflow: hidden;
+      padding:{
+        top: 6px;
+        left: $margin-small;
+      }
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      .spinner{
+        margin-top: 4px;
+      }
+
+      /* Not sure if useful */
+      .wrap{
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #eee;
+        background: #fff;
+        height: 32px;
+      }
+
+      &.is-error{
+        overflow: visible;
+
+        .boxfield-tags-span{
+
+          &.mod-error{
+
+            &:hover{
+
+              .boxfield-assign-tags-error{
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+      &.disabled {
+        background: #ebebeb;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+    }
+
+      .boxfield-alert{
+        background: $red-lightest;
+        border-radius: 0 0 $border-radius $border-radius;
+        color: $red;
+        display: none;
+        font-size: $font-small;
+        height: auto;
+        line-height: 22px;
+        padding: 5px $margin-small;
+        width: 100%;
+
+        &.mod-attr-error{
+          width: auto;
+          margin-right: 35px;
+        }
+      }
+
+      .boxfield-assign-tags-error{
+        background: white;
+        border: 1px solid $red;
+        border-radius: 1px;
+        color: $red;
+        left: -16px;
+        line-height: 20px;
+        opacity: 0;
+        overflow: visible;
+        position: absolute;
+        bottom: 31px;
+        padding: 7px 15px;
+        transition: opacity $transition-faster ease;
+      }
+
+    .boxfield-link{
+
+      &.mod-list{
+        position: absolute;
+        right: 65px;
+        top: 15px;
+      }
+    }
+
+      .boxfield-assign-tags-gradiant{
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 1%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 100%);
+        bottom: 0;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%;
+        z-index: 1;
+      }
+
+      .boxfield-assign-tags-input{
+        background: $grey-input;
+        border: 1px solid $grey-border;
+        border-radius: $border-radius;
+        box-shadow: inset 0 3px 3px rgba(0,0,0,0.05);
+        color: $grey;
+        display: block;
+        font-size: $font-standard;
+        height: $boxfield-input-height;
+        line-height: calc(#{$boxfield-input-height} - 2px);
+        outline: none;
+        padding: 0 $margin-small;
+        transition: all $transition-faster ease;
+        width: 100%;
+        position: relative;
+
+        &::-ms-clear {
+          display: none;
+        }
+
+        &:hover,
+        &:focus{
+          color: $grey;
+        }
+
+        &:focus{
+          background-color: white;
+          border-color: $sky;
+          outline: none;
+        }
+
+        &[disabled],
+        &[readonly]{
+          background: $grey-disabled;
+          border-color: $grey-border;
+          color: $grey-light;
+          cursor: not-allowed;
+
+          &:focus{
+            background: #eee;
+          }
+        }
+
+        &.locked {
+          opacity: 0;
+        }
+      }
+
+      .boxfield-assign-tags-textarea{
+        //@extend .boxfield-assign-tags-input;
+        //@extend .textarea;
+
+        height: $input-height;
+        line-height: 30px;
+        max-width: 800px;
+        min-height: $input-height;
+        overflow: hidden;
+        padding: 5px $margin-small;
+        resize: none;
+        transition: all $transition-fast ease;
+        &.mod-full-width{
+          max-width: 100%;
+        }
+      }
+
+    .boxfield-rules-covered{
+      text-align: right;
+
+      &.is-processing,
+      &.is-loading{
+
+        .spinner{
+          display: inline-block;
+        }
+
+        .boxfield-rules-covered-products{
+          opacity: 0;
+        }
+
+        .boxfield-rules-covered-processing{
+          opacity: 1;
+        }
+      }
+
+      &.is-final{
+
+        .boxfield-rules-covered-products{
+          opacity: 1;
+        }
+
+        .spinner{
+          opacity: 0;
+        }
+      }
+
+      &.is-accurate{
+
+        .boxfield-rules-covered-button{
+          display: none;
+        }
+      }
+    }
+
+      .boxfield-rules-covered-products,
+      .boxfield-rules-covered-processing{
+        opacity: 0;
+        padding-top: 3px;
+        position: absolute;
+        top: 15px;
+        right: 0;
+        transition: all $transition-fast ease;
+        z-index: 2;
+      }
+
+        .boxfield-rules-covered-products-span{
+          font-size: $font-small;
+          margin: 0 !important;
+          line-height: 1;
+          vertical-align: inherit;
+        }
+
+        // Button more accurate estimation
+
+        .boxfield-rules-covered-button{
+          background-color: $white;
+          border: 2px solid $grey-disabled;
+          border-radius: $border-radius;
+          color: $grey-light;
+          cursor: pointer;
+          display: inline-block;
+          height: 18px;
+          margin: 5px 7px 0 0;
+          pointer-events: auto;
+          position: relative;
+          transition: all $transition-faster ease;
+          width: 18px;
+
+          &:hover,
+          &:focus{
+            background-color: $blue;
+            border-color: $blue;
+            color: white;
+            outline: none;
+            text-decoration: none;
+          }
+
+          &:before{
+            content: "~";
+            font-size: 22px;
+            left: 1px;
+            position: absolute;
+            top: -5px;
+            line-height: 21px;
+          }
+        }
+
+    .boxfield-preview{
+      margin: $margin-tiny 0 $margin-standard;
+    }
+
+.boxfield-loader{
+  display: none;
+  height: 100%;
+  padding-top: 23px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+  .boxfield-loader-label,
+  .boxfield-loader-field{
+    background: $neutral-10;
+    border: 0;
+    border-radius: $border-radius;
+    display: block;
+    min-height: 12px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &:after {
+      animation: placeHolderShimmer 1s cubic-bezier(0.860, 0.000, 0.070, 1.000) infinite;
+      background: $neutral-15;
+      background: linear-gradient(to right, $neutral-10 0%, $neutral-15 10%, $neutral-15 90%, $neutral-10 100%);
+      border-radius: 0px;
+      content: " ";
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 400%;
+      z-index: 2;
+    }
+  }
+
+  .boxfield-loader-label{
+    margin: 0 0 16px 0;
+    opacity: 70%;
+    width: 15%;
+  }
+
+  .boxfield-loader-field{
+    height: 30px;
+    opacity: 70%;
+    width: 50%;
+  }
+
+
+/* - - - - - - - - - - - - - - - - - - -
+
+            BOXFIELD MODS
+
+ - - - - - - - - - - - - - - - - - - - */
+
+.boxfield{
+
+  &.mod-box{
+    //@include m-box-style();
+    margin-bottom: $margin-small;
+    padding: $margin-small $margin-standard;
+  }
+
+  &.mod-advanced-btn{
+
+    .disabled{
+      .boxfield-advanced-rule-icon {
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+
+    .boxfield-advanced-rule{
+      bottom: initial;
+      display: block;
+      height: 20px;
+      position: absolute;
+      right: -34px;
+      top: 11px;
+      width: 20px;
+      transition: all $transition-fast ease;
+    }
+
+    .boxfield-advanced-rule-icon{
+      display: block;
+      height: 20px;
+      width: 20px;
+      transition: color $transition-fast ease;
+
+      &:before{
+        //@include m-icon-lgw;
+        color: $grey-border-over;
+        //content: unicode($icon-cog);
+        font-size: 21px;
+        position: absolute;
+        transition: color $transition-fast ease;
+      }
+
+      &:hover{
+        background-position: 0 -20px;
+
+        &:before{
+          color: $blue;
+        }
+      }
+    }
+
+    .boxfield-advanced-rule-count{
+      display: none;
+    }
+
+    .boxfield-assign{
+      margin-right: 35px;
+    }
+  }
+
+  &.mod-grouped{
+    border-radius: 0;
+    margin-bottom: 1px;
+  }
+
+  &.mod-caption{
+
+    .boxfield-advanced-rule{
+      bottom: 52px;
+    }
+  }
+
+  &.mod-addon{
+
+    &.is-focused:not(.is-ruled):not(.mod-ob) {
+      background: white;
+    }
+  }
+}
+
+
+/* - - - - - - - - - - - - - - - - - - -
+
+           BOXFIELD-WRAP MODS
+
+ - - - - - - - - - - - - - - - - - - - */
+
+.boxfield-wrap{
+
+  &.mod-transform-pim{
+
+    .boxfield-wrap-header{
+      display: grid;
+      font-weight: 700;
+      grid-template-columns: 1.6fr 1fr 1fr 1.4fr 0.25fr 0.25fr;
+      padding: $margin-small $margin-standard $margin-small;
+    }
+
+    .boxfield-advanced-rule{
+      height: 32px;
+      bottom: initial;
+      right: 55px;
+      width: 32px;
+
+      .boxfield-advanced-rule-icon{
+        border-radius: 50%;
+        height: 32px;
+        width: 32px;
+
+        &:before{
+          top: 5px;
+          left: 6px;
+        }
+
+        &:hover{
+          background-color: $sky-lightest;
+
+          &:before{
+            color: $blue;
+          }
+        }
+      }
+
+      .boxfield-advanced-rule-count{
+        right: 1px;
+        top: 1px;
+      }
+
+    }
+
+    .boxfield-delete{
+      right: 15px;
+      top: 18px;
+    }
+
+    .boxfield{
+      align-items: center;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.4fr 0.25fr 0.25fr;
+      padding: $margin-small $margin-standard $margin-small;
+
+      &.is-ruled{
+
+        .boxfield-advanced-rule{
+          bottom: initial;
+          top: initial;
+        }
+      }
+
+      &.mod-box{
+        transition: all $transition-fast ease;
+
+        &:hover{
+          background: $sky-white;
+          color: $blue;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &.mod-segment{
+    @extend .mod-transform-pim;
+
+    .boxfield{
+      grid-template-columns: 1.7fr 1fr 1fr 1fr 0.3fr;
+      cursor: pointer;
+    }
+
+    .boxfield-wrap-header{
+      grid-template-columns: 1.7fr 1fr 1fr 1fr 0.3fr;
+    }
+
+    .boxfield-delete {
+      right: 29px;
+      top: 26px;
+    }
+  }
+
+  .boxfields-add{
+    background-color: transparent;
+    border: 2px dotted #d7d7d7;
+    border-radius: 3px;
+    box-shadow: 0 -0.5px 1px rgba(0, 0, 0, 0), 0 2px 2px rgba(0, 0, 0, 0);
+    color: #999;
+    padding: $margin-small $margin-standard $margin-small $margin-bigger;
+
+    &:hover{
+      background-color: white;
+      border: 2px dotted transparent;
+      box-shadow: 0 -0.5px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2);
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+}
+
+/* - - - - - - - - - - - - - - - - - - -
+
+            BOXFIELD STATES
+
+ - - - - - - - - - - - - - - - - - - - */
+
+.boxfield{
+
+  &.is-focused:not(.is-ruled){
+
+    .boxfield-assign{
+
+      .boxfield-assign-tags-input{
+        opacity: 1;
+        z-index: 11;
+      }
+
+      .boxfield-assign-tags{
+        opacity: 0;
+      }
+    }
+
+    &.mod-advanced-btn{
+
+      .boxfield-assign{
+        margin-right: 0px;
+      }
+    }
+
+
+    &.mod-box{
+
+      .boxfield-advanced-rule-icon{
+        background-position: 0 -40px;
+      }
+
+      .boxfield-assign{
+        padding-right: 0;
+      }
+    }
+
+    &:not(.mod-ob){
+      background:$sky-lighter;
+      box-shadow:none;
+
+      .boxfield-assign-tags-input{
+        border-color: white;
+        background: white;
+        box-shadow: 0 3px 0 0 rgba(0,0,0,.05);
+
+        &:focus{
+          background-color: white;
+          border-color: $sky;
+          outline: none;
+          box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.05);
+        }
+      }
+
+      .boxfield-label label{
+        color:white !important;
+      }
+
+      .boxfield-advanced-rule{
+        opacity: 0;
+      }
+
+      .boxfield-advanced-rule-icon{
+        background-position:0 -40px;
+      }
+
+      .boxfield-assignm{
+        padding-right:0;
+      }
+    }
+
+    .boxfield-assign-tags-input{
+       opacity: 1;
+    }
+
+    .boxfield-link{
+      color: $dark-lighter;
+    }
+
+    .boxfield-delete{
+
+      &.mod-field{
+
+        &:before{
+          color: $dark-light;
+        }
+
+        &:hover,
+        &:focus{
+
+          &:before{
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  &.is-saving{
+
+    .boxfield-assign-tags{
+      //background-image: url(../images/pages/channels/fields/loading.gif);
+      background-position: 10px center;
+      background-repeat: no-repeat;
+      z-index: 10;
+    }
+
+    .boxfield-assign-tags-input{
+      position:relative;
+      z-index: 9;
+    }
+  }
+
+  &.is-done{
+
+    .boxfield-label-main{
+      color: $grey;
+    }
+  }
+
+  &.is-ruled{
+    cursor: pointer;
+
+    &:hover,
+    &:focus{
+
+      .boxfield-rules-covered-products{
+        text-decoration: underline;
+      }
+    }
+
+    &.mod-advanced-btn{
+
+      .boxfield-assign-tags{
+        background: white;
+        border:0 ;
+        box-shadow: none;
+        padding: 15px 0 0 0;
+      }
+
+      .boxfield-label,
+      .boxfield-label-main,
+      .boxfield-label-secundary{
+
+        &.is-ellipsed,
+        &.is-full-length {
+          pointer-events: auto;
+        }
+      }
+
+      .boxfield-label{
+
+        &:after{
+          background: $grey-background;
+          bottom: -7px;
+          content: '';
+          height: 1px;
+          left: -30px;
+          position: absolute;
+          right: -30px;
+        }
+      }
+
+      .boxfield-assign-tags-input{
+        background: white;
+        border: 0;
+        cursor: default;
+        padding: 0;
+        pointer-events: none;
+      }
+
+      select,
+      .field-virtual-select,
+      .chosen-container,
+      .switch{
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &.is-error{
+        background: $red-lightish;
+
+        .boxfield-assign-tags{
+          background: transparent;
+        }
+
+        .boxfield-label{
+
+          &:after{
+            background: #f9aea8;
+          }
+        }
+
+        .boxfield-label-secundary{
+          color: #a2726d;
+        }
+
+        .boxfield-advanced-rule-icon{
+
+          &:before{
+            color: $red-lighter;
+          }
+        }
+
+        .boxfield-rules-covered-products{
+          color: $red-lighter;
+        }
+      }
+    }
+
+    .covered{
+      margin: 15px 0 0 0;
+      color: $grey-light;
+    }
+
+    .boxfield-advanced-rule-count{
+      background: $blue;
+      border-radius: 7px;
+      color: white;
+      display: block;
+      font-size: $font-smaller;
+      font-weight: 600;
+      height: 14px;
+      line-height: 14px;
+      min-width: 14px;
+      padding: 0 2px;
+      position: absolute;
+      right: -4px;
+      text-align: center;
+      top: -4px;
+      z-index: 20;
+    }
+
+    .boxfield-advanced-rule{
+      bottom: initial;
+      top: 17px;
+    }
+
+    .boxfield-assign-tags-gradiant{
+      opacity: 1;
+    }
+
+    .boxfield-rules-covered{
+      color: $grey-light;
+      margin: 15px 0 0 0;
+    }
+
+    /* Bad but temporary */
+    p{
+      margin:0;
+      line-height: 1.2;
+      font-size:$font-small;
+      line-height: 1;
+      *{
+        margin:0;
+        line-height: 1;
+        vertical-align: bottom;
+      }
+    }
+
+    &:hover,
+    &:focus{
+      .rules-covered-products{
+        text-decoration: underline;
+      }
+    }
+
+    .boxfield-assign {
+
+      .boxfield-assign-tags-input{
+        opacity: 0;
+      }
+
+      .boxfield-assign-tags-box{
+         /*height:44px;*/
+         min-height: 44px;
+
+         // Not sure what it does...
+        [data-type="rules"] {
+          b {
+            padding: 0 5px 0 0;
+            display: inline-block;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    /**/
+
+    &.is-done{
+
+      .boxfield-assign-tags{
+        padding-top: 12px;
+      }
+    }
+
+    &.is-error{
+
+      .boxfield-assign-tags-gradiant{
+        opacity: 0;
+      }
+    }
+  }
+
+  &.is-disabled{
+    color: $grey-light;
+
+    .boxfield-assign-tags{
+      background-color: $grey-disabled;
+      box-shadow: none;
+      cursor: not-allowed;
+      z-index: 2;
+    }
+
+    .boxfield-assign-tags-textarea{
+      z-index: 1;
+    }
+  }
+
+  &.is-converted-default{
+
+    &.mod-advanced-btn{
+
+      .boxfield-assign-tags{
+        background: white;
+        border:0 ;
+        box-shadow: none;
+        padding: 15px 0 0 0;
+      }
+
+      .boxfield-label,
+      .boxfield-label-main,
+      .boxfield-label-secundary{
+
+        &.is-ellipsed,
+        &.is-full-length {
+          pointer-events: auto;
+        }
+      }
+
+      .boxfield-assign-tags-input{
+        background: white;
+        border: 0;
+        cursor: default;
+        padding: 0;
+        pointer-events: none;
+      }
+
+      select,
+      .field-virtual-select,
+      .chosen-container,
+      .switch{
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .boxfield-assign-tags-box{
+        min-height: 44px;
+      }
+
+      .boxfield-assign-tags-input{
+        opacity: 0;
+      }
+
+      .boxfield-advanced-rule {
+        top: 19px;
+        bottom: /*20px*/ initial;
+      }
+
+      .boxfield-assign-tags-gradiant{
+        opacity: 1;
+      }
+
+      &.is-error{
+        background: $red-lightish;
+
+        .boxfield-assign-tags{
+          background: transparent;
+        }
+
+        .boxfield-assign-tags-input{
+          min-height: 49px;
+        }
+
+        .boxfield-label{
+
+          &:after{
+            background: #f9aea8;
+          }
+        }
+
+        .boxfield-advanced-rule-icon{
+
+          &:before{
+            color: $red-lighter;
+          }
+        }
+
+        .boxfield-rules-covered-products{
+          color: $red-lighter;
+        }
+
+        .boxfield-label-secundary{
+          color: #a2726d;
+        }
+
+        .boxfield-assign-tags-gradiant{
+          opacity: 0;
+        }
+      }
+    }
+
+    .boxfield-label{
+
+      &:after{
+        background: $grey-background;
+        bottom: -7px;
+        content: '';
+        height: 1px;
+        left: -30px;
+        position: absolute;
+        right: -30px;
+      }
+    }
+
+  }
+
+  &.is-loading{
+
+    .boxfield-inner{
+      opacity: 0;
+    }
+    .boxfield-loader{
+      display: block;
+    }
+  }
+
+  &.is-error{
+
+    .boxfield-alert{
+      display: block;
+    }
+
+    .boxfield-assign-tags{
+      border-radius: $border-radius $border-radius 0 0;
+      border: 1px solid $red;
+    }
+
+    .lgw-select-container{
+
+      .lgw-select-single {
+        border-color: $red;
+        border-radius: $border-radius $border-radius 0 0;
+      }
+    }
+  }
+}
+
+
+/* - - - - - - - - - - - - - - - - - - -
+
+      BOXFIELD LABEL MAIN STATES
+
+ - - - - - - - - - - - - - - - - - - - */
+
+.boxfield-label-main{
+
+  &.is-ellipsed{
+    cursor: pointer;
+
+    &:hover{
+      color: $grey-light;
+    }
+  }
+
+  &.is-required{
+    span::after {
+      content: " *";
+      color: $red;
+    }
+  }
+
+  &.is-locked{
+    span::before {
+      content: '';
+      //background: url(../images/components/input/locker.png) no-repeat top left;
+      display: inline-block;
+      height: 15px;
+      margin-right: 5px;
+      width: 11px;
+    }
+  }
+
+  &.is-full-length{
+    cursor: pointer;
+    white-space: normal;
+    word-break: break-all;
+
+    &:hover{
+      color: $grey;
+    }
+  }
+}
+
+
+/* - - - - - - - - - - - - - - - - - - -
+
+      FIELD LABEL SECUNDARY STATES
+
+ - - - - - - - - - - - - - - - - - - - */
+
+.boxfield-label-secundary{
+
+  &.is-ellipsed{
+    cursor: pointer;
+
+    &:hover{
+      color: $grey;
+    }
+  }
+
+  &.is-full-length{
+    cursor: pointer;
+    white-space: normal;
+    word-break: break-all;
+
+    &:hover{
+      color: $grey;
+    }
+  }
+}
+
+
+/* - - - - - - - - - - - - - - - - - - -
+
+      BOXFIELD ASSIGMENT STATES
+
+ - - - - - - - - - - - - - - - - - - - */
+
+.boxfield-assign{
+
+  &.is-focused{
+
+    .boxfield-assign-tags{
+      opacity:0;
+    }
+  }
+}

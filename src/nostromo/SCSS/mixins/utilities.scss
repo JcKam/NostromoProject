@@ -1,0 +1,54 @@
+
+//MARGIN
+
+@mixin margin-x-base {
+    margin: 0 $space-base;
+}
+@mixin margin-y-base {
+    margin: $space-base 0;
+}
+
+@mixin margin-t-base {
+    margin-top: $space-base;
+}
+@mixin margin-l-base {
+    margin-left: $space-base;
+}
+@mixin margin-b-base {
+    margin-bottom: $space-base;
+}
+@mixin margin-r-base {
+    margin-right: $space-base;
+}
+
+@mixin margin-x-xl {
+    margin: 0 $space-xl !important;
+}
+@mixin margin-y-xl {
+    margin: $space-xl 0 !important;
+}
+
+@mixin margin-x-xxs {
+    margin: 0 $space-xxs !important;
+}
+@mixin margin-y-xxs {
+    margin: $space-xxs 0 !important;
+}
+
+//PADDING
+
+@mixin padding-x-base {
+    padding: 0 $space-base !important;
+}
+@mixin padding-y-base {
+    padding: $space-base 0 !important;
+}
+
+//FLEXBOX
+
+@mixin center-flex {
+    align-items: center;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+}

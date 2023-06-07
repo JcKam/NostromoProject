@@ -1,21 +1,47 @@
 @import "../design-tokens.scss";
 
+@mixin pagination-active {
+    font-size: $font-size-lg;
+    width: 3.5rem;
+    height: 3.5rem;
+    box-shadow: 0 .1rem .3rem transparentize($color-grey, .5), 0 0 3rem transparentize(#fff, .5);
+    background: map-get($theme, brand, "primary");
+    border-color: map-get($theme, brand, "primary");
+    color: map-get($theme, text, "color-low");
+}
+
 .nav-pagination{
+    background: map-get($theme, text, "color-low");
+    border-radius: $border-radius-xxl;
     display: flex;
-    flex: 1;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     position: relative;
-    width: 100%;
-
 }
 
 .nav-pagination-item{
-    @include margin-x-base;
+    //@include margin-x-xxs;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
 }
 
 .nav-pagination-item-link{
-    @include button-round(2rem);
+    @include button-circle(2.5rem, 2.5rem);
+    background: map-get($theme, text, "color-low");
     border-style: solid;
+    border-width: 1px;
     text-decoration: none;
+    transition: $transition-faster ease;
+
+    &:hover, &:focus{
+        @include pagination-active();
+    }
+}
+
+.nav-pagination-item-link_active{
+    @include pagination-active();
 }

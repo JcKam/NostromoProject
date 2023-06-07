@@ -1,27 +1,50 @@
 
 @import "../design-tokens.scss";
 
+//GENERALE
+
 .is-danger { //.is-danger *
     border-color: map-get($theme, state, "danger") !important;
     color: map-get($theme, state, "danger") !important;
-    &::before, &::after{
+    &::before{
         border-color: map-get($theme, state, "danger") !important;
+    }
+    &::after{
+       background: map-get($theme, state, "danger") !important;
     }
 }
 
 .is-success{
     border-color: map-get($theme, state, "success") !important;
     color: map-get($theme, state, "success") !important;
-    &::before, &::after{
+    &::before{
         border-color: map-get($theme, state, "success") !important;
+    }
+    &::after{
+       background: map-get($theme, state, "success") !important;
     }
 }
 
 .is-selected{
     border-color: map-get($theme, brand, "tertiary")  !important;
     color: map-get($theme, brand, "primary")  !important;
-    &::before, &::after{
+    &::before{
         border-color: map-get($theme, brand, "tertiary")  !important;
+    }
+    &::after{
+       background: map-get($theme, brand, "primary") !important;
+    }
+}
+
+.is-disabled, .is-disabled *{
+    border-color: transparent  !important;
+    color: map-get($theme, text, "color-text-light")  !important;
+    cursor: default !important;
+    &::before{
+        border-color: transparent  !important;
+    }
+    &::after{
+        background: transparent !important;
     }
 }
 
@@ -29,3 +52,14 @@
     border-color: map-get($theme, brand, "color-border")  !important;
     color: map-get($theme, brand, "color-title")  !important;
 }
+
+//INPUT
+
+
+.input-disabled{
+    border-color: transparent;
+
+    &::placeholder{
+      color: map-get($theme, text, "color-grey");
+    }
+  }

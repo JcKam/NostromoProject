@@ -1,0 +1,34 @@
+
+@mixin card_checkbox(
+    $color-background-card,
+    $color-border-card,
+    $color-background-card-before
+    ){
+    align-items: center;
+    background: $color-background-card;
+    border-radius: $border-radius-card;
+    background-clip: border-box;
+    border-color: $color-border-card;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $space-xs $space-s;
+    position: relative;
+    text-align: start;
+    text-decoration: none;
+    word-wrap: break-word;
+    width: auto;
+    &::before{
+        background: $color-background-card-before;
+        border-radius: $border-radius-card 0 0 $border-radius-card;
+        content: " ";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        opacity: 0;
+        width: $space-xxxs;
+    }
+}

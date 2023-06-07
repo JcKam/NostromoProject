@@ -1,0 +1,65 @@
+@import "../design-tokens.scss";
+@import "../mixins.scss";
+
+.progress{
+    background: map-get($theme, text, "text-light");
+    border: 1px solid gray;
+    border-radius: $border-radius-sm;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $space-s;
+    padding: $space-s;
+    position: relative;
+  }
+  .progress-label{
+    display: block;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .progress-info{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    width: 100%;
+  }
+  .progress-status{
+    color: orange;
+    font-size: $font-size-sm;
+    font-weight: 700;
+  }
+  .progress-remaining{
+    font-size: $font-size-sm;
+  }
+  .progress-bg{
+    border: 1px solid gray; 
+    background: g; // 
+    display: flex;
+    height: $space-xxxs;
+    overflow: hidden;
+    border-radius: $border-radius-sm;
+    overflow: hidden;
+    width: 100%;
+  }
+  .progress-bar{
+    background: orange;
+    height: $space-xxxs;
+    transition: all $transition-fast ease;
+    width: 0;
+  }
+  /* - - - - - - - - - - - - - - - - - - -
+            PROGRESS STATES
+   - - - - - - - - - - - - - - - - - - - */
+   .progress{
+    &.is-complete{
+      .progress-status,
+      .progress-remaining{
+        color: green;
+      }
+      .progress-bar{
+        background: green;
+        background: linear-gradient(to right, green 0%, green 100%);
+      }
+    }
+  }

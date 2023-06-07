@@ -1,0 +1,79 @@
+
+@import "../design-tokens.scss";
+@import "../mixins.scss";
+
+.card_button--default{
+    @include card_core;
+    @include card_button(
+        transparentize(map-get($theme, text, "color-low"), .4),
+        map-get($theme, text, "color-border"),
+        transparent
+
+    );
+    &:hover, &:focus{
+        background-color: map-get($theme, text, "color-low");
+        &::before{
+            background: map-get($theme, brand, "primary" );
+        }
+    }
+    &:focus{
+        box-shadow: $focus-btn;
+        outline: none;
+    }
+}
+
+.card_button--selected{
+    @include card_core;
+    @include card_button(
+        map-get($theme, text, "color-low"),
+        map-get($theme, brand, "tertiary"),
+        map-get($theme, brand, "tertiary")
+
+    );
+    &:hover, &:focus{
+        background-color: map-get($theme, text, "color-low");
+        &::before{
+            background: map-get($theme, brand, "primary" );
+        }
+    }
+    &:focus{
+        box-shadow: $focus-btn;
+        outline: none;
+    }
+}
+
+.card_button--success{
+    @include card_core;
+    @include card_button(
+        map-get($theme, text, "color-low" ),
+        map-get($theme, state, "success-hight" ),
+        map-get($theme, state, "success" )
+
+    );
+    &:hover, &:focus{
+        background-color: map-get($theme, text, "color-low");
+        border-color: map-get($theme, state, "success" );
+    }
+    &:focus{
+        box-shadow: $focus-btn-success;
+        outline: none;
+    }
+}
+
+.card_button--danger{
+    @include card_core;
+    @include card_button(
+        map-get($theme, text, "color-low" ),
+        map-get($theme, state, "danger-hight" ),
+        map-get($theme, state, "danger" )
+
+    );
+    &:hover, &:focus{
+        background-color: map-get($theme, text, "color-low");
+        border-color: map-get($theme, state, "danger" );
+    }
+    &:focus{
+        box-shadow: $focus-btn-danger;
+        outline: none;
+    }
+}

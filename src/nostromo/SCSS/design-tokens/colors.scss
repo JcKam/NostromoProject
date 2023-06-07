@@ -21,8 +21,10 @@ $color-success-hight: #008630;
 $color-success-low: #05C247;
 $color-danger-hight: #f02b00;
 $color-danger-low: #F04E3E;
+$color-warning-hight: #B36205;
+$color-warning-low: #f6a02f;
 
-//TEXT
+//TEXT -- neutral
 
 $color-hight: #000000;
 $color-title: #00151b;
@@ -38,3 +40,23 @@ $color-low: #ffffff;
 
 $bg-light: #F4F7F6;
 $bg-dark: #1b2f36; //#  162037
+
+
+
+$neutral-100: #183039;
+$neutral-90: #29444f;
+$neutral-80: #3b555f;
+$neutral-70: #4c646e;
+$neutral-60: #60757e;
+$neutral-50: #788992;
+$neutral-40: #8d9ba2;
+$neutral-30: #a5afb4;
+$neutral-20: #dce0e2;
+$neutral-10: #ecf1f3;
+$neutral-0: #ffffff;
+
+// color-background-button-primary-active
+
+//Tooltip
+$color-background-tooltip: $brand-tertiary-base;
+$color-text-tooltip: $color-text;

@@ -1,0 +1,25 @@
+
+@mixin card_button(
+    $color-background-card, 
+    $color-border-card,
+    $color-background-card-before
+    ){
+    align-items: center;
+    background: $color-background-card;
+    border-radius: $border-radius-card;
+    border-color: $color-border-card;
+    color: map-get($theme, text, "color-text");
+    cursor: pointer;
+    justify-content: space-between;
+    padding: $space-xxs $space-base;
+    text-decoration: none;
+    &::before{
+        background: $color-background-card-before;
+        border-radius: $border-radius-card 0 0 $border-radius-card;
+        content: " ";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        width: $space-xxxs;
+    }
+}

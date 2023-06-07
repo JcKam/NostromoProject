@@ -1,0 +1,17 @@
+$margin-tiny: 7px;
+$margin-small: 15px;
+$margin-standard: 30px;
+$margin-big: 45px;
+$margin-bigger: 60px;
+$margin-biggest: 120px;
+
+
+$spacer: 1rem !default;
+$spacers: (
+  -tiny: $spacer * .25,
+  -small: $spacer * .5,
+  -standard: $spacer,
+  -big: $spacer * 1.5,
+  -bigger: $spacer * 2,
+  -biggest: $spacer * 3,
+) !default;

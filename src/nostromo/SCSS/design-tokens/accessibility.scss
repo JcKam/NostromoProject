@@ -1,2 +1,4 @@
-$focus-btn: 0 .1rem .3rem transparentize($color-grey, .5), 0 0 0 .3rem transparentize($brand-tertiary-base, .6);
-$focus-btn-danger: 0 .1rem .3rem transparentize($color-grey, .5), 0 0 0 .3rem transparentize($color-danger-low, .6);
+$focus-btn: 0 .1rem .3rem transparentize($color-grey, .5), 0 0 0 .25rem transparentize($brand-tertiary-base, .6);
+$focus-btn-danger: 0 .1rem .3rem transparentize($color-grey, .5), 0 0 0 .25rem transparentize($color-danger-low, .6);
+$focus-btn-success: 0 .1rem .3rem transparentize($color-grey, .5), 0 0 0 .25rem transparentize($color-success-low, .6);
+$focus-btn-warning: 0 .1rem .3rem transparentize($color-grey, .5), 0 0 0 .25rem transparentize($color-warning-low, .6);
